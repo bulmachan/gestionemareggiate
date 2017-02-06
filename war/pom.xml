@@ -170,7 +170,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.richfaces.framework</groupId>
-			<artifactId>richfaces-impl</artifactId>
+			<artifactId>richfaces-impl-jsf2</artifactId>
 			<version>3.3.3.Final</version>
 		</dependency>
 		<dependency>

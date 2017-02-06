@@ -7,7 +7,8 @@
 	<application>
 		<!-- uncomment to use Facelets -->
 		<!-- <view-handler>com.sun.facelets.FaceletViewHandler</view-handler> -->
-		<view-handler>it.epocaricerca.geologia.web.util.ReverseProxyViewHandler</view-handler>
+		<!--<view-handler>it.epocaricerca.geologia.web.util.ReverseProxyViewHandler</view-handler>-->
+		<view-handler>org.ajax4jsf.application.AjaxViewHandler</view-handler>
 		<locale-config>
 			<default-locale>it</default-locale>
 		</locale-config>
@@ -21,6 +22,15 @@
 		</resource-bundle>
 	</application>
 	
+  <context-param>
+       <param-name>org.ajax4jsf.VIEW_HANDLERS</param-name>
+       <param-value>com.sun.facelets.FaceletViewHandler</param-value>
+  </context-param>
+ <context-param>
+       <param-name>org.ajax4jsf.VIEW_HANDLERS</param-name>
+       <param-value>org.apache.myfaces.application.jsp.JspViewHandlerImpl</param-value>
+  </context-param>
+
 	
 	
 	<lifecycle>
