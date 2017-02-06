@@ -6,7 +6,7 @@
 	version="1.0">
 	<persistence-unit name="SMPersistenceLayer">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<jta-data-source>java:SMDS</jta-data-source>
+		<jta-data-source>java:/SMDS</jta-data-source>
 		
 		<class>it.epocaricerca.geologia.model.PrevisioneMeteo</class>
 		<class>it.epocaricerca.geologia.model.Allegato</class>
