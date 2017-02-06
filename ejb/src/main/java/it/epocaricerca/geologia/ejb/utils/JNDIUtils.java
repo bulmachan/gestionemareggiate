@@ -68,10 +68,12 @@ import org.apache.log4j.Logger;
  */
 public class JNDIUtils {
 
+	// Replace JNDI Lookup Code
+	// private static String hostPort = SupportoMareggiatePropertiesUtil.getJndiHost()+":"+SupportoMareggiatePropertiesUtil.getJndiPort();
+	// private static String hostPortIps = SupportoMareggiatePropertiesUtil.getJndiIp();
 
-	private static String hostPort = SupportoMareggiatePropertiesUtil.getJndiHost()+":"+SupportoMareggiatePropertiesUtil.getJndiPort();
-	private static String hostPortIps = SupportoMareggiatePropertiesUtil.getJndiIp();
-	private static String applicationName = SupportoMareggiatePropertiesUtil.getApplicationName();
+	//private static String applicationName = SupportoMareggiatePropertiesUtil.getApplicationName();
+	private static String applicationName = "java:app/"+SupportoMareggiatePropertiesUtil.getApplicationName();
 
 	private static final Map<String, Object> EJB_CACHE = new HashMap<String, Object>();
 	
@@ -165,15 +167,19 @@ public class JNDIUtils {
 
 
 	@SuppressWarnings("unchecked")
-	private static InitialContext getInitialContext(String hostPort)
+	private static InitialContext getInitialContext()
 			throws Exception {
 		//Hashtable props = getInitialContextProperties(hostPort);
-		logger.info("Setup JNDI with "+hostPortIps);
-		Hashtable props = getInitialContextProperties(hostPortIps);
-		return new InitialContext(props);
+		logger.info("Setup JNDI");
+		
+		// Hashtable props = getInitialContextProperties(hostPortIps);
+		// Replace JNDI Lookup Code
+		InitialContext context = new InitialContext();
+		// return new InitialContext(props);
+		return context; 
 	}
 
-	@SuppressWarnings("unchecked")
+	/*@SuppressWarnings("unchecked")
 	private static Hashtable getInitialContextProperties(String hostPort) {
 		Hashtable props = new Hashtable();
 		props.put("java.naming.factory.initial",
@@ -183,7 +189,7 @@ public class JNDIUtils {
 		props.put("java.naming.provider.url", hostPort);
 
 		return props;
-	}
+	}*/
 	
 	@SuppressWarnings("unchecked")
 	public static <T> T retrieveEJB(String key, String name) {
@@ -193,7 +199,9 @@ public class JNDIUtils {
 			ejbBean = (T) EJB_CACHE.get(key);
 		} else {
 			try {
-				InitialContext context = getInitialContext( hostPort );
+				// InitialContext context = getInitialContext( hostPort );
+				// Replace JNDI Lookup Code
+				InitialContext context = getInitialContext();
 				ejbBean = (T) context.lookup(name);
 				EJB_CACHE.put(key, ejbBean);
 			} catch (NamingException e) {
@@ -211,8 +219,10 @@ public class JNDIUtils {
 
 		if (userRoleManager == null) {
 			try {
-				userRoleManager = (UserRoleManager) getInitialContext(
-						hostPort ).lookup(userRoleManagerName);
+				// userRoleManager = (UserRoleManager) getInitialContext(hostPort ).lookup(userRoleManagerName);
+				// Replace JNDI Lookup Code
+				userRoleManager = (UserRoleManager) getInitialContext().lookup(userRoleManagerName);
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -225,7 +235,7 @@ public class JNDIUtils {
 
 		if (dannoStbManager == null) {
 			try {
-				dannoStbManager = (DannoSTBManager) getInitialContext(hostPort).lookup(DannoSTBManagerName);
+				dannoStbManager = (DannoSTBManager) getInitialContext().lookup(DannoSTBManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -237,7 +247,7 @@ public class JNDIUtils {
 
 		if (stbManager == null) {
 			try {
-				stbManager = (STBManager) getInitialContext(hostPort ).lookup(STBManagerName);
+				stbManager = (STBManager) getInitialContext().lookup(STBManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -249,7 +259,7 @@ public class JNDIUtils {
 
 		if (fonteManager == null) {
 			try {
-				fonteManager = (FonteManager) getInitialContext(hostPort ).lookup(FonteManagerName);
+				fonteManager = (FonteManager) getInitialContext().lookup(FonteManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -261,7 +271,7 @@ public class JNDIUtils {
 
 		if (estensioneManager == null) {
 			try {
-				estensioneManager = (EstensioneManager) getInitialContext(hostPort ).lookup(EstensioneManagerName);
+				estensioneManager = (EstensioneManager) getInitialContext( ).lookup(EstensioneManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -273,8 +283,7 @@ public class JNDIUtils {
 
 		if (previsioneMeteoManager == null) {
 			try {
-				previsioneMeteoManager = (PrevisioneMeteoManager) getInitialContext(
-						hostPort ).lookup(PrevisioneMeteoManagerName);
+				previsioneMeteoManager = (PrevisioneMeteoManager) getInitialContext().lookup(PrevisioneMeteoManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -286,8 +295,7 @@ public class JNDIUtils {
 
 		if (provenienzaManager == null) {
 			try {
-				provenienzaManager = (ProvenienzaManager) getInitialContext(
-						hostPort ).lookup(ProvenienzaManagerName);
+				provenienzaManager = (ProvenienzaManager) getInitialContext().lookup(ProvenienzaManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -299,8 +307,7 @@ public class JNDIUtils {
 
 		if (macroAreaManager == null) {
 			try {
-				macroAreaManager = (MacroAreaManager) getInitialContext(
-						hostPort ).lookup(MacroAreaManagerName);
+				macroAreaManager = (MacroAreaManager) getInitialContext().lookup(MacroAreaManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -312,8 +319,7 @@ public class JNDIUtils {
 
 		if (fenomenoManager == null) {
 			try {
-				fenomenoManager = (FenomenoManager) getInitialContext(
-						hostPort ).lookup(FenomenoManagerName);
+				fenomenoManager = (FenomenoManager) getInitialContext().lookup(FenomenoManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -324,8 +330,7 @@ public class JNDIUtils {
 	public static TendenzaManager getTendenzaManager() {
 		if (tendenzaManager == null) {
 			try {
-				tendenzaManager = (TendenzaManager) getInitialContext(
-						hostPort ).lookup(TendenzaManagerName);
+				tendenzaManager = (TendenzaManager) getInitialContext().lookup(TendenzaManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -336,8 +341,7 @@ public class JNDIUtils {
 	public static AltezzaManager getAltezzaManager() {
 		if (altezzaManager == null) {
 			try {
-				altezzaManager = (AltezzaManager) getInitialContext(
-						hostPort ).lookup(AltezzaManagerName);
+				altezzaManager = (AltezzaManager) getInitialContext().lookup(AltezzaManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -349,8 +353,7 @@ public class JNDIUtils {
 	public static TipoAllegatoManager getTipoAllegatoManager() {
 		if (tipoAllegatoManager == null) {
 			try {
-				tipoAllegatoManager = (TipoAllegatoManager) getInitialContext(
-						hostPort ).lookup(TipoAllegatoManagerName);
+				tipoAllegatoManager = (TipoAllegatoManager) getInitialContext( ).lookup(TipoAllegatoManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -361,8 +364,7 @@ public class JNDIUtils {
 	public static PagingManager getPagingManager() {
 		if (pagingManager == null) {
 			try {
-				pagingManager = (PagingManager) getInitialContext(
-						hostPort ).lookup(PagingManagerName);
+				pagingManager = (PagingManager) getInitialContext().lookup(PagingManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -374,8 +376,7 @@ public class JNDIUtils {
 	public static PrevisioneDannoManager getPrevisioneDannoManager() {
 		if (previsioneDannoManager == null) {
 			try {
-				previsioneDannoManager = (PrevisioneDannoManager) getInitialContext(
-						hostPort ).lookup(PrevisioneDannoManagerName);
+				previsioneDannoManager = (PrevisioneDannoManager) getInitialContext().lookup(PrevisioneDannoManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -387,8 +388,7 @@ public class JNDIUtils {
 	public static PrevisioneImpattoManager getPrevisioneImpattoManager() {
 		if (previsioneImpattoManager == null) {
 			try {
-				previsioneImpattoManager = (PrevisioneImpattoManager) getInitialContext(
-						hostPort ).lookup(PrevisioneImpattoManagerName);
+				previsioneImpattoManager = (PrevisioneImpattoManager) getInitialContext().lookup(PrevisioneImpattoManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -399,8 +399,7 @@ public class JNDIUtils {
 	public static ImpattoRealeManager getImpattoRealeManager() {
 		if (impattoRealeManager == null) {
 			try {
-				impattoRealeManager = (ImpattoRealeManager) getInitialContext(
-						hostPort ).lookup(ImpattoRealeManagerName);
+				impattoRealeManager = (ImpattoRealeManager) getInitialContext().lookup(ImpattoRealeManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -411,8 +410,7 @@ public class JNDIUtils {
 	public static TipoDannoManager getTipoDannoManager() {
 		if (tipoDannoManager == null) {
 			try {
-				tipoDannoManager = (TipoDannoManager) getInitialContext(
-						hostPort ).lookup(TipoDannoManagerName);
+				tipoDannoManager = (TipoDannoManager) getInitialContext( ).lookup(TipoDannoManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -423,8 +421,7 @@ public class JNDIUtils {
 	public static DannoManager getDannoManager() {
 		if (dannoManager == null) {
 			try {
-				dannoManager = (DannoManager) getInitialContext(
-						hostPort ).lookup(DannoManagerName);
+				dannoManager = (DannoManager) getInitialContext().lookup(DannoManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -435,8 +432,7 @@ public class JNDIUtils {
 	public static LocalitaManager getLocalitaManager() {
 		if (localitaManager == null) {
 			try {
-				localitaManager = (LocalitaManager) getInitialContext(
-						hostPort ).lookup(LocalitaManagerName);
+				localitaManager = (LocalitaManager) getInitialContext().lookup(LocalitaManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -448,8 +444,7 @@ public class JNDIUtils {
 	public static RelazioneGeneraleSTBManager getRelazioneGeneraleSTBManager() {
 		if (relazioneGeneraleSTBManager == null) {
 			try {
-				relazioneGeneraleSTBManager = (RelazioneGeneraleSTBManager) getInitialContext(
-						hostPort ).lookup(RelazioneGeneraleSTBManagerName);
+				relazioneGeneraleSTBManager = (RelazioneGeneraleSTBManager) getInitialContext().lookup(RelazioneGeneraleSTBManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -460,7 +455,7 @@ public class JNDIUtils {
 	public static LivelloCriticitaManager getLivelloCriticitaManager() {
 		if (livelloCriticitaManager == null) {
 			try {
-				livelloCriticitaManager = (LivelloCriticitaManager) getInitialContext(hostPort).lookup(livelloCriticitaManagerName);
+				livelloCriticitaManager = (LivelloCriticitaManager) getInitialContext().lookup(livelloCriticitaManagerName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

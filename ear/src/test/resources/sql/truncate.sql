@@ -1,4 +1,6 @@
 
+--delete from  MRG_MAREOGRAFI;
+--delete from  MRG_BOE;
 --delete from  MRG_TENDENZE;
 --delete from  MRG_PROVENIENZE;
 --delete from  MRG_TIPI_MACRO_AREE;

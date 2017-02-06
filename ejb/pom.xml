@@ -312,6 +312,13 @@
 			<artifactId>richfaces-api</artifactId>
 			<version>3.3.3.Final</version>
 		</dependency>
+
+      <!-- @see https://developer.jboss.org/wiki/RichFaces333AndJSF20 -->
+      <dependency>
+         <groupId>org.richfaces.framework</groupId>
+         <artifactId>richfaces-impl</artifactId>
+         <version>3.3.3.Final</version>
+      </dependency>	
             
 		<dependency>
 			<groupId>commons-configuration</groupId>
