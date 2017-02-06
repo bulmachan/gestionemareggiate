@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+
+	<div class="margin">
+		<div class="attachmentsBoxHelp">
+		<h3 class="form_subtitle">Allegati</h3>
+			<ol>
+				<li><p>Carica gli allegati.</p></li>
+				<li><p>Specifica il tipo di ciascun allegato.</p></li>
+			</ol>
+			<p>
+				<span class="azure_light bold">NOTA BENE: </span>Fintanto che non
+				viene salvato l'avviso i file caricati sono temporanei.
+			</p>
+		</div>
+
+		<label for="relazioniGeneraliSTBAddForm:j_id18:uploadAllegati:file" style="display:none" accesskey="u">Inserisci allegati</label>
+		<rich:fileUpload
+			fileUploadListener="#{RelazioniGeneraliSTBController.fileUploadListener}"
+			maxFilesQuantity="10" id="uploadAllegati" immediateUpload="true"
+			acceptedTypes="pdf,png,jpg,txt" allowFlash="false"
+			addControlLabel="Inserisci un allegato"
+			styleClass="eventoCostieroAttachmentsContainer" noDuplicate="true"
+			ontyperejected="JSFUtils.onAttachmentTypeRejected()"
+			clearAllControlLabel="Cancella tutto" clearControlLabel="Cancella"
+			doneLabel="Caricato">
+			<a4j:support event="onfileuploadcomplete"
+				reRender="tipoAllegatiContainer, uploadedFilesTypeBoxesContainer" />
+			<a4j:support event="onclear"
+				reRender="tipoAllegatiContainer, uploadedFilesTypeBoxesContainer">
+				<a4j:actionparam name="fname" noEscape="true"
+					value="(event.memo.entry)?event.memo.entry.fileName:''"
+					assignTo="#{RelazioniGeneraliSTBController.fileToClear}"
+					actionListener="#{RelazioniGeneraliSTBController.clearFileUpload}" />
+			</a4j:support>
+
+		</rich:fileUpload>
+		<a4j:outputPanel id="tipoAllegatiContainer">
+			<h:panelGroup styleClass="tipoAllegatiContainer"
+				rendered="#{RelazioniGeneraliSTBController.allegati.tipoAllegatiBoxRendered}">
+				<table class="rich-fileupload-toolbar-decor">
+					<tr>
+						<td><b>Specifica il tipo di allegato</b></td>
+					</tr>
+				</table>
+				<a4j:outputPanel id="uploadedFilesTypeBoxesContainer" styleClass="rich-fileupload-font">
+					<h:dataTable styleClass="uploadedFilesTypeTable"
+						value="#{RelazioniGeneraliSTBController.allegati.uploadedFilesKeys}"
+						var="uploadedFileKey">
+
+						<h:column styleClass="uploadedFilesTypeTableLeft">
+							<h:outputText value="#{uploadedFileKey}" />
+						</h:column>
+
+						<h:column styleClass="uploadedFilesTypeTableRight">
+							<h:selectOneMenu
+								value="#{RelazioniGeneraliSTBController.allegati.tipiAllegatiUploadedFiles[uploadedFileKey]}" title="Specifica il tipo di allegato">
+								<f:selectItems
+									value="#{RelazioniGeneraliSTBController.tipiAllegatoSelect}" />
+							</h:selectOneMenu>
+						</h:column>
+
+					</h:dataTable>
+				</a4j:outputPanel>
+			</h:panelGroup>
+		</a4j:outputPanel>
+		<f:verbatim>
+		<script type="text/javascript">
+		 //<![CDATA[
+			document.getElementById("relazioniGeneraliSTBAddForm:j_id18:uploadAllegati:file").title = "Inserisci un allegato [Alt + (Shift) + u]";
+		 //]]>
+		</script>
+		</f:verbatim>
+		<div class="clearfix"></div>
+		
+		<div class="navPanel" style="width: 100%; margin-top: 1em;">
+			<a4j:commandButton value="&lt;&lt; Precedente" title="Precedente"
+				styleClass="pull-left inputBtn inputBtn-blue"
+				action="#{RelazioniGeneraliSTBController.previous}" />
+		</div>
+
+
+		<div class="clearfix"></div>
+
+	</div>
+</ui:composition>

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+
+<f:view>
+
+	<ui:composition template="/WEB-INF/layout/layout.xhtml">
+
+
+		<ui:define name="title">
+			<ui:fragment rendered="#{!MareggiateControllerr.editMode}">
+				<h:outputText value="Nuova Mareggiata" />
+			</ui:fragment>
+		</ui:define>
+
+
+		<ui:define name="page_title_box_right">
+		</ui:define>
+
+		<ui:define name="content">
+
+			<h:form id="mareggiataAddForm">
+
+				<h:commandButton value="Annulla" immediate="true"
+					title="Annulla"
+					styleClass="formButton inputBtn inputBtn-grey"
+					action="#{MareggiateController.annullaCreazione}" />
+
+				<a4j:outputPanel ajaxRendered="true">
+
+					<h:commandButton id="salvaRelazioneGeneraleSTB"
+						rendered="#{MareggiateController.saveEnabled}"
+						title="Salva Mareggiata [Alt + (Shift) + s]"
+						value="Salva Mareggiata"
+						styleClass="formButton inputBtn inputBtn-green"
+						accesskey="s"
+						action="#{MareggiateController.salvaMareggiata}"
+						type="submit" />
+
+				</a4j:outputPanel>		
+				
+				<a4j:outputPanel styleClass="formErrorMessageContainer" ajaxRendered="true">
+					<rich:messages styleClass="formButton formErrorMessage">
+					<h:outputText styleClass="formButton formErrorMessage"
+							value="#{MareggiateController.mareggiataFormMessage}"
+						rendered="#{MareggiateController.mareggiataFormMessageRendered}" />
+						<f:verbatim escape="true" rendered="#{MareggiateController.mareggiataFormMessageRendered}">
+							<a class="disnone" id="mareggiateFormMessageA" href="#">avvisoMeteoFormMessageA</a>
+							<script type="text/javascript">document.getElementById("mareggiateFormMessageA").focus();</script>
+						</f:verbatim>
+					</rich:messages>
+				</a4j:outputPanel>
+							
+				<rich:panel styleClass="wizard" style="margin-top:1em;">
+						<a4j:include viewId="/wizard/mareggiata/wstep1.xhtml" />
+				</rich:panel>
+
+			</h:form>
+
+		</ui:define>
+
+
+
+	</ui:composition>
+
+</f:view>
+
+</html>

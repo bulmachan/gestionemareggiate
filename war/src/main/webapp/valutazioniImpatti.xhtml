@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+
+<ui:composition template="/WEB-INF/layout/layout.xhtml">
+	<ui:define name="title">Valutazioni Impatti Protezione Civile</ui:define>
+	<ui:define name="content">
+		<f:view>
+			<div>
+				<h:form id="searchForm" ajaxSubmit="true"
+					reRender="previsioneImpattiList,scrollValidationDown,scroll_1_div">
+
+					<h:panelGroup rendered="#{UserSession.roleValutazioneImpatti or UserSession.roleSuperUser}">
+							
+						<h:commandButton value="Nuova valutazione impatto" 
+						styleClass="inputBtn inputBtn-blue"
+						title="Nuova valutazione impatto [Alt + (Shift) + n]"
+						accesskey="n"
+						action="#{ValutazioneImpattiController.nuovaValutazioneImpatti}">
+						</h:commandButton>
+					
+					</h:panelGroup>
+
+					<div class="searchFilterBox">
+						<h3>Filtri di ricerca</h3>
+						<t:panelGrid id="searchBox" columns="4" styleClass="form_panelGrid">
+
+							<!-- INIZIO VALIDITA' -->
+							<label for="datigenerali_iniziovalidita_giorno" class="form_label">Inizio validità</label>
+							<rich:calendar id="id_inizio_data" datePattern="dd/MM/yyyy HH:mm" popup="true"
+								validatorMessage="Inizio validità: formato campo data non valido." converterMessage="Inizio validità: formato campo data non valido."
+								value="#{ValutazioneImpattiController.filtro_inizioValiditaGiorno}" >
+								 <a4j:support event="onchanged" action="#{ValutazioneImpattiController.filtraValutazioneImpatti}" reRender="previsioneImpattiList,scrollValidationDown,scroll_1_div"/>
+							</rich:calendar>
+
+							<!-- FINE VALIDITA' -->
+							<label for="datigenerali_finevalidita_giorno" class="form_label">Fine validità</label>
+							<rich:calendar id="id_fine_data" datePattern="dd/MM/yyyy HH:mm" popup="true"
+								validatorMessage="Fine validità: formato campo data non valido." converterMessage="Fine validità: formato campo data non valido."
+								value="#{ValutazioneImpattiController.filtro_fineValiditaGiorno}"
+								onexpand="JSFUtils.onEndValidityClick('searchForm:id_inizio_data','searchForm:id_fine_data')">
+								 <a4j:support event="onchanged" action="#{ValutazioneImpattiController.filtraValutazioneImpatti}" reRender="previsioneImpattiList,scrollValidationDown,scroll_1_div"/>
+							</rich:calendar>
+							
+							<!-- Macro Area -->
+							<label for="valutazioneimpatto_localita" class="form_label">Macro Area</label>
+							<h:selectOneMenu id="valutazioneimpatto_localita" title="Imposta filtro per selezione macroarea"
+								value="#{ValutazioneImpattiController.filtro_localita}">
+								<f:selectItems
+									value="#{ValutazioneImpattiController.macroAreaSelect}" noSelectionValue="-" />
+								 <a4j:support event="onchange" action="#{ValutazioneImpattiController.filtraValutazioneImpatti}" reRender="previsioneImpattiList"/>
+							</h:selectOneMenu>
+							
+							<h:outputText value="" />
+							<h:outputText value="" />
+
+							<a4j:commandButton value="Pulisci Filtri" reRender="searchBox,previsioneImpattiList,scrollValidationDown,scroll_1_div"
+								styleClass="inputBtn inputBtn-grey"
+								title="Pulisci Filtri"
+								action="#{ValutazioneImpattiController.pulisciFiltri}">
+							</a4j:commandButton>
+							
+							<h:commandButton value="Cerca"
+								style="visibility: hidden;"
+								action="#{ValutazioneImpattiController.filtraValutazioneImpatti}">
+							</h:commandButton>
+
+						</t:panelGrid>
+					</div>
+
+					<a4j:poll id="poll" interval="10000" ajaxSingle="true" action="#{ValutazioneImpattiController.updateDataModel}" reRender="previsioneImpattiList,scrollValidationDown,scroll_1_div"/>
+					<div class="scrollX">
+					<t:dataTable id="previsioneImpattiList" var="previsioneImpatti"
+						value="#{ValutazioneImpattiController.dataModel}"
+						preserveDataModel="false" styleClass="itemsDataTable"
+						rowClasses="itemsDataTableOddRow, itemsDataTableEvenRow"
+						columnClasses="itemsDataTableColumns"
+						rows="#{ValutazioneImpattiController.rowsPerPage}">
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText styleClass="headerText" value="Codice" />
+							</f:facet>
+							<h:outputText value="#{previsioneImpatti.codice}" />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header">
+								<h:outputText styleClass="headerText" value="N° Allerta" />
+							</f:facet>
+							<h:outputText value="#{previsioneImpatti.numeroAllerta} del " />
+							<h:outputText value="#{previsioneImpatti.dataAllerta}">
+							<f:convertDateTime type="date" pattern="dd/MM/yyyy" />
+							</h:outputText>
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText styleClass="headerText" value="Inizio validità" />
+							</f:facet>
+							<h:outputText styleClass="headerText"
+								value="#{previsioneImpatti.inizioValidita}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText styleClass="headerText" value="Fine validità" />
+							</f:facet>
+							<h:outputText styleClass="headerText"
+								value="#{previsioneImpatti.fineValidita}" />
+						</h:column>
+
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText styleClass="headerText"
+									value="Livello max criticità" />
+							</f:facet>
+							<!--<h:outputText styleClass="headerText"
+								value="#{ValutazioneImpattiController.valutazioneDannoPrevalente[previsioneImpatti.id]}" /> -->
+								<h:outputText styleClass="headerText"
+								value="BOH?!?" />
+						</h:column>
+
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText styleClass="headerText" value="Azioni" />
+							</f:facet>
+							
+							<a4j:commandLink id="viewlink"
+								action="#{ValutazioneImpattiController.viewItemDetails}">
+								<em title="Visualizza dettagli valutazione impatti" class="icon-folder-open icon-2x"><span class="hidden">Visualizza dettagli valutazione impatti</span></em>
+							</a4j:commandLink>
+							<rich:toolTip for="viewlink" value="Visualizza dettagli" />
+																					
+							<h:panelGroup rendered="#{empty previsioneImpatti.mareggiataPrevisioneImpatto and ( UserSession.roleValutazioneImpatti or UserSession.roleSuperUser)}">
+								<a4j:commandLink id="editlink"
+									action="#{ValutazioneImpattiController.editItemDetails}">
+									<em title="Modifica dettagli valutazione impatti" class="icon-edit icon-2x"><span class="hidden">Modifica dettagli valutazione impatti</span></em>
+								</a4j:commandLink>
+								<rich:toolTip for="editlink" value="Modifica dettagli" />
+							</h:panelGroup>
+							
+							<h:panelGroup rendered="#{empty previsioneImpatti.mareggiataPrevisioneImpatto and ( UserSession.roleValutazioneImpatti or UserSession.roleSuperUser)}">
+								<a4j:commandLink id="trashlink"
+									oncomplete="#{rich:component('deletePanel')}.show()">
+									<em title="Cancella valutazione impatti" class="icon-trash icon-2x"><span class="hidden">Cancella valutazione impatti</span></em>
+									<a4j:actionparam name="idItemToDelete"
+										value="#{previsioneImpatti.id}"
+										assignTo="#{ValutazioneImpattiController.itemToDelete}" />
+								</a4j:commandLink>
+								<rich:toolTip for="trashlink" value="Cancella" />
+							</h:panelGroup>
+						</h:column>
+
+					</t:dataTable>
+					</div>
+					<t:div id="scroll_1_div">
+						<t:dataScroller id="scrollValidationDown"
+							for="previsioneImpattiList" fastStep="10"
+							pageCountVar="pageCount" pageIndexVar="scrollerPage"
+							paginator="true" paginatorMaxPages="9" immediate="true"
+							rendered="#{ValutazioneImpattiController.dataSize gt 10}"
+							styleClass="paginatorTable"
+							paginatorColumnClass="paginatorColumn"
+							paginatorActiveColumnClass="paginatorActiveColumn"
+							firstStyleClass="paginatorIcon"
+							previousStyleClass="paginatorIcon" nextStyleClass="paginatorIcon"
+							lastStyleClass="paginatorIcon">
+							
+						<f:facet name="first">
+							<h:graphicImage url="img/first.png" alt="Vai alla pagina iniziale" title="Vai alla pagina iniziale"/>
+						</f:facet>
+
+						<f:facet name="last">
+							<h:graphicImage url="img/last.png" alt="Vai alla pagina finale" title="Vai alla pagina finale"/>
+						</f:facet>
+
+						<f:facet name="previous">
+							<h:graphicImage url="img/previous.png" alt="Vai alla pagina precendente" title="Vai alla pagina precendente"/>
+						</f:facet>
+
+						<f:facet name="next">
+							<h:graphicImage url="img/next.png" alt="Vai alla pagina successiva" title="Vai alla pagina successiva"/>
+						</f:facet>
+						
+						</t:dataScroller>
+						<f:verbatim>
+							<script type="text/javascript">
+								//<![CDATA[
+									var elements = document.getElementsByTagName('a');
+									for (var i=0; i<elements.length; i++) {
+										var aId = elements[i].id;
+										if (aId) {
+												
+												if (aId.indexOf('searchForm:scrollValidationDownidx') != -1) {
+													var pos = elements[i].innerHTML.indexOf('>')+1;
+													elements[i].title = "Vai alla pagina " + elements[i].innerHTML.substr(pos, 1);												
+												}
+										}
+									}
+								 //]]>
+							</script>
+						</f:verbatim>
+					</t:div>
+					
+					
+					<rich:modalPanel styleClass="confirmationModalPanel"
+						id="deletePanel" autosized="true" width="250">
+						<f:facet name="header">
+							<h:outputText value="Eliminare questo elemento?" />
+						</f:facet>
+						<br />
+						<table width="100%">
+							<tbody>
+								<tr>
+									<td align="center" width="20%"><em
+										class="icon-warning-sign icon-3x red"></em></td>
+									<td align="center" width="40%"><a4j:commandLink
+											value="Elimina" title="Conferma Elimina valutazione impatti"
+											styleClass="inputBtn inputBtn-blue"
+											oncomplete="#{rich:component('deletePanel')}.hide();return true;"
+											action="#{ValutazioneImpattiController.deleteItem}" /></td>
+									<td align="center" width="40%"><a4j:commandLink
+											value="Annulla" title="Annulla Elimina avviso valutazione impatti"  styleClass="inputBtn inputBtn-grey"
+											onclick="#{rich:component('deletePanel')}.hide();return false;" /></td>
+								</tr>
+							</tbody>
+						</table>
+					</rich:modalPanel>
+
+
+				</h:form>
+				<f:verbatim>
+				 <script type="text/javascript">
+				 //<![CDATA[
+					iTitle = "Imposta filtro per data inizio validità valutazione impatti";
+					fTitle = "Imposta filtro per data fine validità valutazione impatti";
+					document.getElementById("searchForm:id_inizio_dataInputDate").title = iTitle;			
+					document.getElementById("searchForm:id_inizio_dataInputDate").removeAttribute('readonly');
+					document.getElementById("searchForm:id_inizio_dataPopupButton").title = iTitle;
+					
+					document.getElementById("searchForm:id_fine_dataInputDate").title = iTitle;			
+					document.getElementById("searchForm:id_fine_dataInputDate").removeAttribute('readonly');
+					document.getElementById("searchForm:id_fine_dataPopupButton").title = iTitle;
+					
+				 //]]>
+				</script>
+			</f:verbatim>	
+			</div>
+
+
+		</f:view>
+	</ui:define>
+</ui:composition>
+
+</html>

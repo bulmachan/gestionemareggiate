@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+
+	<div>
+	<a4j:outputPanel ajaxRendered="true">
+	<p id="obb2"><span class="azure_light bold">NOTA BENE: </span>I campi contrassegnati dall'asterisco sono obbligatori.</p>
+	<f:verbatim escape="true" rendered="#{CondizioniMeteoMarineController.meteoFormMessageRendered}">
+		<script type="text/javascript">document.getElementById('obb').className = "marginRid";</script>
+	</f:verbatim>
+	</a4j:outputPanel>
+		<h:panelGrid columns="2" styleClass="form_panelGrid">
+
+			<!-- INIZIO VALIDITA' -->
+			<label for="condizioneMeteoMarinaAddForm:j_id24:meteo_iniziovaliditaInputDate" class="form_label">Inizio
+				validita (*)</label>
+			<rich:calendar id="meteo_iniziovalidita" popup="true"
+				datePattern="dd/MM/yyyy HH:mm"
+				disabled="#{CondizioniMeteoMarineController.editMode}"
+				value="#{CondizioniMeteoMarineController.meteoBeanEdit.inizioValidita}" />
+
+			<!-- FINE VALIDITA' -->
+			<label for="condizioneMeteoMarinaAddForm:j_id24:meto_finevaliditaInputDate" class="form_label">Fine
+				validita (*)</label>
+			<rich:calendar id="meto_finevalidita" popup="true"
+				datePattern="dd/MM/yyyy HH:mm"
+				onexpand="JSFUtils.onEndValidityClick('condizioneMeteoMarinaAddForm:j_id21:meteo_iniziovalidita','condizioneMeteoMarinaAddForm:j_id21:meto_finevalidita')"
+				disabled="#{CondizioniMeteoMarineController.editMode}"
+				value="#{CondizioniMeteoMarineController.meteoBeanEdit.fineValidita}" />
+				
+			<!-- ESTENSIONE -->
+			<label for="datigenerali_tendenza" class="form_label">Estensione territoriale (*)</label>
+			<h:selectOneMenu value="#{CondizioniMeteoMarineController.meteoBeanEdit.estensione}" title="Imposta estensione territoriale">
+				<f:selectItems value="#{CondizioniMeteoMarineController.estTerritorialiSelect}" />
+			</h:selectOneMenu>				
+				
+
+		</h:panelGrid>
+
+		<div class="form-textarea-fullwidth">
+			<label class="form_label">Descrizione</label>
+			<h:inputTextarea rows="10" id="datigenerali_descrizione" maxlength="500"
+				value="#{CondizioniMeteoMarineController.meteoBeanEdit.descrizione}"
+				styleClass="full-width" />
+			<h:outputText value="(Max 500 caratteri)" />
+		</div>
+
+		<a4j:outputPanel ajaxRendered="true">
+			<p id="obb"><span class="azure_light bold">NOTA BENE: </span> Nella pagina successiva verranno mostrati dati dalle stazioni Arpa, nell'intervallo di tempo indcato.<br/>
+			L'elaborazione potrebbe richiedere qualche istante per il caricamento.</p>
+		</a4j:outputPanel>
+
+		<div class="navPanel" style="width: 100%; margin-top: 1em;">
+			<a4j:commandButton id="toStep2Btn" styleClass="pull-right inputBtn inputBtn-blue"
+				action="#{CondizioniMeteoMarineController.next}" value="Successivo &gt;&gt;" title="Pagina successiva"
+				onclick="jQuery('[id^=condizioneMeteoMarinaAddForm][id$=toStep2Btn]').hide(); jQuery('[id^=condizioneMeteoMarinaAddForm][id$=loadingAnimation]').show();"
+    			oncomplete="jQuery('[id^=condizioneMeteoMarinaAddForm][id$=loadingAnimation]').hide(); jQuery('[id^=condizioneMeteoMarinaAddForm][id$=toStep2Btn]').show();" />
+    		<h:graphicImage styleClass="pull-right" id="loadingAnimation" url="img/ajax-loader.gif" style="display:none" />
+		</div>
+
+		<div class="clearfix"></div>
+
+	</div>
+	
+	<f:verbatim>
+		 <script type="text/javascript">
+		 //<![CDATA[
+			iTitle = "Imposta data inizio validità condizione meteo marina";
+			fTitle = "Imposta data fine validità condizione meteo marina";
+			document.getElementById("condizioneMeteoMarinaAddForm:j_id25:meteo_iniziovaliditaInputDate").title = iTitle;
+			document.getElementById("condizioneMeteoMarinaAddForm:j_id25:meteo_iniziovaliditaPopupButton").title = iTitle;
+			document.getElementById("condizioneMeteoMarinaAddForm:j_id25:meteo_iniziovaliditaInputDate").removeAttribute('readonly');
+			document.getElementById("condizioneMeteoMarinaAddForm:j_id25:meto_finevaliditaInputDate").title = fTitle;
+			document.getElementById("condizioneMeteoMarinaAddForm:j_id25:meto_finevaliditaInputDate").removeAttribute('readonly');
+			document.getElementById("condizioneMeteoMarinaAddForm:j_id25:meto_finevaliditaPopupButton").title = fTitle;
+		 //]]>
+		</script>
+	</f:verbatim>	
+</ui:composition>

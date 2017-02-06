@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>SupportoMareggiate-ear</artifactId>
+	<packaging>ear</packaging>
+	<name>it.epocaricerca.geologia :: Supporto Mareggiate - EAR</name>
+
+	<parent>
+		<groupId>it.epocaricerca.geologia</groupId>
+		<artifactId>SupportoMareggiate</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+
+	<profiles>
+		<profile>
+			<id>developer</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="src/test/resources/sql/import.sql" />
+										<delete file="src/test/resources/sql/truncate.sql" />
+										<copy file="configurations/sql/import.developer.sql"
+											tofile="src/test/resources/sql/import.sql" />
+										<copy file="configurations/sql/truncate.developer.sql"
+											tofile="src/test/resources/sql/truncate.sql" />
+
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+			<dependencies>
+				<dependency>
+					<groupId>postgresql</groupId>
+					<artifactId>postgresql</artifactId>
+					<version>8.4-701.jdbc3</version>
+				</dependency>
+
+				<dependency>
+					<groupId>org.postgis</groupId>
+					<artifactId>postgis-jdbc</artifactId>
+					<version>1.1.6</version>
+				</dependency>
+
+				<dependency>
+					<groupId>org.hibernatespatial</groupId>
+					<artifactId>hibernate-spatial-postgis</artifactId>
+					<version>1.0</version>
+					<exclusions>
+						<exclusion>
+							<groupId>org.hibernate</groupId>
+							<artifactId>hibernate-core</artifactId>
+						</exclusion>
+					</exclusions>
+				</dependency>
+			</dependencies>
+		</profile>
+		<profile>
+			<id>staging</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="src/test/resources/sql/import.sql" />
+										<delete file="src/test/resources/sql/truncate.sql" />
+										<copy file="configurations/sql/import.staging.sql"
+											tofile="src/test/resources/sql/import.sql" />
+										<copy file="configurations/sql/truncate.staging.sql"
+											tofile="src/test/resources/sql/truncate.sql" />
+
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+			<dependencies>
+				<dependency>
+					<groupId>oracle</groupId>
+					<artifactId>ojdbc14</artifactId>
+					<version>10.2.0.5</version>
+				</dependency>
+
+				<dependency>
+					<groupId>org.hibernatespatial</groupId>
+					<artifactId>hibernate-spatial-oracle</artifactId>
+					<version>1.0</version>
+					<exclusions>
+						<exclusion>
+							<groupId>org.hibernate</groupId>
+							<artifactId>hibernate-core</artifactId>
+						</exclusion>
+					</exclusions>
+				</dependency>
+
+			</dependencies>
+		</profile>
+		<profile>
+			<id>test</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="src/test/resources/sql/import.sql" />
+										<delete file="src/test/resources/sql/truncate.sql" />
+										<copy file="configurations/sql/import.test.sql"
+											tofile="src/test/resources/sql/import.sql" />
+										<copy file="configurations/sql/truncate.test.sql"
+											tofile="src/test/resources/sql/truncate.sql" />
+
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+			<dependencies>
+
+				<dependency>
+					<groupId>oracle</groupId>
+					<artifactId>ojdbc14</artifactId>
+					<version>10.2.0.5</version>
+				</dependency>
+
+				<dependency>
+					<groupId>org.hibernatespatial</groupId>
+					<artifactId>hibernate-spatial-oracle</artifactId>
+					<version>1.0</version>
+					<exclusions>
+						<exclusion>
+							<groupId>org.hibernate</groupId>
+							<artifactId>hibernate-core</artifactId>
+						</exclusion>
+					</exclusions>
+				</dependency>
+
+			</dependencies>
+		</profile>
+		<profile>
+			<id>production</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="src/test/resources/sql/import.sql" />
+										<delete file="src/test/resources/sql/truncate.sql" />
+										<copy file="configurations/sql/import.production.sql"
+											tofile="src/test/resources/sql/import.sql" />
+										<copy file="configurations/sql/truncate.production.sql"
+											tofile="src/test/resources/sql/truncate.sql" />
+
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+			<dependencies>
+
+				<dependency>
+					<groupId>oracle</groupId>
+					<artifactId>ojdbc14</artifactId>
+					<version>10.2.0.5</version>
+				</dependency>
+
+				<dependency>
+					<groupId>org.hibernatespatial</groupId>
+					<artifactId>hibernate-spatial-oracle</artifactId>
+					<version>1.0</version>
+					<exclusions>
+						<exclusion>
+							<groupId>org.hibernate</groupId>
+							<artifactId>hibernate-core</artifactId>
+						</exclusion>
+					</exclusions>
+				</dependency>
+
+			</dependencies>
+		</profile>
+	</profiles>
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>testCompile</goal>
+
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+
+				<executions>
+					<execution>
+						<goals>
+							<goal>testResources</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<defaultJavaBundleDir>lib/</defaultJavaBundleDir>
+					<skinnyWars>true</skinnyWars>
+					<jboss>
+						<version>4</version>
+					</jboss>
+					<modules>
+						<webModule>
+							<groupId>it.epocaricerca.geologia</groupId>
+							<artifactId>SupportoMareggiate-war</artifactId>
+							<contextRoot>/GestioneMareggiate</contextRoot>
+						</webModule>
+					</modules>
+				</configuration>
+
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>properties-maven-plugin</artifactId>
+				<version>1.0-alpha-2</version>
+				<executions>
+					<execution>
+						<id>import-db-properties</id>
+						<phase>generate-test-sources</phase>
+						<goals>
+							<goal>read-project-properties</goal>
+						</goals>
+						<configuration>
+							<files>
+								<file>../ejb/src/main/resources/database.properties</file>
+							</files>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>sql-maven-plugin</artifactId>
+				<dependencies>
+					<dependency>
+						<groupId>oracle</groupId>
+						<artifactId>ojdbc14</artifactId>
+						<version>10.2.0.5</version>
+					</dependency>
+
+					<dependency>
+						<groupId>postgresql</groupId>
+						<artifactId>postgresql</artifactId>
+						<version>9.1-901.jdbc4</version>
+					</dependency>
+
+				</dependencies>
+				<configuration>
+					<!-- common configuration shared by all executions -->
+					<driver>${database.driverClassName}</driver>
+					<username>${database.username}</username>
+					<password>${database.password}</password>
+					<url>${database.url}</url>
+				</configuration>
+				<executions>
+					<execution>
+						<id>populate-mareografo-boa</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>execute</goal>
+						</goals>
+						<configuration>
+							<autocommit>true</autocommit>
+							<srcFiles>
+								<srcFile>src/test/resources/sql/import.sql</srcFile>
+							</srcFiles>
+							<onError>continue</onError>
+						</configuration>
+					</execution>
+					<execution>
+						<id>truncate-mareografo-boa</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>execute</goal>
+						</goals>
+						<configuration>
+							<autocommit>true</autocommit>
+							<srcFiles>
+								<srcFile>src/test/resources/sql/truncate.sql</srcFile>
+							</srcFiles>
+							<onError>continue</onError>
+						</configuration>
+					</execution>
+
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.cargo</groupId>
+				<artifactId>cargo-maven2-plugin</artifactId>
+				<version>1.0</version>
+				<configuration>
+					<container>
+						<containerId>jboss42x</containerId>
+						<home>${env.JBOSS_HOME}</home>
+						<append>false</append>
+					</container>
+					<configuration>
+						<type>existing</type>
+						<home>${env.JBOSS_HOME}/server/default</home>
+						<properties>
+							<cargo.jboss.configuration>default</cargo.jboss.configuration>
+							<cargo.rmi.port>1099</cargo.rmi.port>
+							<cargo.logging>high</cargo.logging>
+						</properties>
+					</configuration>
+					<wait>false</wait>
+				</configuration>
+				<executions>
+					<execution>
+						<id>start-container</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>start</goal>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>stop-container</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>stop</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.12.3</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>it.epocaricerca.geologia</groupId>
+			<artifactId>SupportoMareggiate-ejb</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>it.epocaricerca.geologia</groupId>
+			<artifactId>SupportoMareggiate-war</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+
+		<dependency>
+			<groupId>it.epocaricerca.geologia</groupId>
+			<artifactId>SupportoMareggiate-model</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<type>jar</type>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.client</groupId>
+			<artifactId>jbossall-client</artifactId>
+			<version>4.2.3.GA</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>3.2.1.ga</version>
+			<type>jar</type>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>jboss</groupId>
+			<artifactId>jboss-ejb3x</artifactId>
+			<version>4.2.3.GA</version>
+			<scope>test</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>persistence-api</artifactId>
+			<version>1.0.2</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sf.trove4j</groupId>
+			<artifactId>trove4j</artifactId>
+			<version>2.0.2</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.13</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+</project>

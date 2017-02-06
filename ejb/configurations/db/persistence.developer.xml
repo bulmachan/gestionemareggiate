@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+    http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+	<persistence-unit name="SMPersistenceLayer">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:SMDS</jta-data-source>
+		
+		<class>it.epocaricerca.geologia.model.PrevisioneMeteo</class>
+		<class>it.epocaricerca.geologia.model.Allegato</class>
+		<class>it.epocaricerca.geologia.model.EventoCostiero</class>
+		<class>it.epocaricerca.geologia.model.CondizioneMeteo</class>
+		<class>it.epocaricerca.geologia.model.Impatto</class>
+		<class>it.epocaricerca.geologia.model.PrevisioneImpatto</class>
+		<class>it.epocaricerca.geologia.model.ImpattoReale</class>
+		<class>it.epocaricerca.geologia.model.Localita</class>
+		<class>it.epocaricerca.geologia.model.Danno</class>
+		<class>it.epocaricerca.geologia.model.Altezza</class>
+		<class>it.epocaricerca.geologia.model.Tendenza</class>
+		<class>it.epocaricerca.geologia.model.Provenienza</class>
+		<class>it.epocaricerca.geologia.model.Estensione</class>
+		<class>it.epocaricerca.geologia.model.MacroArea</class>
+		<class>it.epocaricerca.geologia.model.Fenomeno</class>
+		<class>it.epocaricerca.geologia.model.TipoAllegato</class>
+		<class>it.epocaricerca.geologia.model.TipoDanno</class>
+		<class>it.epocaricerca.geologia.model.RelazioneSTB</class>
+		<class>it.epocaricerca.geologia.model.StatoRelazione</class>
+		<class>it.epocaricerca.geologia.model.STB</class>
+		<class>it.epocaricerca.geologia.model.DannoSTB</class>
+		<class>it.epocaricerca.geologia.model.Mareggiata</class>
+		<class>it.epocaricerca.geologia.model.RelazioneGeneraleSTB</class>
+		<class>it.epocaricerca.geologia.model.VariabileStazione</class>
+		<class>it.epocaricerca.geologia.model.Stazione</class>
+		<class>it.epocaricerca.geologia.model.Rilevazione</class>
+		<class>it.epocaricerca.geologia.model.DatoSensore</class>
+		<class>it.epocaricerca.geologia.model.auth.User</class>
+		<class>it.epocaricerca.geologia.model.auth.Role</class>
+		<class>it.epocaricerca.geologia.model.Comune</class>
+		<class>it.epocaricerca.geologia.model.MicroLocalita</class>
+		<class>it.epocaricerca.geologia.model.PrevisioneDanno</class>
+		<class>it.epocaricerca.geologia.model.LivelloCriticita</class>
+		<class>it.epocaricerca.geologia.model.Indirizzo</class>
+		<class>it.epocaricerca.geologia.model.Fonte</class>		
+		
+		
+
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernatespatial.postgis.PostgisDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.connection.charSet" value="UTF-8" />
+			<property name="hibernate.show_sql" value="false" />
+		</properties>
+
+	</persistence-unit>
+
+</persistence>

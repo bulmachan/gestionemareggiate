@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13420957160500" configfile="/SupportoMareggiate-war/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="avvisiMeteoEventiCostieri.xhtml" x="122" y="178" id="pf13559116613470" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" path="avvisiMeteoEventiCostieri.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="avvisoMeteoEventoCostieroAddForm.xhtml" x="122" y="562" id="pf13559116613483" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" path="avvisoMeteoEventoCostieroAddForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="avvisoMeteoEventiCostieriDetails.xhtml" x="122" y="946" id="pf13589508365702" referenceLink="//@navigationRule.2/@fromViewId|" path="avvisoMeteoEventiCostieriDetails.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="valutazioniImpatti.xhtml" x="122" y="1330" id="pf13605923232722" referenceLink="//@navigationRule.6/@navigationCase.0/@toViewId|" path="valutazioniImpatti.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="valutazioniImpattiAddForm.xhtml" x="122" y="1714" id="pf13605923232729" referenceLink="//@navigationRule.6/@navigationCase.1/@toViewId|" path="valutazioniImpattiAddForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="valutazioniImpattiDetails.xhtml" x="122" y="2098" id="pf136059232327214" referenceLink="//@navigationRule.6/@fromViewId|" path="valutazioniImpattiDetails.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="tipologiaDannoAddForm.xhtml" x="122" y="2482" id="pf136059232327215" referenceLink="//@navigationRule.5/@fromViewId|" path="tipologiaDannoAddForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="impattiReali.xhtml" x="122" y="2866" id="pf136059232327216" referenceLink="//@navigationRule.9/@navigationCase.1/@toViewId|" path="impattiReali.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="impattiRealiAddForm.xhtml" x="122" y="3250" id="pf136059232327219" referenceLink="//@navigationRule.10/@navigationCase.1/@toViewId|" path="impattiRealiAddForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="relazioniGeneraliSTB.xhtml" x="986" y="960" id="pf13608411521334" referenceLink="//@navigationRule.18/@navigationCase.0/@toViewId|" outlinks="pf13608411521335 pf13609179429376 pf13617948539141 pf14029337457690 pf14043107319630" inlinks="pf13608508838097 pf13609179429377 pf13611950361662 pf13617948539141" path="/relazioniGeneraliSTB.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="relazioniGeneraliSTBAddForm.xhtml" x="770" y="960" id="pf13608411521336" referenceLink="//@navigationRule.17/@fromViewId|" outlinks="pf13608508838097 pf13609179429377 pf14029337457691" inlinks="pf13608411521335" path="/relazioniGeneraliSTBAddForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="wizard/stb/wstep1.xhtml" x="986" y="5010" id="pf13608508838098" referenceLink="//@navigationRule.20/@navigationCase.1/@toViewId|" outlinks="pf14029337457692 pf14029337457693" inlinks="pf140293379413455" path="/wizard/stb/wstep1.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="impattiRealiDetails.xhtml" x="122" y="3634" id="pf13609179429388" referenceLink="//@navigationRule.8/@fromViewId|" path="impattiRealiDetails.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="impattoLocaleAddForm.xhtml" x="122" y="4018" id="pf13609179429389" referenceLink="//@navigationRule.10/@fromViewId|" path="impattoLocaleAddForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="relazioniTecnicheSTB.xhtml" x="122" y="5643" id="pf136091794293810" referenceLink="//@navigationRule.13/@navigationCase.3/@toViewId|" path="relazioniTecnicheSTB.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="relazioneTecnicaSTBAddForm.xhtml" x="122" y="6031" id="pf136091794293813" referenceLink="//@navigationRule.14/@navigationCase.2/@toViewId|" path="relazioneTecnicaSTBAddForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="dannoSTBAddForm.xhtml" x="122" y="6418" id="pf136091794293818" referenceLink="//@navigationRule.14/@fromViewId|" path="dannoSTBAddForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="relazioniGeneraliSTBDetails.xhtml" x="770" y="1365" id="pf136091794293919" referenceLink="//@navigationRule.18/@fromViewId|" outlinks="pf13611950361662 pf136136255920810 pf14029337457695" inlinks="pf13609179429376" path="/relazioniGeneraliSTBDetails.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="relazioneTecnicaDetails.xhtml" x="122" y="6804" id="pf136119503616812" referenceLink="//@navigationRule.12/@fromViewId|" path="relazioneTecnicaDetails.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="mareggiate.xhtml" x="554" y="1428" id="pf136119511053115" referenceLink="//@navigationRule.24/@navigationCase.0/@toViewId|" outlinks="pf136119511053116 pf13615510855521 pf13617948539153 pf14029337457696" inlinks="pf136119525715322 pf13613625199301 pf13613625199302 pf13617948539153" path="/mareggiate.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="mareggiateAddForm.xhtml" x="338" y="1428" id="pf136119511053117" referenceLink="//@navigationRule.23/@fromViewId|" outlinks="pf13613625199301 pf13613625199302 pf14029337457697" inlinks="pf136119511053116" path="/mareggiateAddForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="mareggiateDetails.xhtml" x="338" y="4179" id="pf136119525715323" referenceLink="//@navigationRule.36/@navigationCase.0/@toViewId|" outlinks="pf136119525715322 pf13615510855532 pf13615510855533 pf13615510855534 pf13615510855535 pf14029337457698 pf14029337457699" inlinks="pf13615510855521 pf13618788177913 pf140293374576910" path="/mareggiataDetails.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="wizard/mareggiata/wstep1.xhtml" x="986" y="1791" id="pf136119527518524" referenceLink="//@navigationRule.26/@navigationCase.1/@toViewId|" outlinks="pf13613625199303 pf140293374576911" inlinks="pf136119527518526" path="/wizard/mareggiata/wstep1.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="wizard/mareggiata/finalStep.xhtml" x="770" y="1812" id="pf136119527518527" referenceLink="//@navigationRule.27/@navigationCase.1/@toViewId|" outlinks="pf136119527518526 pf13613625199304 pf140293374576912" inlinks="pf13613625199303 pf13613625199305" path="/wizard/mareggiata/wstep2.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="wizard/mareggiata/wstep2.xhtml" x="122" y="7189" id="pf136119724796129" referenceLink="//@navigationRule.23/@navigationCase.0/@toViewId|" path="/wizard/mareggiata/wstep2.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="wizard/mareggiata/wstep3.xhtml" x="554" y="1812" id="pf13613625199316" referenceLink="//@navigationRule.28/@navigationCase.0/@toViewId|" outlinks="pf13613625199317 pf13613625199305 pf140293374576913" inlinks="pf13613625199304 pf13613625199318" path="/wizard/mareggiata/wstep3.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="wizard/mareggiata/wstep4.xhtml" x="338" y="1913" id="pf13613625199319" referenceLink="//@navigationRule.28/@fromViewId|" outlinks="pf13613625199318 pf140293374576914" inlinks="pf13613625199317" path="/wizard/mareggiata/wstep4.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="relazioneTecnicaDetails.xhtml" x="986" y="2985" id="pf136136255921011" referenceLink="//@navigationRule.24/@navigationCase.3/@toViewId|" outlinks="pf13745934507451 pf140293374576915" inlinks="pf136136255920810 pf13615510855534 pf13745934507452" path="/relazioneTecnicaDetails.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="avvisoMeteoEventiCostieriDetails.xhtml" x="554" y="4179" id="pf13615510855546" referenceLink="//@navigationRule.24/@navigationCase.1/@toViewId|" outlinks="pf13745934507453 pf13745934507454 pf140293374576916" inlinks="pf13615510855532 pf13745934507455" path="/avvisoMeteoEventiCostieriDetails.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="valutazioniImpattiDetails.xhtml" x="554" y="2601" id="pf13615510855547" referenceLink="//@navigationRule.24/@navigationCase.2/@toViewId|" outlinks="pf13745934507456 pf13745934507457 pf140293374576917" inlinks="pf13615510855533 pf13745934507458" path="/valutazioniImpattiDetails.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="impattiRealiDetails.xhtml" x="554" y="3411" id="pf13615510855548" referenceLink="//@navigationRule.24/@navigationCase.4/@toViewId|" outlinks="pf140293374576918 pf140293374576919 pf140293374576920" inlinks="pf13615510855535 pf13745934507469" path="/impattiRealiDetails.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="reportAnno.xhtml" x="122" y="4402" id="pf13618788177924" referenceLink="//@navigationRule.35/@fromViewId|" outlinks="pf13618788177913 pf140293374577021" path="/reportAnno.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="avvisiMeteoEventiCostieri.xhtml" x="986" y="3998" id="pf137459345074610" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf137459345074611 pf137459345074612 pf13745934507455 pf137459345074613 pf140293374577022" inlinks="pf137459345074613 pf137459345074614 pf137459345074615 pf13745934507453" path="/avvisiMeteoEventiCostieri.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="avvisoMeteoEventoCostieroAddForm.xhtml" x="770" y="4095" id="pf137459345074616" referenceLink="//@navigationRule.3/@navigationCase.1/@toViewId|" outlinks="pf137459345074614 pf137459345074615 pf140293374577023" inlinks="pf137459345074611 pf137459345074612 pf13745934507454" path="/avvisoMeteoEventoCostieroAddForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="valutazioniImpatti.xhtml" x="986" y="2559" id="pf137459345074617" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" outlinks="pf137459345074618 pf137459345074619 pf13745934507458 pf137459345074620 pf140293374577024" inlinks="pf137459345074620 pf137459345074621 pf137459345074622 pf13745934507456" path="/valutazioniImpatti.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="valutazioniImpattiAddForm.xhtml" x="770" y="2378" id="pf137459345074623" referenceLink="//@navigationRule.7/@navigationCase.1/@toViewId|" outlinks="pf137459345074621 pf137459345074622 pf137459345074624 pf140293374577025" inlinks="pf137459345074618 pf137459345074619 pf137459345074625 pf137459345074626 pf13745934507457" path="/valutazioniImpattiAddForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="tipologiaDannoAddForm.xhtml" x="554" y="2217" id="pf137459345074627" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf137459345074625 pf137459345074626 pf140293374577026" inlinks="pf137459345074624" path="/tipologiaDannoAddForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="impattiReali.xhtml" x="986" y="3474" id="pf137459345074728" referenceLink="//@navigationRule.10/@navigationCase.1/@toViewId|" outlinks="pf137459345074729 pf13745934507469 pf137459345074730 pf140293374577027 pf140293374577028" inlinks="pf137459345074730 pf137459345074731 pf137459345074732 pf140293374576918" path="/impattiReali.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="impattiRealiAddForm.xhtml" x="770" y="3593" id="pf137459345074733" referenceLink="//@navigationRule.11/@navigationCase.1/@toViewId|" outlinks="pf137459345074731 pf137459345074732 pf137459345074734 pf140293374577029" inlinks="pf137459345074729 pf137459345074735 pf137459345074736 pf140293374577027 pf140293374576919" path="/impattiRealiAddForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="impattoLocaleAddForm.xhtml" x="554" y="3795" id="pf137459345074737" referenceLink="//@navigationRule.11/@fromViewId|" outlinks="pf137459345074735 pf137459345074736 pf140293374577030" inlinks="pf137459345074734" path="/impattoLocaleAddForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="relazioniTecnicheSTB.xhtml" x="770" y="2985" id="pf137459345074738" referenceLink="//@navigationRule.14/@navigationCase.2/@toViewId|" outlinks="pf137459345074739 pf13745934507452 pf137459345074740 pf140293374577031 pf140293374577032 pf14037660001480" inlinks="pf137459345074740 pf13745934507451 pf137459345074741 pf137459345074742" path="/relazioniTecnicheSTB.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="relazioneTecnicaSTBAddForm.xhtml" x="554" y="2985" id="pf137459345074743" referenceLink="//@navigationRule.15/@navigationCase.2/@toViewId|" outlinks="pf137459345074741 pf137459345074744 pf137459345074742 pf140293374577033" inlinks="pf137459345074739 pf137459345074745 pf137459345074746 pf137459345074747 pf140293374577031" path="/relazioneTecnicaSTBAddForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="dannoSTBAddForm.xhtml" x="338" y="2985" id="pf137459345074748" referenceLink="//@navigationRule.15/@fromViewId|" outlinks="pf137459345074745 pf137459345074746 pf137459345074747 pf140293374577034" inlinks="pf137459345074744" path="/dannoSTBAddForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="condizioniMeteoMarine.xhtml" x="986" y="5478" id="pf137459345074849" referenceLink="//@navigationRule.30/@navigationCase.1/@toViewId|" outlinks="pf137459345074850 pf140293374577035 pf140293374577036 pf140293374577037 pf140293374577038" inlinks="pf137459345074851 pf140293374577035 pf140293374577039" path="/condizioniMeteoMarine.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="condizioniMeteoMarineAddForm.xhtml" x="770" y="5478" id="pf137459345074852" referenceLink="//@navigationRule.30/@fromViewId|" outlinks="pf137459345074851 pf140293374577039 pf140293374577040" inlinks="pf137459345074850 pf140293374577037" path="/condizioniMeteoMarineAddForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="wizard/meteo/wstep1.xhtml" x="986" y="4542" id="pf137459345074853" referenceLink="//@navigationRule.32/@navigationCase.1/@toViewId|" outlinks="pf137459345074854 pf140293374577041" inlinks="pf137459345074855" path="/wizard/meteo/wstep1.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="wizard/meteo/wstep2.xhtml" x="770" y="4563" id="pf137459345074856" referenceLink="//@navigationRule.33/@navigationCase.1/@toViewId|" outlinks="pf137459345074857 pf137459345074855 pf140293374577042" inlinks="pf137459345074854 pf137459345074858" path="/wizard/meteo/wstep2.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="wizard/meteo/wstep3.xhtml" x="554" y="4605" id="pf137459345074859" referenceLink="//@navigationRule.34/@navigationCase.0/@toViewId|" outlinks="pf137459345074860 pf137459345074858 pf140293374577043" inlinks="pf137459345074857 pf137459345074861" path="/wizard/meteo/wstep3.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="wizard/meteo/wstep4.xhtml" x="338" y="4717" id="pf137459345074862" referenceLink="//@navigationRule.34/@fromViewId|" outlinks="pf137459345074861 pf140293374577044" inlinks="pf137459345074860" path="/wizard/meteo/wstep4.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="986" y="1344" id="pf140293374577045" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf140293374577046" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="notauthorized.xhtml" x="1202" y="3271" id="pf140293374577047" referenceLink="//@navigationRule.36/@navigationCase.1/@toViewId|" inlinks="pf140293374577046 pf140293374577022 pf140293374577023 pf140293374576916 pf140293374577024 pf140293374577025 pf140293374577026 pf140293374576917 pf140293374577028 pf140293374576920 pf140293374577029 pf140293374577030 pf140293374577032 pf140293374576915 pf140293374577033 pf140293374577034 pf14029337457690 pf14029337457691 pf14029337457695 pf14029337457692 pf14029337457696 pf14029337457697 pf14029337457699 pf140293374576911 pf140293374576912 pf140293374576913 pf140293374576914 pf140293374577038 pf140293374577040 pf140293374577041 pf140293374577042 pf140293374577043 pf140293374577044 pf140293374577021 pf140293374577048 pf140293375561052 pf140293381488759" path="/notauthorized.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="condizioneMeteoMarineDetails.xhtml" x="1202" y="4807" id="pf140293374577049" referenceLink="//@navigationRule.29/@navigationCase.2/@toViewId|" inlinks="pf14029337457698 pf140293374577036" path="/condizioneMeteoMarineDetails.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="reportLocalita.xhtml" x="122" y="5254" id="pf140293374577050" referenceLink="//@navigationRule.36/@fromViewId|" outlinks="pf140293374576910 pf140293374577048" path="/reportLocalita.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="wizard/stb/wstep2.xhtml" x="770" y="5031" id="pf140293374577051" referenceLink="//@navigationRule.21/@navigationCase.0/@toViewId|" outlinks="pf140293375561052 pf140293375561053 pf140293379413455" inlinks="pf14029337457693 pf140293381488760" path="/wizard/stb/wstep2.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="wizard/stb/wstep3.xhtml" x="554" y="5052" id="pf140293375561054" referenceLink="//@navigationRule.21/@fromViewId|" outlinks="pf140293381488760 pf140293381488759" inlinks="pf140293375561053" path="/wizard/stb/wstep3.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="reportSTB.xhtml" x="1202" y="2782" id="pf14037660001491" referenceLink="//@navigationRule.16/@navigationCase.3/@toViewId|" inlinks="pf14037660001480 pf14043107319630" path="/reportSTB.xhtml"/>
+  <links id="pf13608411521335" target="pf13608411521336" source="pf13608411521334" outcome="nuovaRelazioneGeneraleSTB" redirect="true"/>
+  <links id="pf13608508838097" target="pf13608411521334" source="pf13608411521336" outcome="annullaCreazioneRelazioneGeneraleSTB" redirect="true"/>
+  <links id="pf13609179429377" target="pf13608411521334" source="pf13608411521336" outcome="relazioneGeneraleSTBSalvata" redirect="true"/>
+  <links id="pf13609179429376" target="pf136091794293919" source="pf13608411521334" outcome="toRelazioneGeneraleDetails" redirect="true"/>
+  <links id="pf13611950361662" target="pf13608411521334" source="pf136091794293919" outcome="toRelazioniGeneraliHome" redirect="true"/>
+  <links id="pf136119511053116" target="pf136119511053117" source="pf136119511053115" outcome="nuovaMareggiata" redirect="true"/>
+  <links id="pf136119525715322" target="pf136119511053115" source="pf136119525715323" outcome="toMareggiateHome" redirect="true"/>
+  <links id="pf136119527518526" target="pf136119527518524" source="pf136119527518527" outcome="previous"/>
+  <links id="pf13613625199301" target="pf136119511053115" source="pf136119511053117" outcome="annullaCreazioneMareggiata" redirect="true"/>
+  <links id="pf13613625199302" target="pf136119511053115" source="pf136119511053117" outcome="mareggiataSalvata" redirect="true"/>
+  <links id="pf13613625199303" target="pf136119527518527" source="pf136119527518524" outcome="next"/>
+  <links id="pf13613625199304" target="pf13613625199316" source="pf136119527518527" outcome="next"/>
+  <links id="pf13613625199317" target="pf13613625199319" source="pf13613625199316" outcome="next"/>
+  <links id="pf13613625199305" target="pf136119527518527" source="pf13613625199316" outcome="previous"/>
+  <links id="pf13613625199318" target="pf13613625199316" source="pf13613625199319" outcome="previous"/>
+  <links id="pf136136255920810" target="pf136136255921011" source="pf136091794293919" outcome="toRelazioneSTBDetails" redirect="true"/>
+  <links id="pf13615510855521" target="pf136119525715323" source="pf136119511053115" outcome="mareggiataDetails" redirect="true"/>
+  <links id="pf13615510855532" target="pf13615510855546" source="pf136119525715323" outcome="toAvvisoMeteoDetails" redirect="true"/>
+  <links id="pf13615510855533" target="pf13615510855547" source="pf136119525715323" outcome="toPrevisioneImpattoDetails" redirect="true"/>
+  <links id="pf13615510855534" target="pf136136255921011" source="pf136119525715323" outcome="toRelazioneSTBDetails" redirect="true"/>
+  <links id="pf13615510855535" target="pf13615510855548" source="pf136119525715323" outcome="toImpattoRealeDetails" redirect="true"/>
+  <links id="pf13618788177913" target="pf136119525715323" source="pf13618788177924" outcome="mareggiataDetails" redirect="true"/>
+  <links id="pf137459345074611" target="pf137459345074616" source="pf137459345074610" outcome="nuovoMeteoEventoCostiero" redirect="true"/>
+  <links id="pf137459345074612" target="pf137459345074616" source="pf137459345074610" outcome="editAvvisoMeteo" redirect="true"/>
+  <links id="pf13745934507455" target="pf13615510855546" source="pf137459345074610" outcome="toAvvisoMeteoDetails" redirect="true"/>
+  <links id="pf137459345074614" target="pf137459345074610" source="pf137459345074616" outcome="avvisoMeteoSalvato" redirect="true"/>
+  <links id="pf137459345074615" target="pf137459345074610" source="pf137459345074616" outcome="annullaCreazioneAvviso" redirect="true"/>
+  <links id="pf13745934507453" target="pf137459345074610" source="pf13615510855546" outcome="toAvvisiMeteoHome" redirect="true"/>
+  <links id="pf13745934507454" target="pf137459345074616" source="pf13615510855546" outcome="editAvvisoMeteo" redirect="true"/>
+  <links id="pf137459345074618" target="pf137459345074623" source="pf137459345074617" outcome="nuovaValutazioneImpatto" redirect="true"/>
+  <links id="pf137459345074619" target="pf137459345074623" source="pf137459345074617" outcome="editItemDetails" redirect="true"/>
+  <links id="pf13745934507458" target="pf13615510855547" source="pf137459345074617" outcome="toItemDetails" redirect="true"/>
+  <links id="pf137459345074621" target="pf137459345074617" source="pf137459345074623" outcome="valutazioneImpattiSalvata" redirect="true"/>
+  <links id="pf137459345074622" target="pf137459345074617" source="pf137459345074623" outcome="annullaCreazioneValutazioneImpatto" redirect="true"/>
+  <links id="pf137459345074624" target="pf137459345074627" source="pf137459345074623" outcome="nuovaTipologiaDanno" redirect="true"/>
+  <links id="pf137459345074625" target="pf137459345074623" source="pf137459345074627" outcome="tipologiaDannoSalvato" redirect="true"/>
+  <links id="pf137459345074626" target="pf137459345074623" source="pf137459345074627" outcome="annullaCreazioneNuovoDanno" redirect="true"/>
+  <links id="pf13745934507456" target="pf137459345074617" source="pf13615510855547" outcome="toValutazioniImpattiHome" redirect="true"/>
+  <links id="pf13745934507457" target="pf137459345074623" source="pf13615510855547" outcome="editItemDetails" redirect="true"/>
+  <links id="pf137459345074729" target="pf137459345074733" source="pf137459345074728" outcome="nuovoImpattoReale" redirect="true"/>
+  <links id="pf13745934507469" target="pf13615510855548" source="pf137459345074728" outcome="toItemDetails" redirect="true"/>
+  <links id="pf137459345074731" target="pf137459345074728" source="pf137459345074733" outcome="annullaCreazioneImpatto" redirect="true"/>
+  <links id="pf137459345074732" target="pf137459345074728" source="pf137459345074733" outcome="impattoRealeSalvato" redirect="true"/>
+  <links id="pf137459345074734" target="pf137459345074737" source="pf137459345074733" outcome="nuovoImpattoLocale"/>
+  <links id="pf137459345074735" target="pf137459345074733" source="pf137459345074737" outcome="impattoLocaleSalvato"/>
+  <links id="pf137459345074736" target="pf137459345074733" source="pf137459345074737" outcome="annullaCreazioneNuovoImpattoLocale"/>
+  <links id="pf137459345074739" target="pf137459345074743" source="pf137459345074738" outcome="nuovaRelazioneTecnica" redirect="true"/>
+  <links id="pf13745934507452" target="pf136136255921011" source="pf137459345074738" outcome="toItemDetails" redirect="true"/>
+  <links id="pf13745934507451" target="pf137459345074738" source="pf136136255921011" outcome="toRelazioniTecnicheHome" redirect="true"/>
+  <links id="pf137459345074741" target="pf137459345074738" source="pf137459345074743" outcome="annullaCreazioneNuovoRelazione" redirect="true"/>
+  <links id="pf137459345074744" target="pf137459345074748" source="pf137459345074743" outcome="nuovoImpattoLocale" redirect="true"/>
+  <links id="pf137459345074742" target="pf137459345074738" source="pf137459345074743" outcome="relazioneTecnicaSalvata" redirect="true"/>
+  <links id="pf137459345074745" target="pf137459345074743" source="pf137459345074748" outcome="annullaCreazioneNuovoImpatto" redirect="true"/>
+  <links id="pf137459345074746" target="pf137459345074743" source="pf137459345074748" outcome="impattoLocaleSalvato" redirect="true"/>
+  <links id="pf137459345074747" target="pf137459345074743" source="pf137459345074748" outcome="annullaCreazioneNuovoImpatto" redirect="true"/>
+  <links id="pf137459345074850" target="pf137459345074852" source="pf137459345074849" outcome="nuovaCondizioneMeteoMarina" redirect="true"/>
+  <links id="pf137459345074851" target="pf137459345074849" source="pf137459345074852" outcome="annullaCreazioneMeteo" redirect="true"/>
+  <links id="pf137459345074854" target="pf137459345074856" source="pf137459345074853" outcome="next"/>
+  <links id="pf137459345074857" target="pf137459345074859" source="pf137459345074856" outcome="next"/>
+  <links id="pf137459345074855" target="pf137459345074853" source="pf137459345074856" outcome="previous"/>
+  <links id="pf137459345074860" target="pf137459345074862" source="pf137459345074859" outcome="next"/>
+  <links id="pf137459345074858" target="pf137459345074856" source="pf137459345074859" outcome="previous"/>
+  <links id="pf137459345074861" target="pf137459345074859" source="pf137459345074862" outcome="previous"/>
+  <links id="pf140293374577046" target="pf140293374577047" source="pf140293374577045" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374577022" target="pf140293374577047" source="pf137459345074610" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374577023" target="pf140293374577047" source="pf137459345074616" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374576916" target="pf140293374577047" source="pf13615510855546" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374577024" target="pf140293374577047" source="pf137459345074617" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374577025" target="pf140293374577047" source="pf137459345074623" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374577026" target="pf140293374577047" source="pf137459345074627" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374576917" target="pf140293374577047" source="pf13615510855547" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374577027" target="pf137459345074733" source="pf137459345074728" outcome="editItemDetails" redirect="true"/>
+  <links id="pf140293374577028" target="pf140293374577047" source="pf137459345074728" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374576918" target="pf137459345074728" source="pf13615510855548" outcome="toImpattiRealiHome" redirect="true"/>
+  <links id="pf140293374576919" target="pf137459345074733" source="pf13615510855548" outcome="editItemDetails" redirect="true"/>
+  <links id="pf140293374576920" target="pf140293374577047" source="pf13615510855548" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374577029" target="pf140293374577047" source="pf137459345074733" outcome="notauthorized"/>
+  <links id="pf140293374577030" target="pf140293374577047" source="pf137459345074737" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374577031" target="pf137459345074743" source="pf137459345074738" outcome="editRelazioneTecnica" redirect="true"/>
+  <links id="pf140293374577032" target="pf140293374577047" source="pf137459345074738" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374576915" target="pf140293374577047" source="pf136136255921011" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374577033" target="pf140293374577047" source="pf137459345074743" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374577034" target="pf140293374577047" source="pf137459345074748" outcome="notauthorized" redirect="true"/>
+  <links id="pf14029337457690" target="pf140293374577047" source="pf13608411521334" outcome="notauthorized" redirect="true"/>
+  <links id="pf14029337457691" target="pf140293374577047" source="pf13608411521336" outcome="notauthorized" redirect="true"/>
+  <links id="pf14029337457695" target="pf140293374577047" source="pf136091794293919" outcome="notauthorized" redirect="true"/>
+  <links id="pf14029337457692" target="pf140293374577047" source="pf13608508838098" outcome="notauthorized" redirect="true"/>
+  <links id="pf14029337457696" target="pf140293374577047" source="pf136119511053115" outcome="notauthorized" redirect="true"/>
+  <links id="pf14029337457697" target="pf140293374577047" source="pf136119511053117" outcome="notauthorized" redirect="true"/>
+  <links id="pf14029337457698" target="pf140293374577049" source="pf136119525715323" outcome="toCondizioneMeteoDetails" redirect="true"/>
+  <links id="pf14029337457699" target="pf140293374577047" source="pf136119525715323" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374576911" target="pf140293374577047" source="pf136119527518524" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374576912" target="pf140293374577047" source="pf136119527518527" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374576913" target="pf140293374577047" source="pf13613625199316" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374576914" target="pf140293374577047" source="pf13613625199319" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374577036" target="pf140293374577049" source="pf137459345074849" outcome="toCondizioniMeteoMarineDetails" redirect="true"/>
+  <links id="pf140293374577037" target="pf137459345074852" source="pf137459345074849" outcome="toCondizioniMeteoMarineEdit" redirect="true"/>
+  <links id="pf140293374577038" target="pf140293374577047" source="pf137459345074849" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374577039" target="pf137459345074849" source="pf137459345074852" outcome="condizioniMeteoSalvata" redirect="true"/>
+  <links id="pf140293374577040" target="pf140293374577047" source="pf137459345074852" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374577041" target="pf140293374577047" source="pf137459345074853" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374577042" target="pf140293374577047" source="pf137459345074856" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374577043" target="pf140293374577047" source="pf137459345074859" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374577044" target="pf140293374577047" source="pf137459345074862" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374577021" target="pf140293374577047" source="pf13618788177924" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293374576910" target="pf136119525715323" source="pf140293374577050" outcome="mareggiataDetails" redirect="true"/>
+  <links id="pf140293374577048" target="pf140293374577047" source="pf140293374577050" outcome="notauthorized" redirect="true"/>
+  <links id="pf14029337457693" target="pf140293374577051" source="pf13608508838098" outcome="next"/>
+  <links id="pf140293375561052" target="pf140293374577047" source="pf140293374577051" outcome="notauthorized" redirect="true"/>
+  <links id="pf140293375561053" target="pf140293375561054" source="pf140293374577051" outcome="next"/>
+  <links id="pf140293379413455" target="pf13608508838098" source="pf140293374577051" outcome="previous"/>
+  <links id="pf140293381488760" target="pf140293374577051" source="pf140293375561054" outcome="previous"/>
+  <links id="pf140293381488759" target="pf140293374577047" source="pf140293375561054" outcome="notauthorized" redirect="true"/>
+  <links id="pf14037660001480" target="pf14037660001491" source="pf137459345074738" outcome="report" redirect="true"/>
+  <links id="pf14043107319630" target="pf14037660001491" source="pf13608411521334" outcome="report" redirect="true"/>
+  <links id="pf13617948539141" target="pf13608411521334" source="pf13608411521334" outcome="delete">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf13617948539153" target="pf136119511053115" source="pf136119511053115" outcome="delete">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf137459345074613" target="pf137459345074610" source="pf137459345074610" outcome="delete">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf137459345074620" target="pf137459345074617" source="pf137459345074617" outcome="delete">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf137459345074730" target="pf137459345074728" source="pf137459345074728" outcome="delete">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf137459345074740" target="pf137459345074738" source="pf137459345074738" outcome="delete">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+  <links id="pf140293374577035" target="pf137459345074849" source="pf137459345074849" outcome="delete" redirect="true">
+    <bendPoints d1Height="-36" d2Height="-36"/>
+    <bendPoints d1Width="-64" d1Height="-36" d2Width="-64" d2Height="-36"/>
+    <bendPoints d1Width="-64" d2Width="-64"/>
+  </links>
+</pageflow:Pageflow>

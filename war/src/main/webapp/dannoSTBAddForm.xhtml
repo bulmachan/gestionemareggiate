@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+
+<f:view>
+
+	<ui:composition template="/WEB-INF/layout/layout.xhtml">
+
+
+		<ui:define name="title">
+
+			<h:outputText value="Nuovo impatto locale" />
+
+		</ui:define>
+
+
+		<ui:define name="page_title_box_right">
+		</ui:define>
+
+		<ui:define name="content">
+
+			<h:form id="addTipologiaDannoForm">
+
+				<div class="generic_bordered_box" style="width: 97%;">
+
+				<div>
+				
+					<h:commandButton value="Annulla" immediate="true"
+						styleClass="inputBtn inputBtn-grey"
+						title="Annulla"
+						action="#{RelazioniTecnicheSTBController.annullaCreazioneNuovoImpatto}" />
+
+					<a4j:commandButton value="Salva impatto locale"
+						styleClass="formButton inputBtn inputBtn-green"
+						title="Salva impatto locale[Alt + (Shift) + s]"
+						accesskey="s"
+						action="#{RelazioniTecnicheSTBController.salvaImpatto}"
+						type="submit" />
+						
+					<a4j:outputPanel styleClass="formErrorMessageContainer" ajaxRendered="true">
+						<rich:messages styleClass="formButton formErrorMessage">
+						<h:outputText styleClass="formButton formErrorMessage"
+								value="#{RelazioniTecnicheSTBController.tipologiaDannoFormMessage}"
+								rendered="#{RelazioniTecnicheSTBController.tipologiaDannoFormMessageRendered}"/>
+							<f:verbatim escape="true" rendered="#{RelazioniTecnicheSTBController.tipologiaDannoFormMessageRendered}">
+								<a class="disnone" id="avvisoMeteoFormMessageA" href="#">avvisoMeteoFormMessageA</a>
+								<script type="text/javascript">document.getElementById("avvisoMeteoFormMessageA").focus();</script>
+							</f:verbatim>
+						</rich:messages>
+					</a4j:outputPanel>
+					 
+					<p id="obb"><span class="azure_light bold">NOTA BENE: </span>I campi contrassegnati dall'asterisco sono obbligatori.</p>
+					<f:verbatim escape="true" rendered="#{RelazioniTecnicheSTBController.tipologiaDannoFormMessageRendered}">
+						<script type="text/javascript">document.getElementById('obb').className = "marginRid";</script>
+					</f:verbatim>
+				</div>
+				<div>
+					<h3>Inserisci nuovo impatto locale</h3>
+				
+				<!-- LOCALITA -->
+				<label for="nuovoImpatto_localitaImpatto" class="form_labelD">Località (*)</label>
+				<h:selectOneMenu id="nuovoImpatto_localitaImpatto"
+					value="#{RelazioniTecnicheSTBController.currentTipologiaDanno.localita}" title="Imposta la località"
+					onchange="GMOpenLayerUtils.centerToPoint(document.getElementById('addTipologiaDannoForm:nuovoImpatto_localitaImpatto'))">
+					<f:selectItems value="#{RelazioniTecnicheSTBController.localitaSelect}" />
+					<f:converter converterId="LocalitaConverter" />	
+				</h:selectOneMenu>
+				</div>	
+				<h:inputHidden id="geometryHiddenText" value="#{RelazioniTecnicheSTBController.currentTipologiaDanno.geometryText}"/>
+				
+				<div style="margin-bottom: 10px;">
+				<a4j:commandButton onclick="GMOpenLayerUtils.toggleBase(this)"
+					styleClass="formButton inputBtn inputBtn-blue pull-right" value="Foto"  title="Accende la fotografia aerea"
+				/>						
+				
+				<a4j:commandButton onclick="GMOpenLayerUtils.centerMap()"
+					styleClass="formButton inputBtn inputBtn-blue pull-right" value="Centra mappa" title="Centra la mappa"
+				/>
+				
+				<a4j:commandButton onclick="GMOpenLayerUtils.clearVectors()"
+					styleClass="formButton inputBtn inputBtn-blue pull-right" value="Pulisci" title="Cancella la geometria"
+				/>
+
+				</div>
+					
+					<div class="clearfix"><p>&nbsp;</p></div>
+				
+					<div id="nuovoDanno_map" class="mapbox" style="height: 500px;"></div>
+
+					<div class="clearfix"><p>&nbsp;</p></div>
+					<div>
+					<div style="float: left; height: 250px; width: 200px; margin-top:10px;">
+						
+						<h3>
+							<h:outputText value="Tipologia Danni" />
+						</h3>
+						<t:panelGrid columns="2" styleClass="form_panelGrid">					
+						
+							<!-- EROSIONI -->
+							<label for="impattigenerali_erosioni" class="form_label">Erosioni</label>
+							<h:selectBooleanCheckbox id="impattigenerali_erosioni"
+								value="#{RelazioniTecnicheSTBController.currentTipologiaDanno.erosioni}" />
+						
+							<!-- TRACIMAZIONI -->
+							<label for="impattigenerali_tracimazioni" class="form_label">Tracimazioni canali</label>
+							<h:selectBooleanCheckbox id="impattigenerali_tracimazioni"
+								value="#{RelazioniTecnicheSTBController.currentTipologiaDanno.tracimazioni}" />
+								
+							<!-- INONDAZIONI -->
+							<label for="impattigenerali_inondazioni" class="form_label">Inondazioni</label>
+							<h:selectBooleanCheckbox id="impattigenerali_inondazioni"
+								value="#{RelazioniTecnicheSTBController.currentTipologiaDanno.inondazioni}" />	
+
+							<!-- DANNI DIFESE -->
+							<label for="impattigenerali_dannidifese" class="form_label">Danni
+								opere di difesa</label>
+							<h:selectBooleanCheckbox id="impattigenerali_dannidifese"
+								value="#{RelazioniTecnicheSTBController.currentTipologiaDanno.danniDifese}" />
+								
+							<!-- DANNI INFRASTRUTTURE -->
+							<label for="impattigenerali_danniinfrastrutture"
+								class="form_label">Danni agli stabilimenti</label>
+							<h:selectBooleanCheckbox id="impattigenerali_danniinfrastrutture"
+								value="#{RelazioniTecnicheSTBController.currentTipologiaDanno.danniInfrastrutture}" />
+
+						
+						</t:panelGrid>
+					</div>
+					
+					<div style="float: left; height: 250px; width: 350px; margin-top:10px;">
+					
+						<h3>
+							<h:outputText value="Stima Costi e Danni" />
+						</h3>
+					
+						<t:panelGrid columns="2" styleClass="form_panelGrid">
+
+							<!-- VOLUMI EROSI -->
+							<label for="nuovoImpatto_volumierosi" class="form_label">Volumi
+								erosi (m3)</label>
+							<h:inputText id="nuovoImpatto_volumierosi"
+								value="#{RelazioniTecnicheSTBController.currentTipologiaDanno.volumiErosi}" converterMessage="Valore volumi erosi deve essere un numero"
+									validatorMessage="Valore volumi erosi deve essere un numero">
+										<f:validateDoubleRange minimum="0"/>
+										<rich:ajaxValidator event="onblur"/>	
+									</h:inputText>
+						
+							<!-- LUNGHEZZA TRATTO -->
+							<label for="nuovoImpatto_lunghezzatratto" class="form_label">Lunghezza
+								tratto (m)</label>
+							<h:inputText id="nuovoImpatto_lunghezzatratto"
+								value="#{RelazioniTecnicheSTBController.currentTipologiaDanno.lunghezzaTratto}" converterMessage="La lunghezza tratto deve essere un numero"
+									validatorMessage="La lunghezza tratto deve essere un numero">
+										<f:validateDoubleRange minimum="0"/>
+										<rich:ajaxValidator event="onblur"/>	
+									</h:inputText>
+								
+							<!-- STIMA COSTI RIPASCIMENTI -->
+								<label for="impattigenerali_stimaripascimenti"
+									class="form_label">Stima costi ripascimenti (€)</label>
+								<h:inputText id="impattigenerali_stimaripascimenti"
+									value="#{RelazioniTecnicheSTBController.currentTipologiaDanno.stimaCostiRipascimenti}"
+									converterMessage="La stima costi ripascimenti deve essere un numero"
+									validatorMessage="La stima costi ripascimenti deve essere un numero">
+									<f:validateDoubleRange minimum="0" />
+									<f:convertNumber minFractionDigits="2" />
+									<rich:ajaxValidator event="onblur" />
+									<a4j:support ajaxSingle="true" event="onblur"
+										reRender="impattigenerali_stimacostitotali" />
+								</h:inputText>
+
+							<!-- STIMA COSTI DANNI OPERE -->
+								<label for="impattigenerali_stimadanniopere" class="form_label">Stima
+									costi danni opere rigide (€)</label>
+								<h:inputText id="impattigenerali_stimadanniopere"
+									value="#{RelazioniTecnicheSTBController.currentTipologiaDanno.stimaCostiDanni}"
+									converterMessage="La stima costi danni opere rigide deve essere un numero"
+									validatorMessage="La stima costi danni opere rigide deve essere un numero">
+									<f:validateDoubleRange minimum="0" />
+									<f:convertNumber minFractionDigits="2" />
+									<rich:ajaxValidator event="onblur" />
+									<a4j:support ajaxSingle="true" event="onblur"
+										reRender="impattigenerali_stimacostitotali" />
+								</h:inputText>
+
+							<!-- STIMA COSTI TOTALI -->
+								<label for="impattigenerali_stimacostitotali" class="form_label">Stima
+									costi totali (€)</label>
+								<h:outputText id="impattigenerali_stimacostitotali"
+									value="#{RelazioniTecnicheSTBController.currentTipologiaDanno.stimaCostiRipascimenti+RelazioniTecnicheSTBController.currentTipologiaDanno.stimaCostiDanni}" >
+									<f:convertNumber minFractionDigits="2" />
+								</h:outputText>
+
+							<!-- DESCRIZIONE -->
+							<label class="form_label" for="nuovoImpatto_descrizione">Descrizione</label>
+							<h:inputTextarea rows="5" id="nuovoImpatto_descrizione" maxlength="255"
+								value="#{RelazioniTecnicheSTBController.currentTipologiaDanno.descrizione}" converterMessage="Il livello mare deve essere un numero"
+									validatorMessage="Il livello mare deve essere un numero"/>
+							<h:outputText value="(Max 255 caratteri)" />
+
+						</t:panelGrid>
+					</div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="attachmentsBoxHelpDannoSTBAddForm">
+							<h3 class="form_subtitle">Allegati</h3>
+							<ol>
+								<li><p>Carica gli allegati.</p></li>
+								<li><p>Specifica il tipo di ciascun allegato.</p></li>
+							</ol>
+							<p><span class="azure_light bold">NOTA BENE: </span>Fintanto che non viene salvato l'impatto locale i file caricati sono temporanei.</p>
+							</div>
+					<div>
+						
+						<div style="float: left;">
+
+							<div class="fLeft">
+							<label for="addTipologiaDannoForm:uploadAllegati:file" style="display:none" accesskey="u">Inserisci allegati</label>		
+							<rich:fileUpload
+								fileUploadListener="#{RelazioniTecnicheSTBController.fileUploadListener}"
+								maxFilesQuantity="10" id="uploadAllegati" immediateUpload="true"
+								listWidth="300px" acceptedTypes="pdf,png,jpg,txt" allowFlash="false"
+								noDuplicate="true" addControlLabel="Aggiungi un allegato"
+								clearAllControlLabel="Cancella tutto"
+								clearControlLabel="Cancella" doneLabel="Caricato">
+								
+								<a4j:support event="onupload">
+									<f:setPropertyActionListener value="dannoAllegati" 
+									  target="#{RelazioniTecnicheSTBController.allegato_type}" />
+								</a4j:support>
+								
+								<a4j:support event="onfileuploadcomplete"
+									reRender="tipoAllegatiContainer, uploadedFilesTypeBoxesContainer" />
+								<a4j:support event="onclear"
+									reRender="tipoAllegatiContainer, uploadedFilesTypeBoxesContainer">
+									<a4j:actionparam name="fname" noEscape="true"
+										value="(event.memo.entry)?event.memo.entry.fileName:''"
+										assignTo="#{RelazioniTecnicheSTBController.fileToClear}"
+										actionListener="#{RelazioniTecnicheSTBController.clearFileUpload}" />
+								</a4j:support>
+
+							</rich:fileUpload>
+							</div>
+						</div>
+						<div style="float: left; height: 250px; width: 200px">
+							<a4j:outputPanel id="tipoAllegatiContainer">
+								<h:panelGroup styleClass="tipoAllegatiContainer"
+									rendered="#{RelazioniTecnicheSTBController.tipoAllegatiBoxRendered}">
+									<table class="rich-fileupload-toolbar-decor">
+										<tr>
+											<td><b>Specifica il tipo di allegato</b></td>
+										</tr>
+									</table>
+									<a4j:outputPanel id="uploadedFilesTypeBoxesContainer" styleClass="rich-fileupload-font">
+										<h:dataTable styleClass="uploadedFilesTypeTable"
+											value="#{RelazioniTecnicheSTBController.uploadedFilesKeys}"
+											var="uploadedFileKey">
+
+											<h:column styleClass="uploadedFilesTypeTableLeft">
+												<h:outputText value="#{uploadedFileKey}" />
+											</h:column>
+
+											<h:column styleClass="uploadedFilesTypeTableRight">
+												<h:selectOneMenu
+													value="#{RelazioniTecnicheSTBController.tipiAllegatiUploadedFiles[uploadedFileKey]}">
+													<f:selectItems
+														value="#{RelazioniTecnicheSTBController.tipiAllegatoSelect}" />
+												</h:selectOneMenu>
+											</h:column>
+
+										</h:dataTable>
+									</a4j:outputPanel>
+								</h:panelGroup>
+							</a4j:outputPanel>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				
+					<script type="text/javascript" src="./js/OpenLayers.js"></script>
+					<script src="./js/proj4js/lib/proj4js-compressed.js" type="text/javascript"></script>
+					<script src="./js/proj4js/lib/defs/EPSG32632.js" type="text/javascript"></script>
+					<script src="./js/proj4js/lib/defs/EPSG3857.js" type="text/javascript"></script>
+					<script src="./js/proj4js/lib/defs/EPSG900913.js" type="text/javascript"></script>	
+					<script type="text/javascript" src="./js/openlayers-utils.js"></script>
+					<script type="text/javascript" src="./js/jsts/javascript.util.js"></script>
+					<script type="text/javascript" src="./js/jsts/jsts.js"></script>
+
+					<script type="text/javascript">
+						GMOpenLayerUtils.init('nuovoDanno_map', document.getElementById('addTipologiaDannoForm:geometryHiddenText'));
+					</script>
+				</div>
+
+			</h:form>
+			<f:verbatim>
+			 <script type="text/javascript">
+			 //<![CDATA[
+				document.getElementById("addTipologiaDannoForm:uploadAllegati:file").title = "Inserisci un allegato [Alt + (Shift) + u]";
+			 //]]>
+			</script>
+			</f:verbatim>
+		</ui:define>
+
+
+
+	</ui:composition>
+
+</f:view>
+
+</html>
