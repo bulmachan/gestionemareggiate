@@ -73,88 +73,89 @@ public class JNDIUtils {
 	// private static String hostPortIps = SupportoMareggiatePropertiesUtil.getJndiIp();
 
 	//private static String applicationName = SupportoMareggiatePropertiesUtil.getApplicationName();
-	private static String applicationName = "java:app/"+SupportoMareggiatePropertiesUtil.getApplicationName();
+	//private static String applicationName = "java:app/"+SupportoMareggiatePropertiesUtil.getApplicationName();
+	private static String ejbNamespace = "java:module/";
 
 	private static final Map<String, Object> EJB_CACHE = new HashMap<String, Object>();
 	
 	private static PrevisioneMeteoManager previsioneMeteoManager = null;
-	private static String PrevisioneMeteoManagerName = applicationName+"/PrevisioneMeteoManagerImpl/remote";
+	private static String PrevisioneMeteoManagerName = ejbNamespace+"/PrevisioneMeteoManagerImpl";
 
 	private static ProvenienzaManager provenienzaManager = null;
-	private static String ProvenienzaManagerName = applicationName+"/ProvenienzaManagerImpl/remote";
+	private static String ProvenienzaManagerName = ejbNamespace+"/ProvenienzaManagerImpl";
 
 	private static MacroAreaManager macroAreaManager = null;
-	private static String MacroAreaManagerName = applicationName+"/MacroAreaManagerImpl/remote";
+	private static String MacroAreaManagerName = ejbNamespace+"/MacroAreaManagerImpl";
 	
 	private static FenomenoManager fenomenoManager = null;
-	private static String FenomenoManagerName = applicationName+"/FenomenoManagerImpl/remote";
+	private static String FenomenoManagerName = ejbNamespace+"/FenomenoManagerImpl";
 
 	private static TendenzaManager tendenzaManager = null;
-	private static String TendenzaManagerName = applicationName+"/TendenzaManagerImpl/remote";
+	private static String TendenzaManagerName = ejbNamespace+"/TendenzaManagerImpl";
 	
 	private static AltezzaManager altezzaManager = null;
-	private static String AltezzaManagerName = applicationName+"/AltezzaManagerImpl/remote";
+	private static String AltezzaManagerName = ejbNamespace+"/AltezzaManagerImpl";
 
 	private static TipoAllegatoManager tipoAllegatoManager = null;
-	public static String TipoAllegatoManagerName = applicationName+"/TipoAllegatoManagerImpl/remote";
+	public static String TipoAllegatoManagerName = ejbNamespace+"/TipoAllegatoManagerImpl";
 
 	private static PagingManager pagingManager = null;
-	private static String PagingManagerName = applicationName+"/PagingManagerImpl/remote";
+	private static String PagingManagerName = ejbNamespace+"/PagingManagerImpl";
 
 	private static PrevisioneImpattoManager previsioneImpattoManager = null;
-	private static String PrevisioneImpattoManagerName = applicationName+"/PrevisioneImpattoManagerImpl/remote";
+	private static String PrevisioneImpattoManagerName = ejbNamespace+"/PrevisioneImpattoManagerImpl";
 	
 	private static ImpattoRealeManager impattoRealeManager = null;
-	private static String ImpattoRealeManagerName = applicationName+"/ImpattoRealeManagerImpl/remote";
+	private static String ImpattoRealeManagerName = ejbNamespace+"/ImpattoRealeManagerImpl";
 
 	private static TipoDannoManager tipoDannoManager = null;
-	private static final String TipoDannoManagerName = applicationName+"/TipoDannoManagerImpl/remote";
+	private static final String TipoDannoManagerName = ejbNamespace+"/TipoDannoManagerImpl";
 	
 	private static DannoManager dannoManager = null;
-	public static final String DannoManagerName = applicationName+"/DannoManagerImpl/remote";
+	public static final String DannoManagerName = ejbNamespace+"/DannoManagerImpl";
 
 	private static LocalitaManager localitaManager = null;
-	private static final String LocalitaManagerName = applicationName+"/LocalitaManagerImpl/remote";
-	private static final String PrevisioneDannoManagerName = applicationName+"/PrevisioneDannoManagerImpl/remote";
+	private static final String LocalitaManagerName = ejbNamespace+"/LocalitaManagerImpl";
+	private static final String PrevisioneDannoManagerName = ejbNamespace+"/PrevisioneDannoManagerImpl";
 
 	private static EstensioneManager estensioneManager = null;
-	private static String EstensioneManagerName = applicationName+"/EstensioneManagerImpl/remote";
+	private static String EstensioneManagerName = ejbNamespace+"/EstensioneManagerImpl";
 	
 	private static STBManager stbManager = null;
-	public static String STBManagerName = applicationName+"/STBManagerImpl/remote";
+	public static String STBManagerName = ejbNamespace+"/STBManagerImpl";
 	
 	private static FonteManager fonteManager = null;
-	public static String FonteManagerName = applicationName+"/FonteManagerImpl/remote";
+	public static String FonteManagerName = ejbNamespace+"/FonteManagerImpl";
 	
 	private static RelazioneGeneraleSTBManager relazioneGeneraleSTBManager = null;
-	private static String RelazioneGeneraleSTBManagerName = applicationName+"/RelazioneGeneraleSTBManagerImpl/remote";
+	private static String RelazioneGeneraleSTBManagerName = ejbNamespace+"/RelazioneGeneraleSTBManagerImpl";
 	
 	private static UserRoleManager userRoleManager = null;
-	private static String userRoleManagerName = applicationName+"/UserRoleManagerImpl/remote";
+	private static String userRoleManagerName = ejbNamespace+"/UserRoleManagerImpl";
 	
 	private static LivelloCriticitaManager livelloCriticitaManager = null;
-	private static String livelloCriticitaManagerName =  applicationName+"/LivelloCriticitaManagerImpl/remote";
+	private static String livelloCriticitaManagerName =  ejbNamespace+"/LivelloCriticitaManagerImpl";
 	
-	public static String RelazioneSTBManagerName = applicationName+"/RelazioneSTBManagerImpl/remote";
-	public static String StatoRelazioneManagerName = applicationName+"/StatoRelazioneManagerImpl/remote";
-	public static String DannoSTBManagerName = applicationName+"/DannoSTBManagerImpl/remote";
-	public static String MareggiataManagerName = applicationName+"/MareggiataManagerImpl/remote";
-	public static String StazioneManagerName = applicationName+"/StazioneManagerImpl/remote";
-	public static String ArpaDataSourceName = applicationName+"/ArpaDataSource/remote";
-	public static String CondizioneMeteoManagerName = applicationName+"/CondizioneMeteoManagerImpl/remote";
-	public static String RilevazioneManagerName = applicationName+"/RilevazioneManagerImpl/remote";
-	public static String VariabileManagerName = applicationName+"/VariabileManagerImpl/remote";
-	public static String AllegatoManagerName = applicationName+"/AllegatoManagerImpl/remote";
-	public static String ImpattoRealeServiceName = applicationName+"/ImpattoRealeServiceImpl/remote";
-	public static String ValutazioneImpattiServiceName = applicationName+"/ValutazioneImpattiServiceImpl/remote";
-	public static String AvvisiMeteoEventiCostieriServiceName = applicationName+"/AvvisiMeteoEventiCostieriServiceImpl/remote";
-	public static String MareggiataManagerServiceName = applicationName+"/MareggiateControllerServiceImpl/remote";
-	public static String CondizioneMeteoManagerServiceName = applicationName+"/CondizioniMeteoMarineServiceImpl/remote";
-	public static String RelazioniGeneraliSTBServiceName = applicationName+"/RelazioniGeneraliSTBServiceImpl/remote";
-	public static String RelazioniTecnicheSTBServiceName = applicationName+"/RelazioniTecnicheSTBServiceImpl/remote";
-	public static String LivelloCriticitaManagerName = applicationName+"/LivelloCriticitaManagerImpl/remote";
-	public static String IndirizzoManagerName = applicationName+"/IndirizzoManagerImpl/remote";
-	public static String AnalysisManagerName = applicationName+"/AnalysisManagerImpl/remote";
+	public static String RelazioneSTBManagerName = ejbNamespace+"/RelazioneSTBManagerImpl";
+	public static String StatoRelazioneManagerName = ejbNamespace+"/StatoRelazioneManagerImpl";
+	public static String DannoSTBManagerName = ejbNamespace+"/DannoSTBManagerImpl";
+	public static String MareggiataManagerName = ejbNamespace+"/MareggiataManagerImpl";
+	public static String StazioneManagerName = ejbNamespace+"/StazioneManagerImpl";
+	public static String ArpaDataSourceName = ejbNamespace+"/ArpaDataSource";
+	public static String CondizioneMeteoManagerName = ejbNamespace+"/CondizioneMeteoManagerImpl";
+	public static String RilevazioneManagerName = ejbNamespace+"/RilevazioneManagerImpl";
+	public static String VariabileManagerName = ejbNamespace+"/VariabileManagerImpl";
+	public static String AllegatoManagerName = ejbNamespace+"/AllegatoManagerImpl";
+	public static String ImpattoRealeServiceName = ejbNamespace+"/ImpattoRealeServiceImpl";
+	public static String ValutazioneImpattiServiceName = ejbNamespace+"/ValutazioneImpattiServiceImpl";
+	public static String AvvisiMeteoEventiCostieriServiceName = ejbNamespace+"/AvvisiMeteoEventiCostieriServiceImpl";
+	public static String MareggiataManagerServiceName = ejbNamespace+"/MareggiateControllerServiceImpl";
+	public static String CondizioneMeteoManagerServiceName = ejbNamespace+"/CondizioniMeteoMarineServiceImpl";
+	public static String RelazioniGeneraliSTBServiceName = ejbNamespace+"/RelazioniGeneraliSTBServiceImpl";
+	public static String RelazioniTecnicheSTBServiceName = ejbNamespace+"/RelazioniTecnicheSTBServiceImpl";
+	public static String LivelloCriticitaManagerName = ejbNamespace+"/LivelloCriticitaManagerImpl";
+	public static String IndirizzoManagerName = ejbNamespace+"/IndirizzoManagerImpl";
+	public static String AnalysisManagerName = ejbNamespace+"/AnalysisManagerImpl";
 	
 	
 	
