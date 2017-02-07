@@ -1,0 +1,3 @@
+[ ] Remove org.postgresql.Driver usage
+[ ] Fix all EJB JNDI lookups in ejb/src/main/java/it/epocaricerca/geologia/ejb/utils/JNDIUtils.java
+
