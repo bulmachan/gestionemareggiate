@@ -19,23 +19,6 @@
 		<param-name>org.richfaces.CONTROL_SKINNING</param-name>
 		<param-value>enable</param-value>
 	</context-param>
-
-<!--
-   Patch aggiunta in fase di migrazione a JBoss EAP 6.4
-   https://developer.jboss.org/wiki/RichFaces333AndJSF20
--->
-<context-param>
-   <param-name>javax.faces.DISABLE_FACELET_JSF_VIEWHANDLER</param-name>
-   <param-value>false</param-value>
-</context-param>
-
-<context-param>
-   <param-name>org.ajax4jsf.VIEW_HANDLERS</param-name>
-   <param-value>com.sun.facelets.FaceletViewHandler</param-value>
-</context-param>
-
-<!-- -->
-
 	<!-- Defining and mapping the RichFaces filter -->
 	<filter>
 		<display-name>RichFaces Filter</display-name>

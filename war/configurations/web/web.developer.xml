@@ -20,21 +20,16 @@
 		<param-value>enable</param-value>
 	</context-param>
 
-<!--
-   Patch aggiunta in fase di migrazione a JBoss EAP 6.4
-   https://developer.jboss.org/wiki/RichFaces333AndJSF20
--->
-<context-param>
-   <param-name>javax.faces.DISABLE_FACELET_JSF_VIEWHANDLER</param-name>
-   <param-value>false</param-value>
-</context-param>
-
-<context-param>
-   <param-name>org.ajax4jsf.VIEW_HANDLERS</param-name>
-   <param-value>com.sun.facelets.FaceletViewHandler</param-value>
-</context-param>
-
 <!-- -->
+<context-param>
+     <param-name>javax.faces.DISABLE_FACELET_JSF_VIEWHANDLER</param-name>
+     <param-value>false</param-value>
+</context-param>
+
+<context-param>
+<param-name>org.ajax4jsf.VIEW_HANDLERS</param-name>
+<param-value>com.sun.facelets.FaceletViewHandler</param-value>
+</context-param>
 
 	<!-- Defining and mapping the RichFaces filter -->
 	<filter>
@@ -58,6 +53,7 @@
 		<dispatcher>INCLUDE</dispatcher>
 	</filter-mapping>
 
+<!--
 	<filter>
 		<filter-name>RequestHeaderFilter</filter-name>
 		<display-name>RequestHeaderFilter</display-name>
@@ -69,7 +65,9 @@
 		<filter-name>RequestHeaderFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+-->
 	
+<!--
 	<filter>
 		<filter-name>RequestHeaderCookie</filter-name>
 		<display-name>RequestHeaderCookie</display-name>
@@ -81,7 +79,7 @@
 		<filter-name>RequestHeaderCookie</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
- 
+-->
  
 	<filter>
 		<filter-name>FileUploadSizeFilter</filter-name>
@@ -135,6 +133,12 @@
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 
-
+      <session-config>
+          <cookie-config>
+             <http-only>true</http-only>
+             <secure>true</secure>
+          </cookie-config>
+          <tracking-mode>COOKIE</tracking-mode>
+      </session-config>
 
 </web-app>

@@ -19,12 +19,6 @@
 		<param-name>org.richfaces.CONTROL_SKINNING</param-name>
 		<param-value>enable</param-value>
 	</context-param>
-
-<context-param>
-     <param-name>javax.faces.DISABLE_FACELET_JSF_VIEWHANDLER</param-name>
-     <param-value>true</param-value>
-</context-param>
-
 	<!-- Defining and mapping the RichFaces filter -->
 	<filter>
 		<display-name>RichFaces Filter</display-name>
@@ -46,18 +40,6 @@
 		<dispatcher>FORWARD</dispatcher>
 		<dispatcher>INCLUDE</dispatcher>
 	</filter-mapping>
-
-	<filter>
-		<filter-name>RequestHeaderFilter</filter-name>
-		<display-name>RequestHeaderFilter</display-name>
-		<description></description>
-		<filter-class>it.epocaricerca.geologia.web.controller.filter.RequestHeaderFilter</filter-class>
-	</filter>
-
-	<filter-mapping>
-		<filter-name>RequestHeaderFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
 	
 	<filter>
 		<filter-name>RequestHeaderCookie</filter-name>
@@ -70,8 +52,7 @@
 		<filter-name>RequestHeaderCookie</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
- 
- 
+	
 	<filter>
 		<filter-name>FileUploadSizeFilter</filter-name>
 		<filter-class>it.epocaricerca.geologia.web.controller.filter.FileUploadSizeFilter</filter-class>
@@ -86,7 +67,7 @@
 		<filter-name>FileUploadSizeFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
+	
 
 	<context-param>
 		<param-name>org.richfaces.LoadStyleStrategy</param-name>
