@@ -16,8 +16,8 @@
 	</modules>
 
 
+<!---->
 	<profiles>
-
 		<profile>
 			<id>nexus</id>
 			<repositories>
@@ -52,7 +52,7 @@
 			</pluginRepositories>
 		</profile>
 	</profiles>
-
+<!---->
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -78,6 +78,7 @@
 
 		</pluginManagement>
 
+<!--
 		<extensions>
 			<extension>
 				<groupId>org.apache.maven.wagon</groupId>
@@ -85,6 +86,7 @@
 				<version>1.0</version>
 			</extension>
 		</extensions>
+-->
 	</build>
 
 	<dependencyManagement>

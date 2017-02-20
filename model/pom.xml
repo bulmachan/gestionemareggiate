@@ -34,7 +34,7 @@
 		<dependency>
 			<groupId>jboss</groupId>
 			<artifactId>jboss-annotations-ejb3</artifactId>
-			<version>4.2.3.GA</version>
+			<version>4.2.2.GA</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -42,7 +42,7 @@
 		<dependency>
 			<groupId>com.vividsolutions</groupId>
 			<artifactId>jts</artifactId>
-			<version>1.10</version>
+			<version>1.11</version>
 		</dependency>
 
 		<dependency>

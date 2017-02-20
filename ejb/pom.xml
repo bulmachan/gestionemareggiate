@@ -221,7 +221,7 @@
 		<dependency>
 			<groupId>jboss</groupId>
 			<artifactId>jboss-annotations-ejb3</artifactId>
-			<version>4.2.3.GA</version>
+			<version>4.2.2.GA</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -313,12 +313,12 @@
 			<version>3.3.3.Final</version>
 		</dependency>
 
-      <!-- @see https://developer.jboss.org/wiki/RichFaces333AndJSF20 -->
-      <dependency>
-         <groupId>org.richfaces.framework</groupId>
-         <artifactId>richfaces-impl</artifactId>
-         <version>3.3.3.Final</version>
-      </dependency>	
+		<!--add-->
+		 <dependency>
+                        <groupId>org.richfaces.framework</groupId>
+                        <artifactId>richfaces-impl</artifactId>
+                        <version>3.3.3.Final</version>
+                </dependency>	
             
 		<dependency>
 			<groupId>commons-configuration</groupId>
