@@ -1,3 +1,5 @@
 [ ] Remove org.postgresql.Driver usage
 [ ] Fix all EJB JNDI lookups in ejb/src/main/java/it/epocaricerca/geologia/ejb/utils/JNDIUtils.java
+[ ] Valorize all 3 ("codicefiscale", "nome" and "cognome") HTTP headers or suffer randon NPEs.
+[ ] Fix cookie handling in "war/src/main/java/it/epocaricerca/geologia/web/controller/filter/RequestHeaderCookie.java"
 
