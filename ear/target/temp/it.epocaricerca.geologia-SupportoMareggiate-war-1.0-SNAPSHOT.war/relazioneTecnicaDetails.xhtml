@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+
+<ui:composition template="/WEB-INF/layout/layout.xhtml">
+	<ui:define name="title">Relazione tecnica STB #{RelazioniTecnicheSTBController.selectedItem.codice}</ui:define>	
+	<ui:define name="content">
+		<f:view>
+			<div>
+				<h:form>
+
+
+					<t:panelGrid columns="4" styleClass="form_panelGrid">
+
+						<h:outputText value="Validita' dal &#160;"
+							styleClass="detailsLabel" />
+						<h:outputText
+							value="#{RelazioniTecnicheSTBController.selectedItem.inizioValidita}">
+							<f:convertDateTime type="date" pattern="dd/MM/yyyy HH:mm" />
+						</h:outputText>
+
+						<h:outputText value="&#160; al &#160;" styleClass="detailsLabel" />
+						<h:outputText
+							value="#{RelazioniTecnicheSTBController.selectedItem.fineValidita}">
+							<f:convertDateTime type="date" pattern="dd/MM/yyyy HH:mm" />
+						</h:outputText>
+					</t:panelGrid>
+					
+					
+					<t:panelGrid columns="2" styleClass="form_panelGrid" style="float:left;">
+						<h:outputText value="Descrizione &#160;" styleClass="detailsLabel" />
+						
+						<h:outputText
+							value="#{RelazioniTecnicheSTBController.selectedItem.descrizione}" />
+
+						<h:outputText value="Stato" styleClass="detailsLabel" />
+						<h:outputText
+							value="#{RelazioniTecnicheSTBController.selectedItem.stato.nome}" />
+						<h:outputText value="STB" styleClass="detailsLabel" />
+						<h:outputText
+							value="#{RelazioniTecnicheSTBController.selectedItem.stb.nome}" />
+							
+						<h:outputText value="Fonte" styleClass="detailsLabel" />
+						<ui:fragment rendered="#{RelazioniTecnicheSTBController.selectedItem.fonte.nome != null}">
+						<h:outputText
+						value="#{RelazioniTecnicheSTBController.selectedItem.fonte.nome}" />
+						</ui:fragment>
+						<ui:fragment rendered="#{RelazioniTecnicheSTBController.selectedItem.fonte.nome == null}">
+							<h:outputText
+								value="-" />
+						</ui:fragment>
+																	
+					</t:panelGrid>
+									
+					<div class="clearfix"></div>
+					
+					<h3>Allegati</h3>
+					<t:dataTable var="allegato"
+						value="#{RelazioniTecnicheSTBController.selectedItem.allegati}"
+						preserveDataModel="false" styleClass="itemsDataTable"
+						rowClasses="itemsDataTableOddRow, itemsDataTableEvenRow"
+						columnClasses="itemsDataTableColumns"
+						style="margin-top: 0 !important">
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Nome file" />
+							</f:facet>
+							<h:outputText value="#{allegato.nome}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Tipo" />
+							</f:facet>
+							<h:outputText value="#{allegato.tipo.nome}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText styleClass="headerText" value="Scarica" />
+							</f:facet>
+							<h:commandLink ajaxSingle="true"
+								action="#{RelazioniTecnicheSTBController.downloadAttachment}">
+								<em class="icon-download icon-2x"></em>
+								<f:setPropertyActionListener
+									target="#{RelazioniTecnicheSTBController.attachmentToDownload}"
+									value="#{allegato}" />
+							</h:commandLink>
+						</h:column>
+
+					</t:dataTable>
+					
+					<div class="clearfix"></div>
+
+					<h3>Tipologie danni</h3>
+					<t:dataTable var="danno"
+						value="#{RelazioniTecnicheSTBController.selectedItem.danni}"
+						preserveDataModel="false" styleClass="itemsDataTable"
+						rowIndexVar="tipologieDanniRow"
+						rowClasses="itemsDataTableOddRow, itemsDataTableEvenRow"
+						columnClasses="itemsDataTableColumns"
+						style="margin-top: 0 !important">
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Id" />
+							</f:facet>
+							<h:outputText value="#{danno.id}" />
+						</h:column>
+						
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Località" />
+							</f:facet>
+							<h:outputText value="#{danno.localita.nome}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Volumi erosi (m3)" />
+							</f:facet>
+							<h:outputText value="#{danno.volumiErosi}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Lunghezza tratto" />
+							</f:facet>
+							<h:outputText value="#{danno.lunghezzaTratto}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Stima danni" />
+							</f:facet>
+							<h:outputText value="#{danno.stimaCostiDanni}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Allegati" />
+							</f:facet>
+							<t:dataTable value="#{danno.allegati}" var="fileAllegatoTemp">
+								<h:column>
+									<h:outputText value="#{fileAllegatoTemp.nome}" />
+									<h:commandLink ajaxSingle="true"
+										action="#{RelazioniTecnicheSTBController.downloadAttachment}">
+										<em class="icon-download icon-large"></em>
+										<f:setPropertyActionListener
+											target="#{RelazioniTecnicheSTBController.attachmentToDownload}"
+											value="#{fileAllegatoTemp}" />
+									</h:commandLink>
+								</h:column>
+							</t:dataTable>
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText styleClass="headerText" value="" />
+							</f:facet>
+							<a4j:commandLink id="maplink"
+								action="#{RelazioniTecnicheSTBController.openItemMap}" 
+								data="#{RelazioniTecnicheSTBController.selectedDannoGeometries}" 
+								oncomplete="GMOpenLayerUtils.showModalPanelMap('pnl', 'modalPanelMap', data);">
+								<em title="Visualizza mappa danni" class="icon-map-marker icon-2x"></em>
+								<f:setPropertyActionListener value="#{tipologieDanniRow}"
+											target="#{RelazioniTecnicheSTBController.tipologieDanniRow}" />	
+							</a4j:commandLink>
+							<rich:toolTip for="maplink" value="Visualizza mappa" />
+						</h:column>
+
+					</t:dataTable>
+
+
+				</h:form>
+			</div>
+			
+			<rich:modalPanel id="pnl" width="900" height="610">
+			<h:commandButton styleClass="formButton inputBtn inputBtn-grey xCloseButton" value="X" title="Chiudi mappa [Esc]" immediate="true"
+						onclick="GMOpenLayerUtils.hideModalPanelMap('pnl');" />
+				<f:facet name="header">
+		            <h:panelGroup>
+		               <h:outputText value="Mappa" styleClass="titleMappa"></h:outputText>
+		            </h:panelGroup>
+		        </f:facet>
+				<div id="modalPanelMap" style="width: 100%; height: 500px; margin-top:-10px !important;"></div>
+				<h:commandButton value="Chiudi" title="Chiudi mappa [Esc]" immediate="true"
+					styleClass="formButton inputBtn inputBtn-grey pull-right closeButton"
+					onclick="GMOpenLayerUtils.hideModalPanelMap('pnl');" />
+				<rich:hotKey id="myKey" key="esc" handler="GMOpenLayerUtils.hideModalPanelMap('pnl');"/>
+				
+			</rich:modalPanel>
+		
+			
+			<!-- <script type="text/javascript"
+				src="http://www.openlayers.org/api/OpenLayers.js"></script>-->
+			<script type="text/javascript"
+				src="./js/OpenLayers.js"></script>	
+			<script src="./js/proj4js/lib/proj4js-compressed.js" type="text/javascript"></script>
+			<script src="./js/proj4js/lib/defs/EPSG32632.js" type="text/javascript"></script>
+			<script src="./js/proj4js/lib/defs/EPSG3857.js" type="text/javascript"></script>
+			<script type="text/javascript" src="./js/openlayers-utils.js"></script>
+		
+		</f:view>
+	</ui:define>
+</ui:composition>
+
+</html>

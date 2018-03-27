@@ -316,7 +316,7 @@ public class MareggiateController extends FilterableHandler<Mareggiata> {
 				previsioniParagraph.add(Chunk.NEWLINE);
 				previsioniParagraph.add(Chunk.TABBING);
 				previsioniParagraph.add(Chunk.TABBING);
-				previsioniParagraph.add(new Chunk("Validità: dal ", fontTextBold));
+				previsioniParagraph.add(new Chunk("Validitï¿½: dal ", fontTextBold));
 				previsioniParagraph.add(new Chunk(dateFormat.format(previsioneMeteo.getInizioValidita()), fontText));
 				previsioniParagraph.add(new Chunk(" al ", fontTextBold));
 				previsioniParagraph.add(new Chunk(dateFormat.format(previsioneMeteo.getFineValidita()), fontText));
@@ -345,7 +345,7 @@ public class MareggiateController extends FilterableHandler<Mareggiata> {
 					previsioniParagraph.add(Chunk.TABBING);
 					previsioniParagraph.add(Chunk.TABBING);
 					previsioniParagraph.add(Chunk.TABBING);
-					previsioniParagraph.add(new Chunk("Intensità del vento: ", fontTextBold));
+					previsioniParagraph.add(new Chunk("Intensitï¿½ del vento: ", fontTextBold));
 					previsioniParagraph.add(new Chunk(previsioneMeteo.getPianuraVento()+"", fontText));
 				}
 				if(previsioneMeteo.getPianuraDirezioneVento() != null){
@@ -361,7 +361,7 @@ public class MareggiateController extends FilterableHandler<Mareggiata> {
 					previsioniParagraph.add(Chunk.TABBING);
 					previsioniParagraph.add(Chunk.TABBING);
 					previsioniParagraph.add(Chunk.TABBING);
-					previsioniParagraph.add(new Chunk("Intensità massima: ", fontTextBold));
+					previsioniParagraph.add(new Chunk("Intensitï¿½ massima: ", fontTextBold));
 					previsioniParagraph.add(new Chunk(previsioneMeteo.getPianuraVentoMax()+"", fontText));
 				}
 				
@@ -375,7 +375,7 @@ public class MareggiateController extends FilterableHandler<Mareggiata> {
 					previsioniParagraph.add(Chunk.TABBING);
 					previsioniParagraph.add(Chunk.TABBING);
 					previsioniParagraph.add(Chunk.TABBING);
-					previsioniParagraph.add(new Chunk("Intensità del vento: ", fontTextBold));
+					previsioniParagraph.add(new Chunk("Intensitï¿½ del vento: ", fontTextBold));
 					previsioniParagraph.add(new Chunk(previsioneMeteo.getPedemontanaVento()+"", fontText));
 				}
 				if(previsioneMeteo.getPedemontanaDirezioneVento() != null){
@@ -391,7 +391,7 @@ public class MareggiateController extends FilterableHandler<Mareggiata> {
 					previsioniParagraph.add(Chunk.TABBING);
 					previsioniParagraph.add(Chunk.TABBING);
 					previsioniParagraph.add(Chunk.TABBING);
-					previsioniParagraph.add(new Chunk("Intensità massima: ", fontTextBold));
+					previsioniParagraph.add(new Chunk("Intensitï¿½ massima: ", fontTextBold));
 					previsioniParagraph.add(new Chunk(previsioneMeteo.getPedemontanaVentoMax()+"", fontText));
 				}
 				
@@ -453,7 +453,7 @@ public class MareggiateController extends FilterableHandler<Mareggiata> {
 				previsioniParagraph.add(Chunk.NEWLINE);
 				previsioniParagraph.add(Chunk.TABBING);
 				previsioniParagraph.add(Chunk.TABBING);
-				previsioniParagraph.add(new Chunk("Validità: dal ", fontTextBold));
+				previsioniParagraph.add(new Chunk("Validitï¿½: dal ", fontTextBold));
 				previsioniParagraph.add(new Chunk(dateFormat.format(previsioneImpatto.getInizioValidita()), fontText));
 				previsioniParagraph.add(new Chunk(" al ", fontTextBold));
 				previsioniParagraph.add(new Chunk(dateFormat.format(previsioneImpatto.getFineValidita()), fontText));
@@ -499,7 +499,7 @@ public class MareggiateController extends FilterableHandler<Mareggiata> {
 				revisioniParagraph.add(Chunk.NEWLINE);
 				revisioniParagraph.add(Chunk.TABBING);
 				revisioniParagraph.add(Chunk.TABBING);
-				revisioniParagraph.add(new Chunk("Validità: dal ", fontTextBold));
+				revisioniParagraph.add(new Chunk("Validitï¿½: dal ", fontTextBold));
 				revisioniParagraph.add(new Chunk(dateFormat.format(condizioneMeteo.getInizioValidita()), fontText));
 				revisioniParagraph.add(new Chunk(" al ", fontTextBold));
 				revisioniParagraph.add(new Chunk(dateFormat.format(condizioneMeteo.getFineValidita()), fontText));
@@ -536,14 +536,14 @@ public class MareggiateController extends FilterableHandler<Mareggiata> {
 					revisioniParagraph.add(Chunk.NEWLINE);
 					revisioniParagraph.add(Chunk.TABBING);
 					revisioniParagraph.add(Chunk.TABBING);
-					revisioniParagraph.add(new Chunk("Massima intensità del vento: ", fontTextBold));
+					revisioniParagraph.add(new Chunk("Massima intensitï¿½ del vento: ", fontTextBold));
 					revisioniParagraph.add(new Chunk(condizioneMeteo.getMaxIntensitaVentoPrevalente()+"", fontText));
 				}
 				if(Float.valueOf(condizioneMeteo.getMaxIntensitaVentoRaffica()) != null){
 					revisioniParagraph.add(Chunk.NEWLINE);
 					revisioniParagraph.add(Chunk.TABBING);
 					revisioniParagraph.add(Chunk.TABBING);
-					revisioniParagraph.add(new Chunk("Massima intensità del vento (raffica): ", fontTextBold));
+					revisioniParagraph.add(new Chunk("Massima intensitï¿½ del vento (raffica): ", fontTextBold));
 					revisioniParagraph.add(new Chunk(condizioneMeteo.getMaxIntensitaVentoRaffica()+"", fontText));
 				}
 				if(Float.valueOf(condizioneMeteo.getMaxAltezzaMarea()) != null){
@@ -596,7 +596,7 @@ public class MareggiateController extends FilterableHandler<Mareggiata> {
 				revisioniParagraph.add(Chunk.NEWLINE);
 				revisioniParagraph.add(Chunk.TABBING);
 				revisioniParagraph.add(Chunk.TABBING);
-				revisioniParagraph.add(new Chunk("Validità: dal ", fontTextBold));
+				revisioniParagraph.add(new Chunk("Validitï¿½: dal ", fontTextBold));
 				revisioniParagraph.add(new Chunk(dateFormat.format(impattoReale.getInizioValidita()), fontText));
 				revisioniParagraph.add(new Chunk(" al ", fontTextBold));
 				revisioniParagraph.add(new Chunk(dateFormat.format(impattoReale.getFineValidita()), fontText));
@@ -641,7 +641,7 @@ public class MareggiateController extends FilterableHandler<Mareggiata> {
 				revisioniParagraph.add(Chunk.NEWLINE);
 				revisioniParagraph.add(Chunk.TABBING);
 				revisioniParagraph.add(Chunk.TABBING);
-				revisioniParagraph.add(new Chunk("Validità: dal ", fontTextBold));
+				revisioniParagraph.add(new Chunk("Validitï¿½: dal ", fontTextBold));
 				revisioniParagraph.add(new Chunk(dateFormat.format(relazioneSTB.getInizioValidita()), fontText));
 				revisioniParagraph.add(new Chunk(" al ", fontTextBold));
 				revisioniParagraph.add(new Chunk(dateFormat.format(relazioneSTB.getFineValidita()), fontText));				
@@ -892,7 +892,7 @@ public class MareggiateController extends FilterableHandler<Mareggiata> {
 
 		if(!checkMareggiataFormFields()){
 		
-			/* Modifico messaggio di file non valido perchè il click del tasto Salva ricarica e pulisce in automatico la sezione inserisci allegato */
+			/* Modifico messaggio di file non valido perchï¿½ il click del tasto Salva ricarica e pulisce in automatico la sezione inserisci allegato */
 			if (mareggiataFormMessageRendered == true) {
 				if (mareggiataFormMessage.contains(Messages.FORM_ERROR_IOFILE_NOTVALID)) {
 					mareggiataFormMessage = "File non valido rimosso. Cliccare su Salva o caricare un nuovo file per proseguire.";
@@ -985,7 +985,7 @@ public class MareggiateController extends FilterableHandler<Mareggiata> {
 			//aggiungo evento alla mareggiate se:
 			// 	1. L'evento ha uno dei due estremo che si verifica dentro l'arco  della mareggiata
 			//	2. L'evento si verifica dentro l'arco temporale della mareggiata
-			//  3. L'evento  e' temporalmente più esteso della mareggiata
+			//  3. L'evento  e' temporalmente piï¿½ esteso della mareggiata
 			criterions.add(
 					Restrictions.or(
 							Restrictions.or(

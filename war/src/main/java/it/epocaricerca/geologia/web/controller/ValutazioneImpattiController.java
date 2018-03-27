@@ -215,8 +215,8 @@ public class ValutazioneImpattiController extends FilterableHandler<PrevisioneIm
 	public String salvaTipologiaDanno() {
 		if ( !checkFormFields() ) {
 		
-			/* Capire perchè salvaTipologiaDanno non ricarica la sezione upload e gli altri Salva sì, */
-			/* Modifico messaggio di file non valido perchè il click del tasto Salva ricarica e pulisce in automatico la sezione inserisci allegato 
+			/* Capire perchï¿½ salvaTipologiaDanno non ricarica la sezione upload e gli altri Salva sï¿½, */
+			/* Modifico messaggio di file non valido perchï¿½ il click del tasto Salva ricarica e pulisce in automatico la sezione inserisci allegato 
 			if (tipologiaDannoFormMessageRendered == true) {
 				if (tipologiaDannoFormMessage.contains(Messages.FORM_ERROR_IOFILE_NOTVALID)) {
 					tipologiaDannoFormMessage = "File non valido rimosso. Cliccare su Salva o caricare un nuovo file per proseguire.";
@@ -290,7 +290,7 @@ public class ValutazioneImpattiController extends FilterableHandler<PrevisioneIm
 	public void deleteTipoDannoTemp() {
 		PrevisioneDanno tdbToRemove = previsioniDanni.get(tipoDannoTempRow);
 		if ( editMode && null!=tdbToRemove.getId() ) {
-			//  un danno da DB, lo aggiungo alla lista di danni da rimuovere mediante API
+			// ï¿½ un danno da DB, lo aggiungo alla lista di danni da rimuovere mediante API
 			getTipologieDannoToRemoveList().add(tdbToRemove);
 		}
 		// in ogni caso rimuovo dalla lista utilizzata per il rendering della tabella
@@ -353,9 +353,9 @@ public class ValutazioneImpattiController extends FilterableHandler<PrevisioneIm
 			pulisciFiltri();
 			return "valutazioneImpattiSalvata";
 		}
-		// la form non completa
+		// la form non ï¿½completa
 		else {
-			/* Modifico messaggio di file non valido perchè il click del tasto Salva ricarica e pulisce in automatico la sezione inserisci allegato */
+			/* Modifico messaggio di file non valido perchï¿½ il click del tasto Salva ricarica e pulisce in automatico la sezione inserisci allegato */
 			if (valutazioneImpattiFormMessageRendered == true) {
 				if (valutazioneImpattiFormMessage.contains(Messages.FORM_ERROR_IOFILE_NOTVALID)) {
 					valutazioneImpattiFormMessage = "File non valido rimosso. Cliccare su Salva o caricare un nuovo file per proseguire.";

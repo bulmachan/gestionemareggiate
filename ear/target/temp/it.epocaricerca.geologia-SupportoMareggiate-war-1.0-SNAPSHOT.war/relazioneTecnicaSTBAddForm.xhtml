@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+
+<f:view>
+
+	<ui:composition template="/WEB-INF/layout/layout.xhtml">
+
+		<ui:define name="title">
+			<ui:fragment rendered="#{!RelazioniTecnicheSTBController.editMode}">
+				<h:outputText value="Nuova Relazione Tecnica STB" />
+			</ui:fragment>
+			<ui:fragment rendered="#{RelazioniTecnicheSTBController.editMode}">
+				<h:outputText
+					value="Relazione Tecnica STB #{RelazioniTecnicheSTBController.selectedItem.codice}" />
+			</ui:fragment>
+		</ui:define>
+		
+
+		<ui:define name="page_title_box_right">
+		</ui:define>
+
+		<ui:define name="content">
+
+			<h:form id="relazioneTecnicaSTBAddForm">
+
+				<h:commandButton value="Annulla" immediate="true"
+					styleClass="inputBtn inputBtn-grey"
+					action="#{RelazioniTecnicheSTBController.annullaCreazioneRelazioneTecnica}" />
+
+				<h:commandButton value="Salva relazione tecnica STB"
+					styleClass="formButton inputBtn inputBtn-green"
+					title="Salva relazione tecnica STB [Alt + (Shift) + s]"
+					action="#{RelazioniTecnicheSTBController.salvaRelazioneTecnica}"
+					accesskey="s"
+					type="submit" />
+
+				<a4j:outputPanel styleClass="formErrorMessageContainer" ajaxRendered="true">
+					<rich:messages styleClass="formButton formErrorMessage">
+					<h:outputText styleClass="formButton formErrorMessage"
+							value="#{RelazioniTecnicheSTBController.formMessage}"
+							rendered="#{RelazioniTecnicheSTBController.formMessageRendered}"/>
+						<f:verbatim escape="true" rendered="#{RelazioniTecnicheSTBController.formMessageRendered}">
+							<a class="disnone" id="relazioneTecnicaFormMessageA" href="#">relazioneTecnicaFormMessageA</a>
+							<script type="text/javascript">document.getElementById("relazioneTecnicaFormMessageA").focus();</script>
+						</f:verbatim>
+					</rich:messages>
+				</a4j:outputPanel>
+				 
+				<p id="obb"><span class="azure_light bold">NOTA BENE: </span>I campi contrassegnati dall'asterisco sono obbligatori.</p>
+				<f:verbatim escape="true" rendered="#{RelazioniTecnicheSTBController.formMessageRendered}">
+					<script type="text/javascript">document.getElementById('obb').className = "marginRid";</script>
+				</f:verbatim>
+				
+				<rich:tabPanel id="nuovavalutazioneimpatti_tabPanel"
+					switchType="client"
+					selectedTab="#{RelazioniTecnicheSTBController.selectedTab}">
+
+
+					<!-- TAB IMPATTI GENERALI -->
+					<rich:tab label="Impatti&#160;generali" id="impattigenerali_tab">
+						<t:panelGrid columns="3" styleClass="form_panelGrid"
+							style="float:left;">
+
+							<!-- CODICE -->
+							<label for="impattigenerali_codicevalutazione" class="form_label">Codice (*)</label>
+							<h:inputText id="impattigenerali_codicevalutazione" maxlength="100"
+								value="#{RelazioniTecnicheSTBController.impattiGeneraliCodiceValutazione}" />
+							<h:outputText value="(Max 100 caratteri)" />
+							
+							<!-- INIZIO VALIDITA' -->
+							<label for="impattigenerali_iniziovalidita" class="form_label">Inizio
+								validità (*)</label>
+							<rich:calendar id="impattigenerali_iniziovalidita" popup="true"
+								datePattern="dd/MM/yyyy HH:mm" validatorMessage="Inizio validità: formato campo data non valido." converterMessage="Inizio validità: formato campo data non valido."
+								value="#{RelazioniTecnicheSTBController.impattiGeneraliInizioValidita}" />
+							<h:outputText value="" />
+
+							<!-- FINE VALIDITA' -->
+							<label for="impattigenerali_finevalidita" class="form_label">Fine
+								validità (*)</label>
+							<rich:calendar id="impattigenerali_finevalidita" popup="true"
+								datePattern="dd/MM/yyyy HH:mm" validatorMessage="Fine validità: formato campo data non valido." converterMessage="Fine validità: formato campo data non valido."
+								onexpand="JSFUtils.onEndValidityClick('relazioneTecnicaSTBAddForm:impattigenerali_iniziovalidita','relazioneTecnicaSTBAddForm:impattigenerali_finevalidita')"
+								value="#{RelazioniTecnicheSTBController.impattiGeneraliFineValidita}" />
+							<h:outputText value="" />
+
+							<!-- STB -->
+							<label for="impattigenerali_stb" class="form_label">Servizio Tecnico (*)</label>
+							<h:selectOneMenu id="impattigenerali_stb"
+								value="#{RelazioniTecnicheSTBController.stb}"  title="Imposta Servizio Tecnico">
+								<f:selectItems
+									value="#{RelazioniTecnicheSTBController.stbSelect}" />
+							</h:selectOneMenu>
+							<h:outputText value="" />
+							
+							<!-- FONTI -->
+							<label for="impattigenerali_fonti" class="form_label">Fonte</label>
+							<h:selectOneMenu id="impattigenerali_fonti"
+								value="#{RelazioniTecnicheSTBController.fonte}" title="Imposta fonte">
+								<f:selectItems
+									value="#{RelazioniTecnicheSTBController.fontiSelect}" />
+							</h:selectOneMenu>
+							<h:outputText value="" />
+
+						</t:panelGrid>
+
+						<div class="clearfix">&#160;</div>
+
+						<div class="form-textarea-fullwidth">
+							<label class="form_label" for="impattigenerali_descrizione">Descrizione
+								dell'impatto generale</label>
+							<h:inputTextarea rows="10" id="impattigenerali_descrizione" maxlength="500"
+								value="#{RelazioniTecnicheSTBController.impattiGeneraliDescrizione}"
+								styleClass="pull-left full-width" />
+							<h:outputText value="(Max 500 caratteri)" />
+						</div>
+					</rich:tab>
+
+					<!-- TAB IMPATTI LOCALI -->
+					<rich:tab label="Impatti&#160;locali" id="impattilocali_tab">
+
+						<h:commandButton value="Inserisci un nuovo impatto locale"
+							title="Inserisci un nuovo impatto locale [Alt+ (Shift) + i]"
+							accesskey="i"
+							styleClass="inputBtn inputBtn-blue"
+							action="#{RelazioniTecnicheSTBController.nuovoImpattoLocale}">
+						</h:commandButton>
+
+						<a4j:outputPanel id="tipiDanniTempTable" style="margin-top:2em;">
+
+							<h3>Impatti locali</h3>
+							<span class="azure_light bold">NOTA BENE: </span>Fintanto che non
+						viene salvata la relazione tecnica STB, gli impatti locali creati sono temporanei.
+					<t:dataTable var="tipoDannoTemp"
+								value="#{RelazioniTecnicheSTBController.tipiDannoTemp}"
+								rowIndexVar="tipoDannoTempRow" preserveDataModel="false"
+								styleClass="itemsDataTable"
+								rowClasses="itemsDataTableOddRow, itemsDataTableEvenRow"
+								columnClasses="itemsDataTableColumns"
+								style="margin-top: 0 !important">
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Località" />
+									</f:facet>
+									<h:outputText value="#{tipoDannoTemp.localita.nome}" />
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Volumi erosi (m3)" />
+									</f:facet>
+									<h:outputText value="#{tipoDannoTemp.volumiErosi}" />
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Lunghezza tratto (m)" />
+									</f:facet>
+									<h:outputText value="#{tipoDannoTemp.lunghezzaTratto}" />
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Stima danni (&#8364;)" />
+									</f:facet>
+									<h:outputText value="#{tipoDannoTemp.stimaCostiDanni}" >
+										<f:convertNumber groupingUsed="true" minFractionDigits="2" />
+									</h:outputText>										
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Allegati" />
+									</f:facet>
+									<t:dataTable value="#{tipoDannoTemp.fileAllegati}"
+										var="fileAllegatoTemp">
+										<h:column>
+											<h:outputText value="#{fileAllegatoTemp.fileName}" />
+										</h:column>
+									</t:dataTable>
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">
+										<h:outputText styleClass="headerText" value="" />
+									</f:facet>
+									<a4j:commandLink 
+										data="#{tipoDannoTemp.geometryText}"
+										oncomplete="GMOpenLayerUtils.showModalPanelMap('pnl', 'modalPanelMap', data);">
+										<em title="Visualizza impatto locale sulla mappa" class="icon-map-marker icon-2x"></em>
+									</a4j:commandLink>
+									<rich:toolTip for="maplink" value="Visualizza mappa" />
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Azioni" />
+									</f:facet>
+									<a4j:commandLink ajaxSingle="true" id="deletelink"
+										action="#{RelazioniTecnicheSTBController.deleteTipoDannoTemp}"
+										reRender="tipiDanniTempTable">
+										<em title="Cancella impatto locale" class="icon-trash icon-2x"><span class="hidden">Cancella impatto locale</span></em>
+										<f:setPropertyActionListener value="#{tipoDannoTempRow}"
+											target="#{RelazioniTecnicheSTBController.tipoDannoTempRow}" />
+									</a4j:commandLink>
+									<rich:toolTip for="deletelink" value="Cancella impatto locale" />
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Non salvati" />
+									</f:facet>
+									<h:panelGroup rendered="#{tipoDannoTemp.id eq null}">
+										<em title="Attenzione: impatto locale non ancora salvato" class="icon-asterisk orange_light"></em>
+									</h:panelGroup>
+								</h:column>
+
+							</t:dataTable>
+
+						</a4j:outputPanel>
+
+					</rich:tab>
+					
+						<!-- TAB ALLEGATI -->
+					<rich:tab label="Allegati">
+					
+						<div class="attachmentsBoxHelp">
+							<ol>
+								<li><p>Carica gli allegati.</p></li>
+								<li><p>Specifica il tipo di ciascun allegato.</p></li>
+							</ol>
+							<p><span class="azure_light bold">NOTA BENE: </span>Fintanto che non viene salvata la relazione tecnica i file caricati sono temporanei.</p>
+						</div>
+						
+
+						<rich:fileUpload
+							fileUploadListener="#{RelazioniTecnicheSTBController.fileUploadListener}"
+							maxFilesQuantity="10" id="uploadAllegati" immediateUpload="true"
+							acceptedTypes="pdf,png,jpg,txt" allowFlash="false"
+							styleClass="eventoCostieroAttachmentsContainer"
+							ontyperejected="JSFUtils.onAttachmentTypeRejected()"
+							addControlLabel="Inserisci un allegato"
+							noDuplicate="true" clearAllControlLabel="Cancella tutto" clearControlLabel="Cancella" doneLabel="Caricato">
+							
+							<a4j:support event="onupload">	
+									 <f:setPropertyActionListener value="allegati" 
+                  					  target="#{RelazioniTecnicheSTBController.allegato_type}" />
+							</a4j:support>
+							
+							<a4j:support event="onfileuploadcomplete"
+								reRender="tipoAllegatiContainer, uploadedFilesTypeBoxesContainer" />
+							<a4j:support event="onclear"
+								reRender="tipoAllegatiContainer, uploadedFilesTypeBoxesContainer">
+								<a4j:actionparam name="fname" noEscape="true"
+									value="(event.memo.entry)?event.memo.entry.fileName:''"
+									assignTo="#{RelazioniTecnicheSTBController.fileToClear}"
+									actionListener="#{RelazioniTecnicheSTBController.clearFileUpload}" />
+							</a4j:support>
+
+						</rich:fileUpload>
+						<a4j:outputPanel id="tipoAllegatiContainer">
+							<h:panelGroup styleClass="tipoAllegatiContainer"
+								rendered="#{RelazioniTecnicheSTBController.allegati.tipoAllegatiBoxRendered}">
+								<table class="rich-fileupload-toolbar-decor">
+									<tr>
+										<td><b>Specifica il tipo di allegato</b></td>
+									</tr>
+								</table>
+								<a4j:outputPanel id="uploadedFilesTypeBoxesContainer" styleClass="rich-fileupload-font">
+									<h:dataTable styleClass="uploadedFilesTypeTable"
+										value="#{RelazioniTecnicheSTBController.allegati.uploadedFilesKeys}"
+										var="uploadedFileKey">
+
+										<h:column styleClass="uploadedFilesTypeTableLeft">
+											<h:outputText value="#{uploadedFileKey}" />
+										</h:column>
+
+										<h:column styleClass="uploadedFilesTypeTableRight">
+											<h:selectOneMenu
+												value="#{RelazioniTecnicheSTBController.allegati.tipiAllegatiUploadedFiles[uploadedFileKey]}"  title="Specifica il tipo di allegato">
+												<f:selectItems
+													value="#{RelazioniTecnicheSTBController.tipiAllegatoSelect}" />
+											</h:selectOneMenu>
+										</h:column>
+
+									</h:dataTable>
+								</a4j:outputPanel>
+							</h:panelGroup>
+						</a4j:outputPanel>
+
+						<a4j:outputPanel rendered="#{RelazioniTecnicheSTBController.editMode}" id="allegatiTempTable" style="margin-top:2em">
+							<div class="clearfix"></div>
+							
+								<h3>Allegati già salvati</h3>
+								<t:dataTable var="allegato"
+									value="#{RelazioniTecnicheSTBController.allegatiTemp}"
+									preserveDataModel="false" styleClass="itemsDataTable"
+									rowClasses="itemsDataTableOddRow, itemsDataTableEvenRow"
+									columnClasses="itemsDataTableColumns"
+									style="margin-top: 0 !important">
+
+									<h:column>
+										<f:facet name="header">
+											<h:outputText value="Nome file" />
+										</f:facet>
+										<h:outputText value="#{allegato.nome}" />
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">
+											<h:outputText value="Tipo" />
+										</f:facet>
+										<h:outputText value="#{allegato.tipo.nome}" />
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">
+											<h:outputText styleClass="headerText" value="Elimina" />
+										</f:facet>
+										<a4j:commandLink ajaxSingle="true"
+											action="#{RelazioniTecnicheSTBController.removeExistingAttachment}" reRender="allegatiTempTable">
+											<em class="icon-trash icon-2x"></em>
+											<f:setPropertyActionListener value="#{allegato}"
+											target="#{RelazioniTecnicheSTBController.attachmentToRemove}" />
+										</a4j:commandLink>
+									</h:column>
+
+								</t:dataTable>
+							
+						</a4j:outputPanel>
+
+
+					</rich:tab>
+
+				</rich:tabPanel>
+
+
+			</h:form>
+			
+			<f:verbatim>
+				 <script type="text/javascript">
+				 //<![CDATA[
+					iTitle = "Imposta data inizio validità relazione tecnica STB";
+					fTitle = "Imposta data fine validità relazione tecnica STB";
+					document.getElementById("relazioneTecnicaSTBAddForm:impattigenerali_iniziovaliditaInputDate").title = iTitle;
+					document.getElementById("relazioneTecnicaSTBAddForm:impattigenerali_iniziovaliditaInputDate").removeAttribute('readonly');
+					document.getElementById("relazioneTecnicaSTBAddForm:impattigenerali_iniziovaliditaPopupButton").title = iTitle;
+					document.getElementById("relazioneTecnicaSTBAddForm:impattigenerali_finevaliditaInputDate").title = fTitle;
+					document.getElementById("relazioneTecnicaSTBAddForm:impattigenerali_finevaliditaInputDate").removeAttribute('readonly');
+					document.getElementById("relazioneTecnicaSTBAddForm:impattigenerali_finevaliditaPopupButton").title = fTitle;
+
+					document.getElementById("relazioneTecnicaSTBAddForm:impattigenerali_tab_lbl").title = "Tab Impatti generali";
+					document.getElementById("relazioneTecnicaSTBAddForm:impattilocali_tab_lbl").title = "Tab Impatti locali";
+					document.getElementById("relazioneTecnicaSTBAddForm:j_id66_lbl").title = "Tab Allegati";
+					
+					document.getElementById("relazioneTecnicaSTBAddForm:uploadAllegati:file").title = "Inserisci un allegato [Alt + (Shift) + u]";
+					
+				 //]]>
+				</script>
+			</f:verbatim>
+						
+			<rich:modalPanel id="pnl" width="900" height="610" >
+					<h:commandButton styleClass="formButton inputBtn inputBtn-grey xCloseButton" value="X" title="Chiudi mappa [Esc]" immediate="true"
+						onclick="GMOpenLayerUtils.hideModalPanelMap('pnl');" />
+				<f:facet name="header">
+					<h:panelGroup>
+						<h:outputText value="Mappa" styleClass="titleMappa"></h:outputText>
+					</h:panelGroup>
+				</f:facet>
+				<div id="modalPanelMap" style="width: 100%; height: 500px; margin-top:-10px !important;"></div>
+				<h:commandButton value="Chiudi" title="Chiudi mappa [Esc]" immediate="true"
+					styleClass="formButton inputBtn inputBtn-grey pull-right closeButton"
+					onclick="GMOpenLayerUtils.hideModalPanelMap('pnl');" />
+				<rich:hotKey id="myKey" key="esc" handler="GMOpenLayerUtils.hideModalPanelMap('pnl');"/>
+			</rich:modalPanel>
+
+			<script type="text/javascript" src="./js/OpenLayers.js"></script>
+			<script src="./js/proj4js/lib/proj4js-compressed.js"
+				type="text/javascript"></script>
+			<script src="./js/proj4js/lib/defs/EPSG32632.js"
+				type="text/javascript"></script>
+			<script src="./js/proj4js/lib/defs/EPSG3857.js"
+				type="text/javascript"></script>
+			<script type="text/javascript" src="./js/openlayers-utils.js"></script>
+
+		</ui:define>
+
+
+
+	</ui:composition>
+
+</f:view>
+
+</html>

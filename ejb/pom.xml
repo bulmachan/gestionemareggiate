@@ -306,7 +306,7 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.1</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.richfaces.framework</groupId>
 			<artifactId>richfaces-api</artifactId>
@@ -318,7 +318,7 @@
 			<artifactId>richfaces-impl-jsf2</artifactId>
 			<version>3.3.3.Final</version>
 		</dependency>
-            
+
 		<dependency>
 			<groupId>commons-configuration</groupId>
 			<artifactId>commons-configuration</artifactId>

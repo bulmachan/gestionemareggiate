@@ -1,0 +1,519 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+
+<f:view>
+
+	<ui:composition template="/WEB-INF/layout/layout.xhtml">
+
+
+        <ui:define name="title">
+        	<ui:fragment rendered="#{!AvvisiMeteoEventiCostieriController.editMode}">
+        		<h:outputText value="Nuovo Avviso Meteo" />
+        	</ui:fragment>
+        	<ui:fragment rendered="#{AvvisiMeteoEventiCostieriController.editMode}">
+        		<h:outputText value="Modifica Avviso Meteo #{AvvisiMeteoEventiCostieriController.selectedItem.idAvviso}" />
+        	</ui:fragment>
+        </ui:define>
+
+
+		<ui:define name="page_title_box_right">
+		</ui:define>
+
+		<ui:define name="content">
+
+			<h:form id="addAvvisoMeteoForm">
+			
+				<h:commandButton value="Annulla" immediate="true"
+					styleClass="formButton inputBtn inputBtn-grey"
+					title="Annulla avviso meteo evento costiero"
+					action="#{AvvisiMeteoEventiCostieriController.annullaCreazioneAvviso}" />
+
+				<h:commandButton value="Salva avviso meteo"
+					styleClass="formButton inputBtn inputBtn-green"
+					title="Salva avviso meteo evento costiero [Alt + (Shift) + s]"
+					accesskey="s"
+					action="#{AvvisiMeteoEventiCostieriController.salvaAvvisoMeteo}"
+					type="submit" />
+
+				<a4j:outputPanel styleClass="formErrorMessageContainer" ajaxRendered="true">
+					<rich:messages styleClass="formButton formErrorMessage">
+					<h:outputText styleClass="formButton formErrorMessage"
+							value="#{AvvisiMeteoEventiCostieriController.avvisoMeteoFormMessage}"
+							rendered="#{AvvisiMeteoEventiCostieriController.avvisoMeteoFormMessageRendered}"/>
+						<f:verbatim escape="true" rendered="#{AvvisiMeteoEventiCostieriController.avvisoMeteoFormMessageRendered}">
+							<a class="disnone" id="avvisoMeteoFormMessageA" href="#">avvisoMeteoFormMessageA</a>
+							<script type="text/javascript">document.getElementById("avvisoMeteoFormMessageA").focus();</script>
+						</f:verbatim>
+					</rich:messages>
+				</a4j:outputPanel>
+				 
+				<p id="obb"><span class="azure_light bold">NOTA BENE: </span>I campi contrassegnati dall'asterisco sono obbligatori.</p>
+				<f:verbatim escape="true" rendered="#{AvvisiMeteoEventiCostieriController.avvisoMeteoFormMessageRendered}">
+					<script type="text/javascript">document.getElementById('obb').className = "marginRid";</script>
+				</f:verbatim>
+				
+				<rich:tabPanel id="nuovoavvisometeo_tabPanel" switchType="client">
+
+					<rich:tab label="Dati&#160;generali">
+						<t:panelGrid columns="3" styleClass="form_panelGrid">						
+								
+							<label for="addAvvisoMeteoForm:datigenerali_numeroavviso" class="form_label">Numero
+								avviso (*)</label>
+							<h:inputText id="datigenerali_numeroavviso" maxlength="100"
+								value="#{AvvisiMeteoEventiCostieriController.idAvviso}" />
+							<h:outputText value="(Max 100 caratteri)" />
+							
+							<label for="addAvvisoMeteoForm:id_dataAvvisoInputDate"
+								class="form_label">del (*)</label>
+							<rich:calendar id="id_dataAvviso" popup="true" datePattern="dd/MM/yyyy" validatorMessage="Data avviso: formato campo data non valido." converterMessage="Data avviso: formato campo data non valido."
+								value="#{AvvisiMeteoEventiCostieriController.dataAvviso}" />
+							<h:outputText value="" />
+
+							<label for="addAvvisoMeteoForm:id_inizio_dataInputDate"
+								class="form_label">Inizio validità (*)</label>
+							<rich:calendar id="id_inizio_data" popup="true" datePattern="dd/MM/yyyy HH:mm" validatorMessage="Inizio validità: formato campo data non valido." converterMessage="Inizio validità: formato campo data non valido."
+								value="#{AvvisiMeteoEventiCostieriController.inizioValiditaGiorno}" />
+							<h:outputText value="" />
+
+							<label for="addAvvisoMeteoForm:id_fine_dataPopupButton" class="form_label">Fine
+								validità (*)</label>
+							<rich:calendar id="id_fine_data" popup="true" datePattern="dd/MM/yyyy HH:mm" validatorMessage="Fine validità: formato campo data non valido." converterMessage="Fine validità: formato campo data non valido."
+								onexpand="JSFUtils.onEndValidityClick('addAvvisoMeteoForm:id_inizio_data','addAvvisoMeteoForm:id_fine_data')"
+								value="#{AvvisiMeteoEventiCostieriController.fineValiditaGiorno}" />
+							<h:outputText value="" />
+							
+							<label for="datigenerali_tendenza" class="form_label">Tendenza (*)</label>
+							<h:selectOneMenu
+								value="#{AvvisiMeteoEventiCostieriController.tendenza}" title="Imposta tendenza">
+								<f:selectItems
+									value="#{AvvisiMeteoEventiCostieriController.tendenzeSelect}" />
+							</h:selectOneMenu>
+							<h:outputText value="" />
+						
+							<t:panelGroup colspan="3">
+								<h3 class="form_subtitle">Zona di Pianura</h3>
+							</t:panelGroup>
+							
+						
+							<label for="addAvvisoMeteoForm:datigenerali_pianura_intensita" class="form_label">Intesità vento (m/s)</label>
+							<h:inputText id="datigenerali_pianura_intensita" title="Intensità del vento medio (nodi)"
+									value="#{AvvisiMeteoEventiCostieriController.pianuraVento}"
+									styleClass="form_input_small"
+									converterMessage="L'intensità del vento medio (nodi), zona di pianura, deve essere un numero"
+									validatorMessage="L'intensità del vento medio (nodi), zona di pianura, deve essere un numero" />
+							<h:outputText value="" />
+							
+							<label for="datigenerali_pianura_direzione_vento" class="form_label">Direzione vento</label>
+							<h:selectOneMenu
+								value="#{AvvisiMeteoEventiCostieriController.pianuraDirezioneVento}" title="Imposta direzione vento">
+								<f:selectItems
+									value="#{AvvisiMeteoEventiCostieriController.provenienzeOndeSelect}" />
+							</h:selectOneMenu>
+							<h:outputText value="" />	
+							
+							<label for="addAvvisoMeteoForm:datigenerali_pianura_intensita_massima" class="form_label">Intesità vento massima (m/s)</label>
+							<h:inputText id="datigenerali_pianura_intensita_massima" title="Intensità del vento massima (nodi)"
+									value="#{AvvisiMeteoEventiCostieriController.pianuraVentoMax}"
+									styleClass="form_input_small"
+									converterMessage="L'intensità del vento massimo (raffiche) (nodi), zona di pianura, deve essere un numero"
+									validatorMessage="L'intensità del vento massimo (raffiche) (nodi), zona di pianura, deve essere un numero" />
+							<h:outputText value="" />		
+							
+							<t:panelGroup colspan="3">
+								<h3 class="form_subtitle" >Zona pedemontana</h3>
+							</t:panelGroup>
+						
+							<label for="addAvvisoMeteoForm:datigenerali_pedemontana_intensita" class="form_label">Intesità vento (m/s)</label>
+							<h:inputText id="datigenerali_pedemontana_intensita" title="Intensità del vento medio (nodi)"
+									value="#{AvvisiMeteoEventiCostieriController.pedemontanaVento}"
+									styleClass="form_input_small"
+									converterMessage="L'intensità del vento medio (nodi), zona pedemontana, deve essere un numero"
+									validatorMessage="L'intensità del vento medio (nodi), zona pedemontana, deve essere un numero" />
+							<h:outputText value="" />
+							
+							<label for="addAvvisoMeteoForm:datigenerali_pedemontana_direzione_vento" class="form_label">Direzione vento</label>
+							<h:selectOneMenu id="datigenerali_pedemontana_direzione_vento"
+								value="#{AvvisiMeteoEventiCostieriController.pedemontanaDirezioneVento}" title="Imposta direzione vento">
+								<f:selectItems
+									value="#{AvvisiMeteoEventiCostieriController.provenienzeOndeSelect}" />
+							</h:selectOneMenu>
+							<h:outputText value="" />
+							
+							<label for="addAvvisoMeteoForm:datigenerali_pedemontana_intensita_massima" class="form_label">Intesità vento massima (m/s)</label>
+							<h:inputText id="datigenerali_pedemontana_intensita_massima" title="Intensità del vento massima (nodi)"
+									value="#{AvvisiMeteoEventiCostieriController.pedemontanaVentoMax}"
+									styleClass="form_input_small"
+									converterMessage="L'intensità del vento massimo (raffiche) (nodi), zona pedemontana, deve essere un numero"
+									validatorMessage="L'intensità del vento massimo (raffiche) (nodi), zona pedemontana, deve essere un numero" />	
+							<h:outputText value="" />
+
+							<t:panelGroup colspan="3">
+								<h3 class="form_subtitle" >Stato del mare (mare aperto)</h3>
+							</t:panelGroup>
+							
+							<label for="addAvvisoMeteoForm:datigenerali_altezza_stimata_onda" class="form_label">Altezza stimata dell'onda (m)</label>
+								<h:selectOneMenu  id="datigenerali_altezza_stimata_onda" title="Imposta altezza stimata dell'onda (metri)"
+									value="#{AvvisiMeteoEventiCostieriController.altezzaStimataOnda}">
+									<f:selectItems
+										value="#{AvvisiMeteoEventiCostieriController.altezzeStimaOndeSelect}" />
+								</h:selectOneMenu>
+							<h:outputText value="" />	
+
+							<label for="addAvvisoMeteoForm:datigenerali_direzione_stimata_prov_onda" class="form_label">Direzione stimata provenienza dell'onda</label>
+								<h:selectOneMenu  id="datigenerali_direzione_stimata_prov_onda" title="Imposta direzione stimata provenienza dell'onda"
+									value="#{AvvisiMeteoEventiCostieriController.direzioneProvStimataOnda}">
+									<f:selectItems
+										value="#{AvvisiMeteoEventiCostieriController.direzioneProvStimaOndeSelect}" />
+								</h:selectOneMenu>
+							<h:outputText value="" />	
+
+						</t:panelGrid>
+
+						<div id="form-textarea-fullwidth" class="form_textarea">
+							<label for="addAvvisoMeteoForm:datigenerali_descrizione" class="form_label">Descrizione dell'evoluzione
+								della situazione metereologica</label>
+							<h:inputTextarea rows="10" id="datigenerali_descrizione" maxlength="500"
+								class="pull-left full-width" value="#{AvvisiMeteoEventiCostieriController.descrizione}"/>
+							<h:outputText value="(Max 500 caratteri)" />
+						</div>
+
+
+
+					</rich:tab>
+
+					<!-- TAB EVENTI COSTIERI -->
+					<rich:tab label="Eventi&#160;costieri">
+						<a4j:region id="region_eventicostieri">
+
+							<rich:panel bodyClass="rich-laguna-panel-no-header">
+								<h3>Inserisci evento costiero</h3>
+								<t:panelGrid columns="8" styleClass="form_panelGrid">
+									<!-- riga 1 -->
+									<label class="form_label" for="addAvvisoMeteoForm:eventicostieri_area">Area (*)</label>
+									<h:selectOneMenu title="Imposta macro area" id="eventicostieri_area"
+										value="#{AvvisiMeteoEventiCostieriController.macroArea}">
+										<f:selectItems
+											value="#{AvvisiMeteoEventiCostieriController.macroAreeSelect}" />
+									</h:selectOneMenu>
+									<label for="addAvvisoMeteoForm:eventicostieri_fenomeno" class="form_label">Fenomeno (*)</label>
+									<t:panelGroup colspan="5">
+										<h:selectOneMenu id="eventicostieri_fenomeno" title="Imposta fenomeno"
+											value="#{AvvisiMeteoEventiCostieriController.fenomeno}">
+										<f:selectItems
+											value="#{AvvisiMeteoEventiCostieriController.fenomeniSelect}" />
+											<!--<a4j:support event="onload" reRender="eventicostieri_altezzaonda" />-->
+											<a4j:support event="onchange" reRender="eventicostieri_direzione, eventicostieri_altezzaonda, eventicostieri_livellomare, eventicostieri_iniziointervallo_giorno, eventicostieri_fineintervallo_giorno" />
+										</h:selectOneMenu>
+									</t:panelGroup>									
+									<!-- riga 2 -->
+									<label for="addAvvisoMeteoForm:eventicostieri_direzione" class="form_label">Direzione Onda</label>
+									<h:selectOneMenu id="eventicostieri_direzione" title="Imposta direzione onda"
+										value="#{AvvisiMeteoEventiCostieriController.eventoCostieroProvenienzaOnda}"
+										disabled="#{AvvisiMeteoEventiCostieriController.fenomeno == 'Livello del mare sopra soglia(>=0.8m)'}">
+										<f:selectItems
+											value="#{AvvisiMeteoEventiCostieriController.provenienzeOndeSelect}" />
+									</h:selectOneMenu>
+									<label for="addAvvisoMeteoForm:eventicostieri_altezzaonda" class="form_label">Altezza
+										onda (m)</label>
+									<h:inputText id="eventicostieri_altezzaonda"
+										value="#{AvvisiMeteoEventiCostieriController.eventoCostieroAltezzaOnda}"
+										styleClass="form_input_small" converterMessage="L'altezza onda deve essere un numero"
+										validatorMessage="L'altezza onda deve essere un numero"
+										disabled="#{AvvisiMeteoEventiCostieriController.fenomeno != 'Combinazione Onda/Livello sopra soglia (onda>=2m e livello >= 0.7m)'}">
+										<f:validateDoubleRange minimum="0" maximum="1000"/>
+										<rich:ajaxValidator event="onblur"/>	
+									</h:inputText>
+									<label for="addAvvisoMeteoForm:eventicostieri_livellomare" class="form_label">Livello
+										mare (m)</label>
+									<h:inputText id="eventicostieri_livellomare"
+										value="#{AvvisiMeteoEventiCostieriController.eventoCostieroLivelloMare}"
+										styleClass="form_input_small" converterMessage="Il livello mare deve essere un numero"
+										validatorMessage="Il livello mare deve essere un numero"
+										disabled="#{AvvisiMeteoEventiCostieriController.fenomeno != 'Combinazione Onda/Livello sopra soglia (onda>=2m e livello >= 0.7m)'}">
+											<f:validateDoubleRange minimum="0" maximum="1000"/>
+											<rich:ajaxValidator event="onblur"/>	
+										</h:inputText>
+									<h:outputText value="&#160;" />
+									<h:outputText value="&#160;" />
+									
+																		<!-- riga 3 -->
+									<label for="addAvvisoMeteoForm:eventicostieri_iniziointervallo_giorno"
+										class="form_label">Inizio intervallo</label>
+									<rich:calendar popup="true" datePattern="dd/MM/yyyy HH:mm" validatorMessage="Inizio intervallo: formato campo data non valido." converterMessage="Inizio intervallo: formato campo data non valido."
+										id="eventicostieri_iniziointervallo_giorno"
+										value="#{AvvisiMeteoEventiCostieriController.eventoCostieroInizio}"
+										disabled="#{AvvisiMeteoEventiCostieriController.fenomeno != 'Combinazione Onda/Livello sopra soglia (onda>=2m e livello >= 0.7m)'}"
+										inputClass="form_input_small" />
+	
+									<label for="addAvvisoMeteoForm:eventicostieri_fineintervallo_giorno"
+										class="form_label">Fine intervallo</label>
+									<rich:calendar popup="true" datePattern="dd/MM/yyyy HH:mm" validatorMessage="Fine intervallo: formato campo data non valido." converterMessage="Fine intervallo: formato campo data non valido."
+										id="eventicostieri_fineintervallo_giorno"
+										onexpand="JSFUtils.onEndValidityClick('addAvvisoMeteoForm:eventicostieri_iniziointervallo_giorno','addAvvisoMeteoForm:eventicostieri_fineintervallo_giorno')"
+										value="#{AvvisiMeteoEventiCostieriController.eventoCostieroFine}"
+										disabled="#{AvvisiMeteoEventiCostieriController.fenomeno != 'Combinazione Onda/Livello sopra soglia (onda>=2m e livello >= 0.7m)'}"
+										inputClass="form_input_small" />
+									<h:outputText value="&#160;" />
+									<h:outputText value="&#160;" />
+									<h:outputText value="&#160;" />
+									<h:outputText value="&#160;" />
+								</t:panelGrid>
+								<a4j:commandButton value="Inserisci evento costiero" styleClass="inputBtn inputBtn-blue"
+									type="submit"
+									title="Inserisci nuovo evento costiero [Alt+ (Shift) + i]"
+									accesskey="i"
+									action="#{AvvisiMeteoEventiCostieriController.aggiungiEventoCostiero}"
+									reRender="eventiCostieriTempTable" />
+								<a4j:outputPanel styleClass="formErrorMessageContainer"
+									ajaxRendered="true">
+									<h:outputText styleClass="formButton formErrorMessage"
+										value="#{AvvisiMeteoEventiCostieriController.eventoCostieroFormMessage}"
+										rendered="#{AvvisiMeteoEventiCostieriController.eventoCostieroFormMessageRendered}" />
+										<f:verbatim escape="true" rendered="#{AvvisiMeteoEventiCostieriController.eventoCostieroFormMessageRendered}">
+											<a class="disnone" id="eventoCostieroFormMessageA" href="#">eventoCostieroFormMessageA</a>
+											<script type="text/javascript">document.getElementById("eventoCostieroFormMessageA").focus();</script>
+										</f:verbatim>
+								</a4j:outputPanel>
+								<rich:messages styleClass="formErrorMessage"/>					
+							
+							</rich:panel>
+
+						</a4j:region>
+
+						<a4j:outputPanel id="eventiCostieriTempTable">
+						
+							<p><span class="azure_light bold">NOTA BENE: </span>Fintanto che non viene salvato l'avviso gli eventi costieri creati sono temporanei.</p>
+
+							<t:dataTable var="eventoCostiero"
+								value="#{AvvisiMeteoEventiCostieriController.eventiCostieriTemp}"
+								rowIndexVar="eventoCostieroRow" preserveDataModel="false"
+								styleClass="itemsDataTable"
+								rowClasses="itemsDataTableOddRow, itemsDataTableEvenRow"
+								columnClasses="itemsDataTableColumns"
+								style="margin-top: 2em !important">
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Area" />
+									</f:facet>
+									<h:outputText value="#{eventoCostiero.macroArea.nome}" />
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Fenomeno" />
+									</f:facet>
+									<h:outputText value="#{eventoCostiero.fenomeno.nome}" />
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Dir. prevalente" />
+									</f:facet>
+									<h:outputText value="#{eventoCostiero.direzione.nome}" />
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Altezza onda (m)" />
+									</f:facet>
+									<h:outputText value="#{eventoCostiero.altezzaOnda}" />
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Livello mare (m)" />
+									</f:facet>
+									<h:outputText value="#{eventoCostiero.livelloMare}" />
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Intervallo temporale" />
+									</f:facet>
+									<h:outputText value="#{eventoCostiero.inizio}">
+										<f:convertDateTime pattern="dd/MM/yyyy" />
+									</h:outputText>
+
+									<br />
+									<h:outputText value="#{eventoCostiero.fine}">
+										<f:convertDateTime pattern="dd/MM/yyyy" />
+									</h:outputText>
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="" />
+									</f:facet>
+									<a4j:commandLink ajaxSingle="true" id="deletelink"
+										action="#{AvvisiMeteoEventiCostieriController.cancellaEventoCostiero}"
+										reRender="eventiCostieriTempTable">
+										<em title="Cancella evento costiero" class="icon-trash icon-2x"></em>
+										<f:setPropertyActionListener value="#{eventoCostieroRow}"
+											target="#{AvvisiMeteoEventiCostieriController.eventoCostieroRow}" />
+									</a4j:commandLink>
+									<rich:toolTip for="deletelink" value="Cancella" />
+								</h:column>
+
+							</t:dataTable>
+
+
+						</a4j:outputPanel>
+
+
+					</rich:tab>
+
+
+					<!-- TAB ALLEGATI -->
+					<rich:tab label="Allegati">
+						<div class="attachmentsBoxHelp">
+							<ol>
+								<li><p>Carica gli allegati.</p></li>
+								<li><p>Specifica il tipo di ciascun allegato.</p></li>
+							</ol>
+							<p><span class="azure_light bold">NOTA BENE: </span>Fintanto che non viene salvato l'avviso i file caricati sono temporanei.</p>
+						</div>
+						
+						<label for="addAvvisoMeteoForm:uploadAllegati:file" style="display:none" accesskey="u">Inserisci allegati</label>
+						<rich:fileUpload
+							fileUploadListener="#{AvvisiMeteoEventiCostieriController.fileUploadListener}"
+							maxFilesQuantity="10" id="uploadAllegati" immediateUpload="true"
+							acceptedTypes="pdf,png,jpg,txt" allowFlash="false"
+							addControlLabel="Inserisci un allegato"
+							styleClass="eventoCostieroAttachmentsContainer"
+							ontyperejected="JSFUtils.onAttachmentTypeRejected()"
+							noDuplicate="true" clearAllControlLabel="Cancella tutto" clearControlLabel="Cancella" doneLabel="Caricato"							
+						>
+							<a4j:support event="onfileuploadcomplete"
+								reRender="tipoAllegatiContainer, uploadedFilesTypeBoxesContainer" />
+							<a4j:support event="onclear"
+								reRender="tipoAllegatiContainer, uploadedFilesTypeBoxesContainer">
+								<a4j:actionparam name="fname" noEscape="true"
+									value="(event.memo.entry)?event.memo.entry.fileName:''"
+									assignTo="#{AvvisiMeteoEventiCostieriController.fileToClear}"
+									actionListener="#{AvvisiMeteoEventiCostieriController.clearFileUpload}" />
+							</a4j:support>
+
+						</rich:fileUpload>
+						<a4j:outputPanel id="tipoAllegatiContainer">
+							<h:panelGroup styleClass="tipoAllegatiContainer"
+								rendered="#{AvvisiMeteoEventiCostieriController.allegati.tipoAllegatiBoxRendered}">
+								<table class="rich-fileupload-toolbar-decor">
+									<tr>
+										<td><b>Specifica il tipo di allegato</b></td>
+									</tr>
+								</table>
+								<a4j:outputPanel id="uploadedFilesTypeBoxesContainer" styleClass="rich-fileupload-font">
+									<h:dataTable styleClass="uploadedFilesTypeTable"
+										value="#{AvvisiMeteoEventiCostieriController.allegati.uploadedFilesKeys}"
+										var="uploadedFileKey">
+
+										<h:column styleClass="uploadedFilesTypeTableLeft">
+											<h:outputText value="#{uploadedFileKey}" />
+										</h:column>
+
+										<h:column styleClass="uploadedFilesTypeTableRight">
+											<h:selectOneMenu
+												value="#{AvvisiMeteoEventiCostieriController.allegati.tipiAllegatiUploadedFiles[uploadedFileKey]}" title="Specifica il tipo di allegato">
+												<f:selectItems
+													value="#{AvvisiMeteoEventiCostieriController.tipiAllegatoSelect}" />
+											</h:selectOneMenu>
+										</h:column>
+
+									</h:dataTable>
+								</a4j:outputPanel>
+							</h:panelGroup>
+						</a4j:outputPanel>
+
+						<a4j:outputPanel rendered="#{AvvisiMeteoEventiCostieriController.editMode}" id="allegatiTempTable" style="margin-top:2em">
+							<div class="clearfix"></div>
+							
+								<h3>Allegati già salvati</h3>
+								<t:dataTable var="allegato"
+									value="#{AvvisiMeteoEventiCostieriController.allegatiTemp}"
+									preserveDataModel="false" styleClass="itemsDataTable"
+									rowClasses="itemsDataTableOddRow, itemsDataTableEvenRow"
+									columnClasses="itemsDataTableColumns"
+									style="margin-top: 0 !important">
+
+									<h:column>
+										<f:facet name="header">
+											<h:outputText value="Nome file" />
+										</f:facet>
+										<h:outputText value="#{allegato.nome}" />
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">
+											<h:outputText value="Tipo" />
+										</f:facet>
+										<h:outputText value="#{allegato.tipo.nome}" />
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">
+											<h:outputText styleClass="headerText" value="Elimina" />
+										</f:facet>
+										<a4j:commandLink ajaxSingle="true"
+											action="#{AvvisiMeteoEventiCostieriController.removeExistingAttachment}" reRender="allegatiTempTable">
+											<em title="Cancella allegato avviso meteo evento costiero" class="icon-trash icon-2x"></em>
+											<f:setPropertyActionListener value="#{allegato}"
+											target="#{AvvisiMeteoEventiCostieriController.attachmentToRemove}" />
+										</a4j:commandLink>
+									</h:column>
+
+								</t:dataTable>
+							
+						</a4j:outputPanel>
+
+
+					</rich:tab>
+
+				</rich:tabPanel>
+
+			</h:form>
+			<f:verbatim>
+			 <script type="text/javascript">
+			 //<![CDATA[
+				iTitle = "Imposta data inizio validità avviso meteo evento costiero";
+				fTitle = "Imposta data fine validità avviso meteo evento costiero";
+				document.getElementById("addAvvisoMeteoForm:id_inizio_dataInputDate").title = iTitle;
+				document.getElementById("addAvvisoMeteoForm:id_inizio_dataInputDate").removeAttribute('readonly');
+				document.getElementById("addAvvisoMeteoForm:id_inizio_dataPopupButton").title = iTitle;
+				document.getElementById("addAvvisoMeteoForm:id_fine_dataInputDate").title = fTitle;
+				document.getElementById("addAvvisoMeteoForm:id_fine_dataInputDate").removeAttribute('readonly');
+				document.getElementById("addAvvisoMeteoForm:id_fine_dataPopupButton").title = fTitle;
+			
+				iTitle = "Imposta data inizio validità evento costiero";
+				fTitle = "Imposta data fine validità evento costiero";
+				document.getElementById("addAvvisoMeteoForm:eventicostieri_iniziointervallo_giornoInputDate").title = iTitle;
+				document.getElementById("addAvvisoMeteoForm:eventicostieri_iniziointervallo_giornoInputDate").removeAttribute('readonly');
+				document.getElementById("addAvvisoMeteoForm:eventicostieri_iniziointervallo_giornoPopupButton").title = iTitle;
+				document.getElementById("addAvvisoMeteoForm:eventicostieri_fineintervallo_giornoInputDate").title = fTitle;
+				document.getElementById("addAvvisoMeteoForm:eventicostieri_fineintervallo_giornoInputDate").removeAttribute('readonly');
+				document.getElementById("addAvvisoMeteoForm:eventicostieri_fineintervallo_giornoPopupButton").title = fTitle;
+				
+				document.getElementById("addAvvisoMeteoForm:uploadAllegati:file").title = "Inserisci un allegato [Alt + (Shift) + u]";
+				
+			 //]]>
+			</script>
+			</f:verbatim>
+			
+		</ui:define>
+
+
+
+	</ui:composition>
+
+</f:view>
+
+</html>

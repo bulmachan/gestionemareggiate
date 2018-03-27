@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SupportoMareggiate.iml" filepath="$PROJECT_DIR$/SupportoMareggiate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ear/SupportoMareggiate-ear.iml" filepath="$PROJECT_DIR$/ear/SupportoMareggiate-ear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ejb/SupportoMareggiate-ejb.iml" filepath="$PROJECT_DIR$/ejb/SupportoMareggiate-ejb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/model/SupportoMareggiate-model.iml" filepath="$PROJECT_DIR$/model/SupportoMareggiate-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/war/SupportoMareggiate-war.iml" filepath="$PROJECT_DIR$/war/SupportoMareggiate-war.iml" />
+    </modules>
+  </component>
+</project>

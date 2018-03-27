@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datasources>
+  
+  <local-tx-datasource>
+    <jndi-name>SMDS</jndi-name>
+    <connection-url>jdbc:oracle:thin:@//vm114srv:1521/GEOT01.ENTE.REGIONE.EMR.IT</connection-url>
+    <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+    <!-- <user-name>WORK_USER</user-name>
+    <password>geo01-work</password> -->
+	<security-domain>${database.security-domain}</security-domain> 
+    <!-- <exception-sorter-class-name>org.jboss.resource.adapter.jdbc.vendor.MySQLExceptionSorter</exception-sorter-class-name>
+    <metadata>
+       <type-mapping>mySQL</type-mapping>
+    </metadata> -->
+  </local-tx-datasource>
+  
+</datasources>
+

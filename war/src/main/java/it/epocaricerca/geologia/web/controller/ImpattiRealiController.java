@@ -375,9 +375,9 @@ public class ImpattiRealiController extends FilterableHandler<ImpattoReale> {
 			pulisciFiltri();
 			return "impattoRealeSalvato";
 		}
-		// la form non è completa
+		// la form non ÔøΩ completa
 		else {
-			/* Modifico messaggio di file non valido perchË il click del tasto Salva ricarica e pulisce in automatico la sezione inserisci allegato */
+			/* Modifico messaggio di file non valido perchÔøΩ il click del tasto Salva ricarica e pulisce in automatico la sezione inserisci allegato */
 			if (valutazioneImpattiFormMessageRendered == true) {
 				if (valutazioneImpattiFormMessage.contains(Messages.FORM_ERROR_IOFILE_NOTVALID)) {
 					valutazioneImpattiFormMessage = "File non valido rimosso. Cliccare su Salva o caricare un nuovo file per proseguire.";
@@ -474,7 +474,7 @@ public class ImpattiRealiController extends FilterableHandler<ImpattoReale> {
 	public void deleteImpattoRealeTemp() {
 		TipologiaDannoBean tdbToRemove = impattiLocaliTemp.get(impattoLocaleTempRow);
 		if ( editMode && null!=tdbToRemove.getId() ) {
-			// è un danno da DB, lo aggiungo alla lista di danni da rimuovere mediante API
+			// ÔøΩ un danno da DB, lo aggiungo alla lista di danni da rimuovere mediante API
 			getTipologieDannoToRemoveList().add(tdbToRemove);
 		}
 		// in ogni caso rimuovo dalla lista utilizzata per il rendering della tabella
@@ -576,7 +576,7 @@ public class ImpattiRealiController extends FilterableHandler<ImpattoReale> {
 			}
 		}
 		
-		
+
 		
 
 	}

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SupportoMareggiate-war:war">
+    <output-path>$PROJECT_DIR$/war/target</output-path>
+    <root id="archive" name="SupportoMareggiate-war-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="SupportoMareggiate-war:war exploded" />
+    </root>
+  </artifact>
+</component>

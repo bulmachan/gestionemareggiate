@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+
+<ui:composition template="/WEB-INF/layout/layout.xhtml">
+	<ui:define name="title">Valutazioni Impatti Protezione Civile <br />
+	#{ValutazioneImpattiController.selectedItem.codice} - N° Allerta 
+	#{ValutazioneImpattiController.selectedItem.numeroAllerta} del <h:outputText
+							value=" #{ValutazioneImpattiController.selectedItem.dataAllerta}">
+							<f:convertDateTime type="date" pattern="dd/MM/yyyy" />
+							</h:outputText>
+	</ui:define>
+	<ui:define name="content">
+		<f:view>
+			<div>
+				<h:form>
+
+					<t:panelGrid columns="4" styleClass="form_panelGrid">
+
+						<h:outputText value="Validit&#224; dal &#160;"
+							styleClass="detailsLabel" />
+						<h:outputText
+							value="#{ValutazioneImpattiController.selectedItem.inizioValidita}">
+							<f:convertDateTime type="date" pattern="dd/MM/yyyy" />
+						</h:outputText>
+
+						<h:outputText value="&#160; al &#160;" styleClass="detailsLabel" />
+						<h:outputText
+							value="#{ValutazioneImpattiController.selectedItem.fineValidita}">
+							<f:convertDateTime type="date" pattern="dd/MM/yyyy" />
+						</h:outputText>
+					</t:panelGrid>
+
+					<t:panelGrid columns="2" styleClass="form_panelGrid">
+						<h:outputText value="Descrizione e localizzazione dell'impatto &#160;" styleClass="detailsLabel" />
+						<h:outputText
+							value="#{ValutazioneImpattiController.selectedItem.descrizione}" />
+					</t:panelGrid>
+
+					<h3>Tipologie danni</h3>
+					<t:dataTable var="danno"
+						value="#{ValutazioneImpattiController.selectedItem.danni}"
+						rowIndexVar="tipologieDanniRow" preserveDataModel="false"
+						styleClass="itemsDataTable"
+						rowClasses="itemsDataTableOddRow, itemsDataTableEvenRow"
+						columnClasses="itemsDataTableColumns"
+						style="margin-top: 0 !important">
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Macro Area" />
+							</f:facet>
+							<h:outputText value="#{danno.macroArea.nome}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Livello di Criticità" />
+							</f:facet>
+							<h:outputText value="#{danno.livello_criticita.nome}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Tipo di danno" />
+							</f:facet>
+
+							<t:dataTable value="#{danno.tipiDanno}" var="tipoDanno">
+								<h:column>
+									<h:outputText value="#{tipoDanno.nome}" />
+								</h:column>
+							</t:dataTable>
+
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Commento" />
+							</f:facet>
+							<h:outputText value="#{danno.commento}" />
+						</h:column>
+
+						<!--<h:column>
+							<f:facet name="header">
+								<h:outputText value="Allegati" />
+							</f:facet>
+							<t:dataTable value="#{danno.allegati}" var="fileAllegatoTemp">
+								<h:column>
+									<h:outputText value="#{fileAllegatoTemp.nome}" />
+									<h:commandLink ajaxSingle="true"
+										action="#{ValutazioneImpattiController.downloadAttachment}">
+										<em class="icon-download icon-large"></em>
+										<f:setPropertyActionListener
+											target="#{ValutazioneImpattiController.attachmentToDownload}"
+											value="#{fileAllegatoTemp}" />
+									</h:commandLink>
+								</h:column>
+							</t:dataTable>
+						</h:column>-->
+					</t:dataTable>
+
+					<h3>Allegati</h3>
+					<t:dataTable var="allegato"
+						value="#{ValutazioneImpattiController.selectedItem.allegati}"
+						preserveDataModel="false" styleClass="itemsDataTable"
+						rowClasses="itemsDataTableOddRow, itemsDataTableEvenRow"
+						columnClasses="itemsDataTableColumns"
+						style="margin-top: 0 !important">
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Nome file" />
+							</f:facet>
+							<h:outputText value="#{allegato.nome}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Tipo" />
+							</f:facet>
+							<h:outputText value="#{allegato.tipo.nome}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText styleClass="headerText" value="Scarica" />
+							</f:facet>
+							<h:commandLink ajaxSingle="true"
+								action="#{ValutazioneImpattiController.downloadAttachment}">
+								<em class="icon-download icon-2x"></em>
+								<f:setPropertyActionListener
+									target="#{ValutazioneImpattiController.attachmentToDownload}"
+									value="#{allegato}" />
+							</h:commandLink>
+						</h:column>
+
+					</t:dataTable>
+					
+				</h:form>
+			</div>
+
+
+			<rich:modalPanel id="pnl" width="900" height="600">
+				<f:facet name="header">
+					<h:panelGroup>
+						<h:outputText value="Mappa"></h:outputText>
+					</h:panelGroup>
+				</f:facet>
+				<div id="modalPanelMap" style="width: 100%; height: 500px;"></div>
+				<h:commandButton value="Chiudi" immediate="true"
+					style="margin-top:2em;"
+					styleClass="formButton inputBtn inputBtn-grey pull-right"
+					onclick="GMOpenLayerUtils.hideModalPanelMap('pnl');" />
+
+			</rich:modalPanel>
+
+
+			<!-- <script type="text/javascript"
+				src="http://www.openlayers.org/api/OpenLayers.js"></script>-->
+			<script type="text/javascript"
+				src="./js/OpenLayers.js"></script>	
+			<script src="./js/proj4js/lib/proj4js-compressed.js"
+				type="text/javascript"></script>
+			<script src="./js/proj4js/lib/defs/EPSG32632.js"
+				type="text/javascript"></script>
+			<script src="./js/proj4js/lib/defs/EPSG3857.js"
+				type="text/javascript"></script>
+			<script type="text/javascript" src="./js/openlayers-utils.js"></script>
+
+		</f:view>
+	</ui:define>
+</ui:composition>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+
+	<div>
+		<p id="obb"><span class="azure_light bold">NOTA BENE: </span>I campi contrassegnati dall'asterisco sono obbligatori.</p>
+		<f:verbatim escape="true" rendered="#{RelazioniGeneraliSTBController.relazioneFormMessageRendered}">
+			<script type="text/javascript">document.getElementById('obb').className = "marginRid";</script>
+		</f:verbatim>
+			
+		<h:panelGrid columns="2" styleClass="form_panelGrid">
+
+			<!-- INIZIO VALIDITA' -->
+			<label for="datigenerali_iniziovalidita" class="form_label">Inizio
+				validità (*)</label>
+			<rich:calendar id="datigenerali_iniziovalidita" popup="true"
+				datePattern="dd/MM/yyyy HH:mm" validatorMessage="Inizio validità: formato campo data non valido." converterMessage="Inizio validità: formato campo data non valido."
+				value="#{RelazioniGeneraliSTBController.inizioValidita}" />
+
+			<!-- FINE VALIDITA' -->
+			<label for="datigenerali_finevalidita" class="form_label">Fine
+				validità (*)</label>
+			<rich:calendar id="datigenerali_finevalidita" popup="true"
+				datePattern="dd/MM/yyyy HH:mm" validatorMessage="Fine validità: formato campo data non valido." converterMessage="Fine validità: formato campo data non valido."
+				onexpand="JSFUtils.onEndValidityClick('relazioniGeneraliSTBAddForm:j_id17:datigenerali_iniziovalidita','relazioniGeneraliSTBAddForm:j_id17:datigenerali_finevalidita')"
+				value="#{RelazioniGeneraliSTBController.fineValidita}" />
+
+		</h:panelGrid>
+
+		<div class="form-textarea-fullwidth form_textarea">
+			<label class="form_label">Informazioni Generali (*)</label>
+			<h:inputTextarea rows="10" id="datigenerali_descrizione" maxlength="500"
+				value="#{RelazioniGeneraliSTBController.relazioneGeneraleEdit.informazioniGenerali}"
+				styleClass="full-width" />
+				<h:outputText value="(Max 500 caratteri)" />
+		</div>
+
+		<div class="form-textarea-fullwidth form_textarea">
+			<label class="form_label">Informazioni Meteo (*)</label>
+			<h:inputTextarea rows="10" id="datigenerali_meteo" maxlength="500"
+				value="#{RelazioniGeneraliSTBController.relazioneGeneraleEdit.informazioniMeteo}"
+				styleClass="full-width" />
+				<h:outputText value="(Max 500 caratteri)" />
+		</div>
+
+		<div class="navPanel" style="width: 100%; margin-top:1em;">
+			<a4j:commandButton styleClass="pull-right inputBtn inputBtn-blue" action="#{RelazioniGeneraliSTBController.next}"  title="Successivo"
+				value="Successivo &gt;&gt;" />
+		</div>
+		
+		<div class="clearfix"></div>
+		
+	</div>
+	<f:verbatim>
+		 <script type="text/javascript">
+		 //<![CDATA[
+			iTitle = "Imposta data inizio validità relazione generale STB";
+			fTitle = "Imposta data fine validità relazione generale STB";
+			document.getElementById("relazioniGeneraliSTBAddForm:j_id18:datigenerali_iniziovaliditaInputDate").title = iTitle;
+			document.getElementById("relazioniGeneraliSTBAddForm:j_id18:datigenerali_iniziovaliditaInputDate").removeAttribute('readonly');
+			document.getElementById("relazioniGeneraliSTBAddForm:j_id18:datigenerali_iniziovaliditaPopupButton").title = iTitle;
+			document.getElementById("relazioniGeneraliSTBAddForm:j_id18:datigenerali_finevaliditaInputDate").title = fTitle;
+			document.getElementById("relazioniGeneraliSTBAddForm:j_id18:datigenerali_finevaliditaInputDate").removeAttribute('readonly');
+			document.getElementById("relazioniGeneraliSTBAddForm:j_id18:datigenerali_finevaliditaPopupButton").title = fTitle;
+		 //]]>
+		</script>
+	</f:verbatim>		
+
+</ui:composition>

@@ -11,7 +11,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
-import org.ajax4jsf.exception.FileUploadException;
+// import org.ajax4jsf.exception.FileUploadException;
 import org.apache.log4j.Logger;
 
 public class FileUploadSizeFilter implements Filter {
@@ -49,7 +49,7 @@ public class FileUploadSizeFilter implements Filter {
 			int contentLengthInt = Integer.parseInt(contentLength);
 			if (contentLength != null && uploadLimit > 0
 					&& contentLengthInt > uploadLimit) {
-				throw new FileUploadException("Multipart request is larger than allowed size");
+				throw new IOException("Multipart request is larger than allowed size");
 			}
 		}
 

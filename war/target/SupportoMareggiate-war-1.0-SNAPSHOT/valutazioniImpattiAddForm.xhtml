@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+
+<f:view>
+
+	<ui:composition template="/WEB-INF/layout/layout.xhtml">
+
+
+		<ui:define name="title">
+			<ui:fragment rendered="#{!ValutazioneImpattiController.editMode}">
+				<h:outputText value="Nuova Valutazione Impatti Protezione Civile" />
+			</ui:fragment>
+			<ui:fragment rendered="#{ValutazioneImpattiController.editMode}">
+				<h:outputText
+					value="Modifica Valutazione Impatti Protezione Civile #{ValutazioneImpattiController.selectedItem.codice}" />
+			</ui:fragment>
+		</ui:define>
+
+
+		<ui:define name="page_title_box_right">
+		</ui:define>
+
+		<ui:define name="content">
+
+			<h:form id="valutazioniImpattiAddForm">
+
+				<h:commandButton value="Annulla" immediate="true"
+					styleClass="inputBtn inputBtn-grey"
+					title="Annulla valutazione impatti"
+					action="#{ValutazioneImpattiController.annullaCreazioneValutazioneImpatto}" />
+
+				<h:commandButton value="Salva valutazione impatti"
+					styleClass="formButton inputBtn inputBtn-green"
+					title="Salva valutazione impatti [Alt + (Shift) + s]"
+					accesskey="s"
+					action="#{ValutazioneImpattiController.salvaValutazioneImpatti}"
+					type="submit" />
+
+				<a4j:outputPanel styleClass="formErrorMessageContainer" ajaxRendered="true">
+					<rich:messages styleClass="formButton formErrorMessage">
+					<h:outputText styleClass="formButton formErrorMessage"
+						value="#{ValutazioneImpattiController.valutazioneImpattiFormMessage}"
+						rendered="#{ValutazioneImpattiController.valutazioneImpattiFormMessageRendered}" />
+						<f:verbatim escape="true" rendered="#{ValutazioneImpattiController.valutazioneImpattiFormMessageRendered}">
+							<a class="disnone" id="valutazioneImpattiFormMessageA" href="#">valutazioneImpattiFormMessageA</a>
+							<script type="text/javascript">document.getElementById("valutazioneImpattiFormMessageA").focus(); </script>
+						</f:verbatim>
+					</rich:messages>
+				</a4j:outputPanel>       
+			
+				<p id="obb"><span class="azure_light bold">NOTA BENE: </span>I campi contrassegnati dall'asterisco sono obbligatori.</p>				
+				<f:verbatim escape="true" rendered="#{ValutazioneImpattiController.valutazioneImpattiFormMessageRendered}">
+					<script type="text/javascript">document.getElementById('obb').className = "marginRid";</script>
+				</f:verbatim>
+						
+ 				<rich:tabPanel id="nuovavalutazioneimpatti_tabPanel"
+					switchType="client"
+					selectedTab="#{ValutazioneImpattiController.selectedTab}">
+
+
+					<!-- TAB DATI GENERALI -->
+					<rich:tab label="Dati&#160;generali" id="datigenerali_tab">
+						<t:panelGrid columns="3" styleClass="form_panelGrid">
+
+							<!-- CODICE -->
+							<label for="datigenerali_codicevalutazione" class="form_label">Codice (*)</label>
+							<h:inputText id="datigenerali_codicevalutazione" maxlength="100"
+								value="#{ValutazioneImpattiController.codiceValutazione}" />
+							<h:outputText value="(Max 100 caratteri)" />
+							
+							<!-- MUMERO ALLERTA -->
+							<label for="datigenerali_numeroallerta" class="form_label">N° Allerta (*)</label>
+							<h:inputText id="datigenerali_numeroallerta" maxlength="100"
+								value="#{ValutazioneImpattiController.numeroAllerta}" />
+							<h:outputText value="" />
+														
+							<!-- DATA ALLERTA -->
+							<label for="datigenerali_dataallerta" class="form_label">del (*)</label>
+							<rich:calendar id="datigenerali_dataallerta" popup="true" 
+								datePattern="dd/MM/yyyy"
+								value="#{ValutazioneImpattiController.dataAllerta}" />
+							<h:outputText value="" />
+							
+							<!-- INIZIO VALIDITA' -->
+							<label for="datigenerali_iniziovalidita" class="form_label">Inizio
+								validità (*)</label>
+							<rich:calendar id="datigenerali_iniziovalidita" popup="true" 
+								datePattern="dd/MM/yyyy HH:mm"
+								value="#{ValutazioneImpattiController.inizioValidita}" />
+							<h:outputText value="" />
+
+							<!-- FINE VALIDITA' -->
+							<label for="datigenerali_finevalidita" class="form_label">Fine
+								validità (*)</label>
+							<rich:calendar id="datigenerali_finevalidita" popup="true"
+								datePattern="dd/MM/yyyy HH:mm"
+								onexpand="JSFUtils.onEndValidityClick('valutazioniImpattiAddForm:datigenerali_iniziovalidita','valutazioniImpattiAddForm:datigenerali_finevalidita')"
+								value="#{ValutazioneImpattiController.fineValidita}" />
+							<h:outputText value="" />
+						</t:panelGrid>
+
+						<div class="form-textarea-fullwidth">
+							<label class="form_label">Descrizione e localizzazione
+								dell'impatto</label>
+							<h:inputTextarea rows="10" id="datigenerali_descrizione" maxlength="500"
+								value="#{ValutazioneImpattiController.descrizioneValutazione}"
+								styleClass="pull-left full-width" />
+							<h:outputText value="(Max 500 caratteri)" />
+						</div>
+					</rich:tab>
+
+					<!-- TAB TIPOLOGIE DANNO -->
+					<rich:tab label="Tipologie&#160;danno" id="tipologiedanno_tab">
+
+						<h:commandButton value="Inserisci tipologia di danno"
+							styleClass="inputBtn inputBtn-blue"
+							title="Inserisci nuova tipologia di danno [Alt+ (Shift) + i]"
+							accesskey="i"
+							action="#{ValutazioneImpattiController.nuovaTipologiaDanno}">
+						</h:commandButton>
+
+						<a4j:outputPanel id="tipiDanniTempTable" style="margin-top:2em;">
+
+							<h3>Tipologie di danno</h3>
+							<span class="azure_light bold">NOTA BENE: </span>Fintanto che non
+						viene salvata la valutazione impatti i tipi di danno creati sono temporanei.
+					<t:dataTable var="previsioneDanno"
+								value="#{ValutazioneImpattiController.previsioniDanni}"
+								rowIndexVar="tipoDannoTempRow" preserveDataModel="false"
+								styleClass="itemsDataTable"
+								rowClasses="itemsDataTableOddRow, itemsDataTableEvenRow"
+								columnClasses="itemsDataTableColumns"
+								style="margin-top: 0 !important">
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Macro Area" />
+									</f:facet>
+									<h:outputText value="#{previsioneDanno.macroArea.nome}" />
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Livello di Criticità" />
+									</f:facet>
+									<h:outputText value="#{previsioneDanno.livello_criticita.nome}" />
+								</h:column>
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Tipi di danno" />
+									</f:facet>
+									<t:dataTable value="#{previsioneDanno.tipiDanno}"
+										var="tipoDanno">
+										<h:column>
+											<h:outputText value="#{tipoDanno.nome}" />
+										</h:column>
+									</t:dataTable>
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Commento" />
+									</f:facet>
+									<h:outputText value="#{previsioneDanno.commento}" />
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Allegati" />
+									</f:facet>
+									<t:dataTable value="#{previsioneDanno.allegati}"
+										var="fileAllegatoTemp">
+										<h:column>
+											<h:outputText value="#{fileAllegatoTemp.nome}" />
+										</h:column>
+									</t:dataTable>
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Azioni" />
+									</f:facet>
+									<a4j:commandLink ajaxSingle="true" id="deletelink" title="Cancella nuova tipologia danno"
+										action="#{ValutazioneImpattiController.deleteTipoDannoTemp}"
+										reRender="tipiDanniTempTable">
+										<em class="icon-trash icon-2x"></em>
+										<f:setPropertyActionListener value="#{tipoDannoTempRow}"
+											target="#{ValutazioneImpattiController.tipoDannoTempRow}" />
+									</a4j:commandLink>
+									<rich:toolTip for="deletelink" value="Cancella" />
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">
+										<h:outputText value="Non salvati" />
+									</f:facet>
+									<h:panelGroup rendered="#{previsioneDanno.id eq null}">
+										<em class="icon-asterisk orange_light"></em>
+									</h:panelGroup>
+								</h:column>
+								
+							</t:dataTable>
+
+						</a4j:outputPanel>
+
+					</rich:tab>
+					
+					<!-- TAB ALLEGATI -->
+					<rich:tab label="Allegati">
+					
+						<div class="attachmentsBoxHelp">
+							<ol>
+								<li><p>Carica gli allegati.</p></li>
+								<li><p>Specifica il tipo di ciascun allegato.</p></li>
+							</ol>
+							<p><span class="azure_light bold">NOTA BENE: </span>Fintanto che non viene salvato l'avviso i file caricati sono temporanei.</p>
+						</div>
+						
+						<label for="valutazioniImpattiAddForm:uploadAllegati:file" style="display:none" accesskey="u">Inserisci allegati</label>
+						<!--<label for="valutazioniImpattiAddForm:uploadAllegati:clean2" accesskey="c">Cancella tutto</label>-->
+						<rich:fileUpload
+							fileUploadListener="#{ValutazioneImpattiController.fileUploadListener}"
+							maxFilesQuantity="10" id="uploadAllegati" immediateUpload="true"
+							acceptedTypes="pdf,png,jpg,txt,html" allowFlash="false"
+							addControlLabel="Inserisci un allegato"
+							styleClass="eventoCostieroAttachmentsContainer"
+							ontyperejected="JSFUtils.onAttachmentTypeRejected()"
+							noDuplicate="true" clearAllControlLabel="Cancella tutto" clearControlLabel="Cancella" doneLabel="Caricato">
+							<a4j:support event="onupload">	
+									 <f:setPropertyActionListener value="allegati" 
+                  					  target="#{ValutazioneImpattiController.allegato_type}" />
+							</a4j:support>
+							
+							<a4j:support event="onfileuploadcomplete"
+								reRender="tipoAllegatiContainer, uploadedFilesTypeBoxesContainer" />
+							<a4j:support event="onclear"
+								reRender="tipoAllegatiContainer, uploadedFilesTypeBoxesContainer">
+								<a4j:actionparam name="fname" noEscape="true"
+									value="(event.memo.entry)?event.memo.entry.fileName:''"
+									assignTo="#{ValutazioneImpattiController.fileToClear}"
+									actionListener="#{ValutazioneImpattiController.clearFileUpload}" />
+							</a4j:support>
+
+						</rich:fileUpload>
+						<a4j:outputPanel id="tipoAllegatiContainer">
+							<h:panelGroup styleClass="tipoAllegatiContainer"
+								rendered="#{ValutazioneImpattiController.allegati.tipoAllegatiBoxRendered}">
+								<table class="rich-fileupload-toolbar-decor">
+									<tr>
+										<td><b>Specifica il tipo di allegato</b></td>
+									</tr>
+								</table>
+								<a4j:outputPanel id="uploadedFilesTypeBoxesContainer" styleClass="rich-fileupload-font">
+									<h:dataTable styleClass="uploadedFilesTypeTable"
+										value="#{ValutazioneImpattiController.allegati.uploadedFilesKeys}"
+										var="uploadedFileKey">
+
+										<h:column styleClass="uploadedFilesTypeTableLeft">
+											<h:outputText value="#{uploadedFileKey}" />
+										</h:column>
+
+										<h:column styleClass="uploadedFilesTypeTableRight">
+											<h:selectOneMenu
+												value="#{ValutazioneImpattiController.allegati.tipiAllegatiUploadedFiles[uploadedFileKey]}" title="Specifica il tipo di allegato">
+												<f:selectItems
+													value="#{ValutazioneImpattiController.tipiAllegatoSelect}" />
+											</h:selectOneMenu>
+										</h:column>
+
+									</h:dataTable>
+								</a4j:outputPanel>
+							</h:panelGroup>
+						</a4j:outputPanel>
+
+						<a4j:outputPanel rendered="#{ValutazioneImpattiController.editMode}" id="allegatiTempTable" style="margin-top:2em">
+							<div class="clearfix"></div>
+							
+								<h3>Allegati già salvati</h3>
+								<t:dataTable var="allegato"
+									value="#{ValutazioneImpattiController.allegatiTemp}"
+									preserveDataModel="false" styleClass="itemsDataTable"
+									rowClasses="itemsDataTableOddRow, itemsDataTableEvenRow"
+									columnClasses="itemsDataTableColumns"
+									style="margin-top: 0 !important">
+
+									<h:column>
+										<f:facet name="header">
+											<h:outputText value="Nome file" />
+										</f:facet>
+										<h:outputText value="#{allegato.nome}" />
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">
+											<h:outputText value="Tipo" />
+										</f:facet>
+										<h:outputText value="#{allegato.tipo.nome}" />
+									</h:column>
+
+									<h:column>
+										<f:facet name="header">
+											<h:outputText styleClass="headerText" value="Elimina" />
+										</f:facet>
+										<a4j:commandLink ajaxSingle="true"
+											action="#{ValutazioneImpattiController.removeExistingAttachment}" reRender="allegatiTempTable">
+											<em class="icon-trash icon-2x"></em>
+											<f:setPropertyActionListener value="#{allegato}"
+											target="#{ValutazioneImpattiController.attachmentToRemove}" />
+										</a4j:commandLink>
+									</h:column>
+
+								</t:dataTable>
+							
+						</a4j:outputPanel>
+
+
+					</rich:tab>
+
+				</rich:tabPanel>
+			</h:form>
+			
+			<f:verbatim>
+			 <script type="text/javascript">
+			 //<![CDATA[
+				dTitle = "Imposta data relativa al Numero Allerta";
+				iTitle = "Imposta data inizio validità valutazione impatti";
+				fTitle = "Imposta data fine validità valutazione impatti";
+				document.getElementById("valutazioniImpattiAddForm:datigenerali_dataallertaInputDate").title = dTitle;
+				document.getElementById("valutazioniImpattiAddForm:datigenerali_dataallertaInputDate").removeAttribute('readonly');
+				document.getElementById("valutazioniImpattiAddForm:datigenerali_dataallertaPopupButton").title = dTitle;
+				document.getElementById("valutazioniImpattiAddForm:datigenerali_iniziovaliditaInputDate").title = iTitle;
+				document.getElementById("valutazioniImpattiAddForm:datigenerali_iniziovaliditaInputDate").removeAttribute('readonly');
+				document.getElementById("valutazioniImpattiAddForm:datigenerali_iniziovaliditaPopupButton").title = iTitle;
+				document.getElementById("valutazioniImpattiAddForm:datigenerali_finevaliditaInputDate").title = fTitle;
+				document.getElementById("valutazioniImpattiAddForm:datigenerali_finevaliditaInputDate").removeAttribute('readonly');
+				document.getElementById("valutazioniImpattiAddForm:datigenerali_finevaliditaPopupButton").title = fTitle;
+				
+				document.getElementById("valutazioniImpattiAddForm:datigenerali_tab_lbl").title = "Tab Dati generali";
+				document.getElementById("valutazioniImpattiAddForm:tipologiedanno_tab_lbl").title = "Tab Tipologie danno";
+				document.getElementById("valutazioniImpattiAddForm:j_id62_lbl").title = "Tab Allegati";
+
+				document.getElementById("valutazioniImpattiAddForm:uploadAllegati:file").title = "Inserisci un allegato [Alt + (Shift) + u]";
+			 //]]>
+			</script>
+			</f:verbatim>
+
+		</ui:define>
+
+
+
+	</ui:composition>
+
+</f:view>
+
+</html>

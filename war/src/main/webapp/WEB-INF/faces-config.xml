@@ -21,7 +21,7 @@
 			<var>errs</var>
 		</resource-bundle>
 	</application>
-	
+
   <context-param>
        <param-name>org.ajax4jsf.VIEW_HANDLERS</param-name>
        <param-value>com.sun.facelets.FaceletViewHandler</param-value>
@@ -31,7 +31,7 @@
        <param-value>org.apache.myfaces.application.jsp.JspViewHandlerImpl</param-value>
   </context-param>
 
-	
+
 	
 	<lifecycle>
         <phase-listener>it.epocaricerca.geologia.web.controller.auth.AccessControlPhaseListener</phase-listener>

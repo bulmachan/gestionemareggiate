@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+
+<ui:composition template="/WEB-INF/layout/layout.xhtml">
+	<ui:define name="title">Report</ui:define>
+	<ui:define name="content">
+		<f:view>
+			<div>
+				<h:form ajaxSubmit="true" reRender="mareggiateList,scrollValidationDown,scroll_1_div">
+
+					<div class="searchFilterBox">
+						<h3>Filtri di ricerca</h3>
+						<t:panelGrid columns="5" styleClass="form_panelGrid">
+	
+							<!-- LOCALITA -->
+							<label for="report_localitaImpatto" class="form_label">Località di impatto</label>
+							<h:selectOneMenu id="report_localitaImpatto"
+								value="#{ReportController.localita}" title="Seleziona località">
+								<f:selectItems
+									value="#{ReportController.localitaSelect}" />
+								
+							
+									
+								 <a4j:support event="onchange" action="#{ReportController.report}" reRender="mareggiateList,scrollValidationDown,scroll_1_div">
+								 		<f:setPropertyActionListener value="localita"
+											target="#{ReportController.type_filtro}" />
+								 </a4j:support>
+							</h:selectOneMenu>
+
+							 <h:commandButton value="Cerca"
+								action="#{ReportController.report}" style="visibility: hidden;">
+											
+							</h:commandButton> 
+
+						</t:panelGrid>
+					</div>
+					
+					<a4j:poll id="poll" interval="10000" ajaxSingle="true" action="#{ReportController.updateDataModel}" reRender="mareggiateList,scrollValidationDown,scroll_1_div"/>
+
+					<t:dataTable id="mareggiateList" var="mareggiata"
+						value="#{ReportController.dataModel}"
+						preserveDataModel="false"
+						styleClass="itemsDataTable"
+						rowClasses="itemsDataTableOddRow, itemsDataTableEvenRow"
+						columnClasses="itemsDataTableColumns"
+						rows="#{ReportController.rowsPerPage}">
+
+						
+							<h:column>
+							<f:facet name="header">
+								<h:outputText styleClass="headerText" value="Codice" />
+							</f:facet>
+							<h:outputText styleClass="headerText"
+								value="#{mareggiata.codice}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText styleClass="headerText" value="Inizio" />
+							</f:facet>
+							<h:outputText styleClass="headerText"
+								value="#{mareggiata.inizioValidita}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText styleClass="headerText" value="Fine" />
+							</f:facet>
+							<h:outputText styleClass="headerText"
+								value="#{mareggiata.fineValidita}" />
+						</h:column>
+
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText styleClass="headerText" value="Descrizione" />
+							</f:facet>
+							<h:outputText styleClass="headerText"
+								value="#{mareggiata.descrizione}" />
+						</h:column>
+
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputText styleClass="headerText" value="Azioni" />
+							</f:facet>
+							
+							<a4j:commandLink ajaxSingle="true" id="viewlink" title="Visualizza dettagli"
+								action="#{ReportController.viewItemDetails}">
+								<em title="Visualizza dettagli" class="icon-folder-open icon-2x"></em>
+							</a4j:commandLink>
+							<rich:toolTip for="viewlink" value="Visualizza dettagli" />
+						</h:column>
+
+
+					</t:dataTable>
+
+					<!--<t:div id="scroll_1_div">
+						<t:dataScroller id="scrollValidationDown" for="mareggiateList"
+							fastStep="10" pageCountVar="pageCount"
+							pageIndexVar="scrollerPage" paginator="true"
+							paginatorMaxPages="9" immediate="true"
+							rendered="#{ReportController.dataSize gt 10}"
+							styleClass="paginatorTable" paginatorColumnClass="paginatorColumn"
+							paginatorActiveColumnClass="paginatorActiveColumn"
+							firstStyleClass="paginatorIcon" previousStyleClass="paginatorIcon"
+							nextStyleClass="paginatorIcon" lastStyleClass="paginatorIcon">
+
+						</t:dataScroller>
+					</t:div>-->
+					
+					<t:div id="scroll_1_div"> 
+						<t:dataScroller id="scrollValidationDown" for="mareggiateList"
+							fastStep="10" pageCountVar="pageCount"
+							pageIndexVar="scrollerPage" paginator="true"
+							paginatorMaxPages="9" immediate="true"
+							rendered="#{ReportController.dataSize gt 10}"
+							styleClass="paginatorTable"
+							paginatorColumnClass="paginatorColumn"
+							paginatorActiveColumnClass="paginatorActiveColumn"
+							firstStyleClass="paginatorIcon"
+							previousStyleClass="paginatorIcon" nextStyleClass="paginatorIcon"
+							lastStyleClass="paginatorIcon">
+
+							<f:facet name="first">
+								<h:graphicImage url="img/first.png" alt="Vai alla pagina iniziale" title="Vai alla pagina iniziale"/>
+							</f:facet>
+
+							<f:facet name="last">
+								<h:graphicImage url="img/last.png" alt="Vai alla pagina finale" title="Vai alla pagina finale"/>
+							</f:facet>
+
+							<f:facet name="previous">
+								<h:graphicImage url="img/previous.png" alt="Vai alla pagina precendente" title="Vai alla pagina precendente"/>
+							</f:facet>
+
+							<f:facet name="next">
+								<h:graphicImage url="img/next.png" alt="Vai alla pagina successiva" title="Vai alla pagina successiva"/>
+							</f:facet>
+							
+						</t:dataScroller>
+						<f:verbatim>
+							<script type="text/javascript">
+								//<![CDATA[
+									var elements = document.getElementsByTagName('span');
+									for (var i=0; i<elements.length; i++) {
+										var aId = elements[i].id;
+										if (aId) {
+												if (aId.indexOf('j_id10:scrollValidationDownidx') != -1) {
+													var pos = elements[i].innerHTML.indexOf('>')+1;
+													elements[i].title = "Vai alla pagina " + elements[i].innerHTML.substr(pos, 1);
+												}
+										}
+									}
+								 //]]>
+							</script>
+							<script type="text/javascript">
+							//<![CDATA[
+								var elements = document.getElementsByTagName('a');
+								for (var i=0; i<elements.length; i++) {
+									var aId = elements[i].id;
+									if (aId) {
+										if ( (aId.indexOf(':viewlink') != -1) || (aId.indexOf(':editlink') != -1) || (aId.indexOf(':trashlink') != -1) ) { 
+										
+										var att = document.createAttribute("title");       
+										att.value = elements[i].childNodes[1].title;       
+										elements[i].setAttributeNode(att);                 
+										
+										elements[i].title =  elements[i].childNodes[1].title;
+										}
+									}
+								}
+							 //]]>
+							</script>
+						</f:verbatim>
+					</t:div>
+
+
+
+				</h:form>
+			</div>
+		</f:view>
+	</ui:define>
+</ui:composition>
+
+</html>
