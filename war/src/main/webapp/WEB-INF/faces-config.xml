@@ -22,17 +22,17 @@
 		</resource-bundle>
 	</application>
 
-  <context-param>
+  <!--<context-param>
        <param-name>org.ajax4jsf.VIEW_HANDLERS</param-name>
        <param-value>com.sun.facelets.FaceletViewHandler</param-value>
   </context-param>
  <context-param>
        <param-name>org.ajax4jsf.VIEW_HANDLERS</param-name>
        <param-value>org.apache.myfaces.application.jsp.JspViewHandlerImpl</param-value>
-  </context-param>
+  </context-param>-->
 
 
-	
+
 	<lifecycle>
         <phase-listener>it.epocaricerca.geologia.web.controller.auth.AccessControlPhaseListener</phase-listener>
 	</lifecycle>
@@ -45,7 +45,7 @@
 	</converter>
 
 	<!-- BEANS -->
-	
+
 	<managed-bean>
 		<managed-bean-name>UserSession</managed-bean-name>
 		<managed-bean-class>it.epocaricerca.geologia.web.controller.UserSession</managed-bean-class>
@@ -81,7 +81,7 @@
 		<managed-bean-class>it.epocaricerca.geologia.web.controller.RelazioniGeneraliSTBController</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-	
+
 	<managed-bean>
 		<managed-bean-name>ReportSTBController</managed-bean-name>
 		<managed-bean-class>it.epocaricerca.geologia.web.controller.ReportSTBController</managed-bean-class>
@@ -108,7 +108,7 @@
 		<managed-bean-class>it.epocaricerca.geologia.web.controller.ReportController</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-	
+
 	<managed-bean>
 		<managed-bean-name>AnalisiController</managed-bean-name>
 		<managed-bean-class>it.epocaricerca.geologia.web.controller.AnalisiController</managed-bean-class>
@@ -244,7 +244,7 @@
 			<to-view-id>/notauthorized.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
-		
+
 	</navigation-rule>
 
 	<navigation-rule>
@@ -302,7 +302,7 @@
 			<from-outcome>delete</from-outcome>
 			<to-view-id>/impattiReali.xhtml</to-view-id>
 		</navigation-case>
-		
+
 		<navigation-case>
 			<from-outcome>editItemDetails</from-outcome>
 			<to-view-id>/impattiRealiAddForm.xhtml</to-view-id>
@@ -313,8 +313,8 @@
 			<to-view-id>/notauthorized.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
-		
-		
+
+
 	</navigation-rule>
 
 	<navigation-rule>
@@ -392,7 +392,7 @@
 			<from-outcome>delete</from-outcome>
 			<to-view-id>/relazioniTecnicheSTB.xhtml</to-view-id>
 		</navigation-case>
-		
+
 		<navigation-case>
 			<from-outcome>editRelazioneTecnica</from-outcome>
 			<to-view-id>/relazioneTecnicaSTBAddForm.xhtml</to-view-id>
@@ -408,8 +408,8 @@
 			<to-view-id>/notauthorized.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
-		
-		
+
+
 	</navigation-rule>
 
 	<navigation-rule>
@@ -443,13 +443,13 @@
 			<to-view-id>/relazioniTecnicheSTB.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
-		
+
 		<navigation-case>
 			<from-outcome>notauthorized</from-outcome>
 			<to-view-id>/notauthorized.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
-		
+
 	</navigation-rule>
 
 	<navigation-rule>
@@ -520,13 +520,13 @@
 			<to-view-id>/relazioniGeneraliSTB.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
-		
+
 		<navigation-case>
 			<from-outcome>notauthorized</from-outcome>
 			<to-view-id>/notauthorized.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
-		
+
 	</navigation-rule>
 
 	<navigation-rule>
@@ -579,7 +579,7 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>/wizard/stb/wstep3.xhtml</from-view-id>
 		<navigation-case>
@@ -637,8 +637,8 @@
 			<to-view-id>/notauthorized.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
-		
-		
+
+
 	</navigation-rule>
 
 	<navigation-rule>
@@ -670,7 +670,7 @@
 			<to-view-id>/impattiRealiDetails.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
-		
+
 		<navigation-case>
 			<from-outcome>toCondizioneMeteoDetails</from-outcome>
 			<to-view-id>/condizioneMeteoMarineDetails.xhtml</to-view-id>
@@ -783,13 +783,13 @@
 			<to-view-id>/condizioniMeteoMarine.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
-		
+
 		<navigation-case>
 			<from-outcome>condizioniMeteoSalvata</from-outcome>
 			<to-view-id>/condizioniMeteoMarine.xhtml</to-view-id>
 			<redirect />
 		</navigation-case>
-		
+
 		<navigation-case>
 			<from-outcome>notauthorized</from-outcome>
 			<to-view-id>/notauthorized.xhtml</to-view-id>
@@ -827,7 +827,7 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>/wizard/meteo/wstep3.xhtml</from-view-id>
 		<navigation-case>
@@ -844,7 +844,7 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>/wizard/meteo/wstep4.xhtml</from-view-id>
 		<navigation-case>
@@ -874,8 +874,8 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
-	
+
+
 	<navigation-rule>
 		<from-view-id>/reportLocalita.xhtml</from-view-id>
 		<navigation-case>
