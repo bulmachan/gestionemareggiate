@@ -1,7 +1,6 @@
 package it.epocaricerca.geologia.web.controller.filter;
 
 import java.io.IOException;
-import java.util.Enumeration;
 import org.apache.log4j.Logger;
 
 import javax.servlet.Filter;

@@ -5,8 +5,11 @@
 	<display-name>Supporto Mareggiate</display-name>
 	<description></description>
 
-	<!-- <context-param> <param-name>javax.faces.STATE_SAVING_METHOD</param-name> 
-		<param-value>client</param-value> </context-param> -->
+	<context-param>
+		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+		<param-value>client</param-value>
+	</context-param>
+
 	<!-- RICHFACES CONFIGURATION -->
 	<context-param>
 		<param-name>javax.faces.DISABLE_FACELET_JSF_VIEWHANDLER</param-name>
@@ -136,6 +139,13 @@
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 
+	<session-config>
+		<cookie-config>
+			<http-only>true</http-only>
+			<secure>true</secure>
+		</cookie-config>
+		<tracking-mode>COOKIE</tracking-mode>
+	</session-config>
 
 
 </web-app>

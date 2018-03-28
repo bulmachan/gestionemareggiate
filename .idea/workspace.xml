@@ -7,20 +7,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de74e4c5-0e89-43c5-9714-27410e2d1947" name="Default" comment="Sitazione stabile dove non vengono compilati i tag jsf">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_faces_jsf_api_1_2.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/SupportoMareggiate_war_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/SupportoMareggiate_war_war_exploded.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/ear/target/SupportoMareggiate-ear.ear" afterPath="$PROJECT_DIR$/ear/target/SupportoMareggiate-ear.ear" />
       <change beforePath="$PROJECT_DIR$/ear/target/SupportoMareggiate-ear/it.epocaricerca.geologia-SupportoMareggiate-ejb-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/ear/target/SupportoMareggiate-ear/it.epocaricerca.geologia-SupportoMareggiate-ejb-1.0-SNAPSHOT.jar" />
       <change beforePath="$PROJECT_DIR$/ear/target/SupportoMareggiate-ear/it.epocaricerca.geologia-SupportoMareggiate-war-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/ear/target/SupportoMareggiate-ear/it.epocaricerca.geologia-SupportoMareggiate-war-1.0-SNAPSHOT.war" />
-      <change beforePath="$PROJECT_DIR$/ejb/target/SupportoMareggiate-ejb-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/ejb/target/SupportoMareggiate-ejb-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      <change beforePath="$PROJECT_DIR$/war/SupportoMareggiate-war.iml" afterPath="$PROJECT_DIR$/war/SupportoMareggiate-war.iml" />
+      <change beforePath="$PROJECT_DIR$/war/pom.xml" afterPath="$PROJECT_DIR$/war/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/RelazioniGeneraliSTBController.java" afterPath="$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/RelazioniGeneraliSTBController.java" />
+      <change beforePath="$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/filter/RequestHeaderCookie.java" afterPath="$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/filter/RequestHeaderCookie.java" />
       <change beforePath="$PROJECT_DIR$/war/src/main/webapp/WEB-INF/faces-config.xml" afterPath="$PROJECT_DIR$/war/src/main/webapp/WEB-INF/faces-config.xml" />
       <change beforePath="$PROJECT_DIR$/war/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/war/src/main/webapp/WEB-INF/web.xml" />
+      <change beforePath="$PROJECT_DIR$/war/src/main/webapp/avvisoMeteoEventiCostieriDetails.xhtml" afterPath="$PROJECT_DIR$/war/src/main/webapp/avvisoMeteoEventiCostieriDetails.xhtml" />
       <change beforePath="$PROJECT_DIR$/war/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/war/src/main/webapp/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/war/src/main/webapp/index.xhtml" afterPath="$PROJECT_DIR$/war/src/main/webapp/index.xhtml" />
-      <change beforePath="$PROJECT_DIR$/war/target/SupportoMareggiate-war-1.0-SNAPSHOT/WEB-INF/faces-config.xml" afterPath="$PROJECT_DIR$/war/target/SupportoMareggiate-war-1.0-SNAPSHOT/WEB-INF/faces-config.xml" />
+      <change beforePath="$PROJECT_DIR$/war/target/SupportoMareggiate-war-1.0-SNAPSHOT/WEB-INF/lib/SupportoMareggiate-ejb-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/war/target/SupportoMareggiate-war-1.0-SNAPSHOT/WEB-INF/lib/SupportoMareggiate-ejb-1.0-SNAPSHOT.jar" />
+      <change beforePath="$PROJECT_DIR$/war/target/SupportoMareggiate-war-1.0-SNAPSHOT/WEB-INF/lib/SupportoMareggiate-model-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/war/target/SupportoMareggiate-war-1.0-SNAPSHOT/WEB-INF/lib/SupportoMareggiate-model-1.0-SNAPSHOT.jar" />
       <change beforePath="$PROJECT_DIR$/war/target/SupportoMareggiate-war-1.0-SNAPSHOT/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/war/target/SupportoMareggiate-war-1.0-SNAPSHOT/WEB-INF/web.xml" />
+      <change beforePath="$PROJECT_DIR$/war/target/SupportoMareggiate-war-1.0-SNAPSHOT/avvisoMeteoEventiCostieriDetails.xhtml" afterPath="$PROJECT_DIR$/war/target/SupportoMareggiate-war-1.0-SNAPSHOT/avvisoMeteoEventiCostieriDetails.xhtml" />
       <change beforePath="$PROJECT_DIR$/war/target/SupportoMareggiate-war-1.0-SNAPSHOT/index.jsp" afterPath="$PROJECT_DIR$/war/target/SupportoMareggiate-war-1.0-SNAPSHOT/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/war/target/SupportoMareggiate-war-1.0-SNAPSHOT/index.xhtml" afterPath="$PROJECT_DIR$/war/target/SupportoMareggiate-war-1.0-SNAPSHOT/index.xhtml" />
+      <change beforePath="$PROJECT_DIR$/war/target/classes/it/epocaricerca/geologia/web/controller/RelazioniGeneraliSTBController$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/war/target/classes/it/epocaricerca/geologia/web/controller/RelazioniGeneraliSTBController.class" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/ejb/target/" />
@@ -36,41 +42,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/war/src/main/webapp/WEB-INF/web.xml">
+      <file leaf-file-name="wstep1.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/src/main/webapp/wizard/stb/wstep1.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="837">
-              <caret line="108" column="24" lean-forward="false" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/war/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="124" column="44" lean-forward="false" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ear/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="388" column="21" lean-forward="false" selection-start-line="388" selection-start-column="21" selection-end-line="388" selection-end-column="21" />
+            <state relative-caret-position="816">
+              <caret line="48" column="42" lean-forward="false" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -79,8 +55,8 @@
       <file leaf-file-name="faces-config.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/war/src/main/webapp/WEB-INF/faces-config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="31" selection-end-column="18" />
+            <state relative-caret-position="646">
+              <caret line="79" column="4" lean-forward="false" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -89,41 +65,83 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/war/src/main/webapp/index.xhtml">
+      <file leaf-file-name="wstep2.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/src/main/webapp/wizard/stb/wstep2.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mareggiate.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/war/src/main/webapp/mareggiate.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mareggiataDetails.xhtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/war/src/main/webapp/mareggiataDetails.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-102">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/war/src/main/webapp/index.jsp">
+      <file leaf-file-name="wstep3.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/src/main/webapp/wizard/stb/wstep3.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+            <state relative-caret-position="612">
+              <caret line="60" column="35" lean-forward="false" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="relazioniGeneraliSTBAddForm.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/src/main/webapp/relazioniGeneraliSTBAddForm.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="654">
+              <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RelazioniTecnicheSTBController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/RelazioniTecnicheSTBController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="53" column="7" lean-forward="false" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RelazioniGeneraliSTBController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/RelazioniGeneraliSTBController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileUploadSizeFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/filter/FileUploadSizeFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/war/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="635">
+              <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.production.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/war/configurations/web/web.production.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="124" column="6" lean-forward="true" selection-start-line="124" selection-start-column="6" selection-end-line="130" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -140,16 +158,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>javax</find>
-      <find>transaction</find>
-      <find>sql-</find>
-      <find>ojdbc14</find>
-      <find>spatial-ora</find>
-      <find>geoto</find>
-      <find>applica</find>
-      <find>repo</find>
-      <find>ear-</find>
-      <find>maven-war</find>
       <find>maven-wara</find>
       <find>generate-sou</find>
       <find>richfaces-impl</find>
@@ -168,10 +176,24 @@
       <find>javax.face</find>
       <find>defa</find>
       <find>managed</find>
+      <find>Mojarra</find>
+      <find>com.sun.</find>
       <find>listener</find>
+      <find>org.richfaces</find>
+      <find>tomah</find>
+      <find>com.sun.faces</find>
+      <find>multipart</find>
+      <find>getTipiAllegatiUploadedFiles</find>
+      <find>RelazioniGeneraliSTBController.relazioneGeneraleEdit.informazioniGenerali</find>
+      <find>step1.</find>
+      <find>relazioneGeneraleEdit</find>
+      <find>STATE_SAVING_METHOD</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web</dir>
+      <dir>$PROJECT_DIR$/war</dir>
+      <dir>$PROJECT_DIR$/war/src</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -194,15 +216,19 @@
         <option value="$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/MareggiateController.java" />
         <option value="$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/ImpattiRealiController.java" />
         <option value="$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/RelazioniTecnicheSTBController.java" />
-        <option value="$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/RelazioniGeneraliSTBController.java" />
         <option value="$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/CondizioniMeteoMarineController.java" />
         <option value="$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/AvvisiMeteoEventiCostieriController.java" />
         <option value="$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/ValutazioneImpattiController.java" />
         <option value="$PROJECT_DIR$/war/src/main/webapp/index.xhtml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/war/src/main/webapp/mareggiataDetails.xhtml" />
+        <option value="$PROJECT_DIR$/war/src/main/webapp/avvisoMeteoEventiCostieriDetails.xhtml" />
         <option value="$PROJECT_DIR$/war/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/war/pom.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/war/src/main/webapp/relazioniGeneraliSTBAddForm.xhtml" />
+        <option value="$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/filter/RequestHeaderCookie.java" />
         <option value="$PROJECT_DIR$/war/src/main/webapp/WEB-INF/faces-config.xml" />
+        <option value="$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/RelazioniGeneraliSTBController.java" />
         <option value="$PROJECT_DIR$/war/src/main/webapp/WEB-INF/web.xml" />
       </list>
     </option>
@@ -313,51 +339,6 @@
             <path>
               <item name="SupportoMareggiate" type="b2602c69:ProjectViewProjectNode" />
               <item name="SupportoMareggiate_210317" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SupportoMareggiate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SupportoMareggiate_210317" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SupportoMareggiate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SupportoMareggiate_210317" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SupportoMareggiate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SupportoMareggiate_210317" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SupportoMareggiate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SupportoMareggiate_210317" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SupportoMareggiate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SupportoMareggiate_210317" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="geometry" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SupportoMareggiate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SupportoMareggiate_210317" type="462c0819:PsiDirectoryNode" />
               <item name="war" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -442,6 +423,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupportoMareggiate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupportoMareggiate_210317" type="462c0819:PsiDirectoryNode" />
+              <item name="war" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SupportoMareggiate" type="b2602c69:ProjectViewProjectNode" />
@@ -481,7 +472,44 @@
             </path>
             <path>
               <item name="SupportoMareggiate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupportoMareggiate_210317" type="462c0819:PsiDirectoryNode" />
+              <item name="war" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="wizard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupportoMareggiate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupportoMareggiate_210317" type="462c0819:PsiDirectoryNode" />
+              <item name="war" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="wizard" type="462c0819:PsiDirectoryNode" />
+              <item name="stb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupportoMareggiate" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="SupportoMareggiate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.richfaces.ui:richfaces-ui:3.3.3.Final" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="SupportoMareggiate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.richfaces.ui:richfaces-ui:3.3.3.Final" type="70bed36:NamedLibraryElementNode" />
+              <item name="richfaces-ui-3.3.3.Final.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupportoMareggiate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.richfaces.ui:richfaces-ui:3.3.3.Final" type="70bed36:NamedLibraryElementNode" />
+              <item name="richfaces-ui-3.3.3.Final.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -500,7 +528,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="SearchEverywhereHistoryKey" value="termi&#9;ACTION&#9;ActivateTerminalToolWindow&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow" />
+    <property name="SearchEverywhereHistoryKey" value="termin&#9;ACTION&#9;ActivateTerminalToolWindow&#10;termi&#9;ACTION&#9;ActivateTerminalToolWindow&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;ter&#9;ACTION&#9;ActivateTerminalToolWindow" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -685,7 +713,7 @@
       <updated>1522147425466</updated>
       <workItem from="1522147428095" duration="6801000" />
       <workItem from="1522180278079" duration="9664000" />
-      <workItem from="1522227434061" duration="6852000" />
+      <workItem from="1522227434061" duration="14031000" />
     </task>
     <task id="LOCAL-00001" summary="Sitazione stabile dove non vengono compilati i tag jsf">
       <created>1522186147639</created>
@@ -698,11 +726,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23317000" />
+    <option name="totallyTimeSpent" value="30496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="293" y="382" width="3706" height="2125" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5154693" sideWeight="0.5010793" order="7" side_tool="true" content_ui="tabs" />
@@ -716,7 +743,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42684844" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3303618" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -724,11 +751,11 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37755638" sideWeight="0.49892068" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35028842" sideWeight="0.49892068" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31043524" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3932879" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3243389" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2862925" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -755,131 +782,19 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ejb/src/main/java/it/epocaricerca/geologia/ejb/tdo/FileUploadBean.java</url>
+          <line>89</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ear/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6358">
-          <caret line="187" column="38" lean-forward="false" selection-start-line="187" selection-start-column="34" selection-end-line="187" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/META-INF/jboss-app.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/WEB-INF/faces-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ejb/src/main/resources/sm-ds.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ejb/src/main/resources/sm.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8670">
-          <caret line="255" column="21" lean-forward="false" selection-start-line="255" selection-start-column="21" selection-end-line="255" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernatespatial/hibernate-spatial-oracle/1.1.1/hibernate-spatial-oracle-1.1.1.jar!/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/.metadata/src/main/webapp/WEB-INF/faces-config.pageflow">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6112">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/it/epocaricerca/geologia/model/geometry/DannoMultiPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ejb/src/main/resources/sm-ds.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ejb/src/main/resources/sm.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/WEB-INF/jboss-deployment-structure.xml" />
-    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/META-INF/jboss-app.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/SupportoMareggiate-model.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -899,14 +814,6 @@
     <entry file="file://$PROJECT_DIR$/war/src/main/webapp/condizioneMeteoMarineDetails.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4407">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/impattiReali.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7399">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -935,13 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/filter/FileUploadSizeFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/util/BeanUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="593">
@@ -960,65 +860,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ejb/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1511">
-          <caret line="347" column="19" lean-forward="false" selection-start-line="347" selection-start-column="19" selection-end-line="347" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3026">
-          <caret line="89" column="28" lean-forward="false" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ejb/src/main/java/it/epocaricerca/geologia/ejb/tdo/FileUploadBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/MareggiateController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2142">
           <caret line="63" column="38" lean-forward="false" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/ImpattiRealiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/RelazioniTecnicheSTBController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="53" column="7" lean-forward="false" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/RelazioniGeneraliSTBController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="50" column="7" lean-forward="false" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1029,14 +875,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/AvvisiMeteoEventiCostieriController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="41" column="37" lean-forward="false" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1182,84 +1020,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/auth/AccessControlPhaseListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="24" column="73" lean-forward="false" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/configurations/web/web.production.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="120" column="28" lean-forward="false" selection-start-line="120" selection-start-column="28" selection-end-line="120" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/filter/RequestHeaderFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="68" lean-forward="false" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/analisi.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1487694264000" expanded="true" signature="3123:3730" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/WEB-INF/layout/layout.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="10" column="76" lean-forward="false" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/mareggiataDetails.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/mareggiate.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/index.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/war/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="124" column="44" lean-forward="false" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -1280,18 +1044,290 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/impattiReali.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1096">
+          <caret line="89" column="28" lean-forward="false" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
+        <state relative-caret-position="1695">
           <caret line="108" column="24" lean-forward="false" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/WEB-INF/faces-config.xml">
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/mareggiate.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="21" column="52" lean-forward="false" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/analisi.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1487694264000" expanded="true" signature="3123:3730" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/avvisoMeteoEventiCostieriDetails.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4697">
+          <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ejb/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="316" column="54" lean-forward="false" selection-start-line="316" selection-start-column="54" selection-end-line="316" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/WEB-INF/layout/header.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/WEB-INF/layout/layout.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="10" column="76" lean-forward="false" selection-start-line="10" selection-start-column="76" selection-end-line="10" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/index.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/mareggiataDetails.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/impattiRealiDetails.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/valutazioniImpatti.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="712">
+          <caret line="175" column="21" lean-forward="false" selection-start-line="175" selection-start-column="21" selection-end-line="175" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/avvisiMeteoEventiCostieri.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6427">
+          <caret line="35" column="74" lean-forward="false" selection-start-line="35" selection-start-column="74" selection-end-line="35" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/auth/AccessControlPhaseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="24" column="73" lean-forward="false" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/ImpattiRealiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="50" column="13" lean-forward="false" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/converter/LocalitaConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/model/AnalysisBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/configurations/web/web.test.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2761">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/configurations/web/web.staging.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3169">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/AvvisiMeteoEventiCostieriController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="456" column="41" lean-forward="false" selection-start-line="456" selection-start-column="41" selection-end-line="456" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ejb/src/main/java/it/epocaricerca/geologia/ejb/tdo/FileUploadBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="94" column="65" lean-forward="false" selection-start-line="94" selection-start-column="65" selection-end-line="94" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/relazioneTecnicaSTBAddForm.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12262">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/relazioniGeneraliSTB.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="181" column="68" lean-forward="false" selection-start-line="181" selection-start-column="68" selection-end-line="181" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/filter/FileUploadSizeFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/wizard/stb/wstep2.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/wizard/stb/wstep3.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="60" column="35" lean-forward="false" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/relazioniGeneraliSTBAddForm.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/wizard/stb/wstep1.xhtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
-          <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="31" selection-end-column="18" />
+          <caret line="48" column="42" lean-forward="false" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/filter/RequestHeaderCookie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/RelazioniTecnicheSTBController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="53" column="7" lean-forward="false" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/java/it/epocaricerca/geologia/web/controller/RelazioniGeneraliSTBController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/war/src/main/webapp/WEB-INF/faces-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="79" column="4" lean-forward="false" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1299,10 +1335,18 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/war/configurations/web/web.production.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="124" column="6" lean-forward="true" selection-start-line="124" selection-start-column="6" selection-end-line="130" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/war/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        <state relative-caret-position="635">
+          <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding />
         </state>
       </provider>

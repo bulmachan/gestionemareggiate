@@ -1,1 +1,1 @@
-<jsp:forward page="/index.xhtml"/>
+<jsp:forward page="/index.jsf"/>

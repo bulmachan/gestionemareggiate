@@ -8,6 +8,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.faces.bean.ManagedBean;
 import javax.faces.event.ActionEvent;
 import javax.faces.model.SelectItem;
 
@@ -44,20 +45,14 @@ import it.epocaricerca.geologia.web.util.Messages;
 import it.epocaricerca.geologia.web.util.StringUtils;
 import it.epocaricerca.geologia.web.validator.FileValidator;
 
+
 public class RelazioniGeneraliSTBController extends FilterableHandler<RelazioneGeneraleSTB> {
 
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -7837140083822405923L;
 
 	private static Logger logger = Logger.getLogger(RelazioniGeneraliSTBController.class);
 
-
 	private PagingManager pagingManager = JNDIUtils.getPagingManager();
-
-
 
 	private boolean editMode = false;
 
