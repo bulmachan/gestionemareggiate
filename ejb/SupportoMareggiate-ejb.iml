@@ -48,7 +48,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.hibernate:hibernate-entitymanager:3.2.1.ga" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.hibernate:hibernate-annotations:3.2.1.ga" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: jboss:jboss-archive-browsing:5.0.0alpha-200607201-119" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.hibernate:hibernate:3.2.3.ga" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.hibernate:hibernate:3.2.6.ga" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: net.sf.ehcache:ehcache:1.2.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.transaction:jta:1.0.1B" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: asm:asm-attrs:1.5.3" level="project" />

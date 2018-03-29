@@ -5,10 +5,11 @@
 	<display-name>Supporto Mareggiate</display-name>
 	<description></description>
 
-	<context-param>
+	<!-- <context-param>
+		<description>State saving method: 'client' or 'server' (=default). See JSF Specification 2.5.2</description>
 		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
-		<param-value>client</param-value>
-	</context-param>
+		<param-value>server</param-value>
+	</context-param> -->
 
 	<!-- RICHFACES CONFIGURATION -->
 	<context-param>
@@ -52,31 +53,31 @@
 		<dispatcher>INCLUDE</dispatcher>
 	</filter-mapping>
 
-	<filter>
+	<!--<filter>
 		<filter-name>RequestHeaderCookie</filter-name>
-	<!--	<display-name>RequestHeaderCookie</display-name>
-		<description></description>-->
+		<display-name>RequestHeaderCookie</display-name>
+		<description></description>
 		<filter-class>it.epocaricerca.geologia.web.controller.filter.RequestHeaderCookie</filter-class>
 	</filter>
 
 	<filter-mapping>
 		<filter-name>RequestHeaderCookie</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+	</filter-mapping>-->
 
-	<filter>
+	<!--<filter>
     	<filter-name>RequestHeaderFilter</filter-name>
-    	<!--<display-name>RequestHeaderFilter</display-name>
-    	<description></description>-->
+    	<display-name>RequestHeaderFilter</display-name>
+    	<description></description>
     	<filter-class>it.epocaricerca.geologia.web.controller.filter.RequestHeaderFilter</filter-class>
   	</filter>
   	<filter-mapping>
     	<filter-name>RequestHeaderFilter</filter-name>
     	<url-pattern>/*</url-pattern>
-  	</filter-mapping>
+  	</filter-mapping>-->
   	
   	
-  	<filter>
+  	<!--<filter>
 		<filter-name>FileUploadSizeFilter</filter-name>
 		<filter-class>it.epocaricerca.geologia.web.controller.filter.FileUploadSizeFilter</filter-class>
 
@@ -89,7 +90,7 @@
 	<filter-mapping>
 		<filter-name>FileUploadSizeFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+	</filter-mapping>-->
   	
 
 	<context-param>
@@ -147,5 +148,11 @@
 		<tracking-mode>COOKIE</tracking-mode>
 	</session-config>
 
+
+	<!-- da aggiungere come fallback per una sessione scaduta
+	<error-page>
+		<exception-type>javax.faces.application.ViewExpiredException</exception-type>
+		<location>/notauthorized.xhtml</location>
+	</error-page>-->
 
 </web-app>

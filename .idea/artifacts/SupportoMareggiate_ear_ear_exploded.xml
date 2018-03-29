@@ -38,7 +38,7 @@
         <element id="archive" name="SupportoMareggiate-model-1.0-SNAPSHOT.jar">
           <element id="module-output" name="SupportoMareggiate-model" />
         </element>
-        <element id="library" level="project" name="Maven: org.hibernate:hibernate:3.2.3.ga" />
+        <element id="library" level="project" name="Maven: org.hibernate:hibernate:3.2.6.ga" />
         <element id="library" level="project" name="Maven: net.sf.ehcache:ehcache:1.2.3" />
         <element id="library" level="project" name="Maven: javax.transaction:jta:1.0.1B" />
         <element id="library" level="project" name="Maven: asm:asm-attrs:1.5.3" />

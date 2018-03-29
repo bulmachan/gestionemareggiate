@@ -33,7 +33,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="SupportoMareggiate-ejb" />
     <orderEntry type="module" module-name="SupportoMareggiate-model" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.hibernate:hibernate:3.2.3.ga" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.hibernate:hibernate:3.2.6.ga" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: net.sf.ehcache:ehcache:1.2.3" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: asm:asm-attrs:1.5.3" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: cglib:cglib:2.1_3" level="project" />
