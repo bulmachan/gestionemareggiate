@@ -9,7 +9,7 @@
 		<description>State saving method: 'client' or 'server' (=default). See JSF Specification 2.5.2</description>
 		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
 		<param-value>server</param-value>
-	</context-param> -->
+	</context-param>-->
 
 	<!-- RICHFACES CONFIGURATION -->
 	<context-param>
@@ -53,17 +53,17 @@
 		<dispatcher>INCLUDE</dispatcher>
 	</filter-mapping>
 
-	<!--<filter>
+	<filter>
 		<filter-name>RequestHeaderCookie</filter-name>
-		<display-name>RequestHeaderCookie</display-name>
-		<description></description>
+		<!--<display-name>RequestHeaderCookie</display-name>
+		<description></description>-->
 		<filter-class>it.epocaricerca.geologia.web.controller.filter.RequestHeaderCookie</filter-class>
 	</filter>
 
 	<filter-mapping>
 		<filter-name>RequestHeaderCookie</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>-->
+	</filter-mapping>
 
 	<!--<filter>
     	<filter-name>RequestHeaderFilter</filter-name>
@@ -77,7 +77,7 @@
   	</filter-mapping>-->
   	
   	
-  	<!--<filter>
+  	<filter>
 		<filter-name>FileUploadSizeFilter</filter-name>
 		<filter-class>it.epocaricerca.geologia.web.controller.filter.FileUploadSizeFilter</filter-class>
 
@@ -90,7 +90,7 @@
 	<filter-mapping>
 		<filter-name>FileUploadSizeFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>-->
+	</filter-mapping>
   	
 
 	<context-param>
@@ -140,6 +140,14 @@
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 
+
+	<!-- da aggiungere come fallback per una sessione scaduta
+	<error-page>
+		<exception-type>javax.faces.application.ViewExpiredException</exception-type>
+		<location>/notauthorized.xhtml</location>
+	</error-page>-->
+
+	<!-- Session Configuration (ci si aspetto uno dei due modi elencati sotto)-->
 	<session-config>
 		<cookie-config>
 			<http-only>true</http-only>
@@ -147,12 +155,8 @@
 		</cookie-config>
 		<tracking-mode>COOKIE</tracking-mode>
 	</session-config>
-
-
-	<!-- da aggiungere come fallback per una sessione scaduta
-	<error-page>
-		<exception-type>javax.faces.application.ViewExpiredException</exception-type>
-		<location>/notauthorized.xhtml</location>
-	</error-page>-->
+	<!-- <session-config>
+		<session-timeout>30</session-timeout>
+	</session-config> -->
 
 </web-app>
