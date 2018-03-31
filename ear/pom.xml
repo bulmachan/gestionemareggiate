@@ -14,7 +14,60 @@
 
 
 	<profiles>
+		<!--<profile>
+			<id>developer</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="src/test/resources/sql/import.sql" />
+										<delete file="src/test/resources/sql/truncate.sql" />
+										<copy file="configurations/sql/import.developer.sql"
+											tofile="src/test/resources/sql/import.sql" />
+										<copy file="configurations/sql/truncate.developer.sql"
+											tofile="src/test/resources/sql/truncate.sql" />
 
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+			<dependencies>
+				<dependency>
+					<groupId>postgresql</groupId>
+					<artifactId>postgresql</artifactId>
+					<version>8.4-701.jdbc3</version>
+				</dependency>
+
+				<dependency>
+					<groupId>org.postgis</groupId>
+					<artifactId>postgis-jdbc</artifactId>
+					<version>1.1.6</version>
+				</dependency>
+
+				<dependency>
+					<groupId>org.hibernatespatial</groupId>
+					<artifactId>hibernate-spatial-postgis</artifactId>
+					<version>1.0</version>
+					<exclusions>
+						<exclusion>
+							<groupId>org.hibernate</groupId>
+							<artifactId>hibernate-core</artifactId>
+						</exclusion>
+					</exclusions>
+				</dependency>
+			</dependencies>
+		</profile>-->
 		<profile>
 			<id>staging</id>
 			<build>

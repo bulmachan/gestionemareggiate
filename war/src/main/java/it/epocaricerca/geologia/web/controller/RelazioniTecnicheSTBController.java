@@ -252,7 +252,7 @@ public class RelazioniTecnicheSTBController extends FilterableHandler<RelazioneS
 	public void deleteTipoDannoTemp() {
 		DannoSTBBean tdbToRemove = tipiDannoTemp.get(tipoDannoTempRow);
 		if ( editMode && null!=tdbToRemove.getId() ) {
-			// � un danno da DB, lo aggiungo alla lista di danni da rimuovere mediante API
+			// è un danno da DB, lo aggiungo alla lista di danni da rimuovere mediante API
 			getTipologieDannoToRemoveList().add(tdbToRemove);
 		}
 
@@ -461,10 +461,10 @@ public class RelazioniTecnicheSTBController extends FilterableHandler<RelazioneS
 			}
 
 		}
-		// la form non � completa
+		// la form non è completa
 		else {
 		
-			/* Modifico messaggio di file non valido perch� il click del tasto Salva ricarica e pulisce in automatico la sezione inserisci allegato */
+			/* Modifico messaggio di file non valido perchè il click del tasto Salva ricarica e pulisce in automatico la sezione inserisci allegato */
 			if (formMessageRendered == true) {
 				if (formMessage.contains(Messages.FORM_ERROR_IOFILE_NOTVALID)) {
 					formMessage = "File non valido rimosso. Cliccare su Salva o caricare un nuovo file per proseguire.";
@@ -495,7 +495,7 @@ public class RelazioniTecnicheSTBController extends FilterableHandler<RelazioneS
 	}
 
 	private boolean checkImpattoLocaleFormFields() {
-		// prende la localit� di default e i float vengono lasciati tutti a 0.0.
+		// prende la località di default e i float vengono lasciati tutti a 0.0.
 		// nessun controllo su descrizione vuota
 		return true;
 	}

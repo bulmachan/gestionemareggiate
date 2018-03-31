@@ -321,7 +321,7 @@ public class RelazioniGeneraliSTBController extends FilterableHandler<RelazioneG
 		}
 		else {
 			
-			/* Modifico messaggio di file non valido perch� il click del tasto Salva ricarica e pulisce in automatico la sezione inserisci allegato */
+			/* Modifico messaggio di file non valido perchè il click del tasto Salva ricarica e pulisce in automatico la sezione inserisci allegato */
 			if (relazioneFormMessageRendered == true) {
 				if (relazioneFormMessage.contains(Messages.FORM_ERROR_IOFILE_NOTVALID)) {
 					relazioneFormMessage = "File non valido rimosso. Cliccare su Salva o caricare un nuovo file per proseguire.";
