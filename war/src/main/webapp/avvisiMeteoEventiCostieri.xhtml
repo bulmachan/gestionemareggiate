@@ -16,6 +16,8 @@
 			<div>
 				<h:form id="searchForm" ajaxSubmit="true" reRender="eventiCostieriList,scrollValidationDown,scroll_1_div">
 
+					<h:messages style = "color:red;margin:8px;" />
+
 					<h:panelGroup rendered="#{UserSession.roleAvvisiMeteo or UserSession.roleSuperUser}">
 							
 						<h:commandButton value="Nuovo avviso meteo di evento costiero" 
@@ -130,7 +132,7 @@
 								<h:outputText styleClass="headerText" value="Azioni" />
 							</f:facet>
 							
-							<a4j:commandLink id="viewlink" action="#{AvvisiMeteoEventiCostieriController.viewItemDetails}" title="Visualizza dettagli avviso meteo evento costiero">
+							<a4j:commandLink id="viewlink" immediate="true" action="#{AvvisiMeteoEventiCostieriController.viewItemDetails}" title="Visualizza dettagli avviso meteo evento costiero">
 								<em title="Visualizza dettagli avviso meteo evento costiero" class="icon-folder-open icon-2x"><span class="hidden">Visualizza dettagli avviso meteo evento costiero</span></em>
 							</a4j:commandLink>
 							<rich:toolTip for="viewlink" value="Visualizza dettagli" />
@@ -157,7 +159,7 @@
 					</t:dataTable>
 					</div>
 
-					<t:div id="scroll_1_div"> 
+					<t:div id="scroll_1_div">
 					<t:dataScroller id="scrollValidationDown" for="eventiCostieriList"
 						fastStep="10" pageCountVar="pageCount" pageIndexVar="scrollerPage"
 						paginator="true" paginatorMaxPages="9" immediate="true"

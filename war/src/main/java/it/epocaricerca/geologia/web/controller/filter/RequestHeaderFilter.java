@@ -1,7 +1,8 @@
 package it.epocaricerca.geologia.web.controller.filter;
 
 import java.io.IOException;
-import java.util.Enumeration;
+import java.util.Map;
+
 import org.apache.log4j.Logger;
 
 import javax.servlet.Filter;
@@ -21,9 +22,9 @@ public class RequestHeaderFilter implements Filter {
 	private static Logger logger = Logger.getLogger(RequestHeaderFilter.class);
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
-		
+
 		RequestHeaderWrapper modifiedRequest = new RequestHeaderWrapper((HttpServletRequest) request);
-		
+
 		modifiedRequest.addHeader("codicefiscale", "FNTDMN85E29F157B");
 		modifiedRequest.addHeader("nome", "fontana");
 		modifiedRequest.addHeader("cognome", "damiano");
@@ -32,7 +33,7 @@ public class RequestHeaderFilter implements Filter {
 		modifiedRequest.addHeader("policylevel", "Alto");
 		modifiedRequest.addHeader("authenticatingauthority", "rer");
 		modifiedRequest.addHeader("authenticationmethod", "openId");
-		
+
 		filterChain.doFilter(modifiedRequest, response);
 	}
 	

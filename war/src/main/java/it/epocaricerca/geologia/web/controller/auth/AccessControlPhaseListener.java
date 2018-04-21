@@ -12,11 +12,13 @@ import org.apache.log4j.Logger;
 
 public class AccessControlPhaseListener implements PhaseListener{
 
-	
+	private static final long serialVersionUID = -1161541721597667238L;
 	private static Logger logger = Logger.getLogger(AccessControlPhaseListener.class);
 	
 	
 	public void afterPhase(PhaseEvent event) {
+		// System.out.println("after Phase " + event.getPhaseId());
+
 		FacesContext context = event.getFacesContext();
 		String viewId = context.getViewRoot().getViewId();
 		
@@ -80,15 +82,24 @@ public class AccessControlPhaseListener implements PhaseListener{
 		
 	}
 
-	public void beforePhase(PhaseEvent event) {
+	public void beforePhase(PhaseEvent e) {
+		System.out.println("before Phase " + e.getPhaseId());
+		if(e.getPhaseId()== PhaseId.RESTORE_VIEW)
+		{
+
+		}
+
 		// TODO Auto-generated method stub
 		
 	}
 
-	public PhaseId getPhaseId() {
+	/* public PhaseId getPhaseId() {
 		return PhaseId.RESTORE_VIEW;
-	}
+	}*/
 
+	public PhaseId getPhaseId() {
+		return PhaseId.ANY_PHASE;
+	}
 	
 	
 	private void redirectHome(FacesContext context, String from)
