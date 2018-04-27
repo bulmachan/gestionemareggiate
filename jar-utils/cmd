@@ -1,0 +1,2 @@
+mvn install:install-file -DgroupId=oracle -DartifactId=ojdbc14 -Dversion=10.2.0.5 -Dpackaging=jar -Dfile=./jar-utils/ojdbc7.jar
+mvn install:install-file -DgroupId=oracle -DartifactId=ojdbc14 -Dversion=10.2.0.5 -Dpackaging=jar -Dfile=./jar-utils/jta-1.0.1B.jar
