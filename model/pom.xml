@@ -71,10 +71,11 @@
 		</dependency>
 		<!--add per BUILD failure -->
 		<!-- [ERROR] Failed to execute goal on project SupportoMareggiate-model: Could not resolve dependencies for project it.epocaricerca.geologia:SupportoMareggiate-model:jar:1.0-SNAPSHOT: Failure to find javax.transaction:jta:jar:1.0.1B in http://vm35lnx/mavenRepository/ was cached in the local repository, resolution will not be reattempted until the update interval of vm35lnx has elapsed or updates are forced 
+
 		<dependency>
 			<groupId>javax.transaction</groupId>
 			<artifactId>jta</artifactId>
-			<version>1.1</version>
+			<version>1.0.1B</version>
 		</dependency>-->
 		
 	</dependencies>
