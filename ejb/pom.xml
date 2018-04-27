@@ -218,6 +218,7 @@
 			<version>4.2.3.GA</version>
 			<scope>provided</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>jboss</groupId>
 			<artifactId>jboss-annotations-ejb3</artifactId>

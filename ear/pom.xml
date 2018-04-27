@@ -212,11 +212,11 @@
 
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
 				<executions>
 					<execution>
 						<goals>
 							<goal>testCompile</goal>
-
 						</goals>
 					</execution>
 				</executions>
@@ -296,21 +296,21 @@
 					</dependency>
 				</dependencies>
 
-				<configuration>
+				<!--<configuration>
 					 common configuration shared by all executions
 					<driver>oracle.jdbc.driver.OracleDriver</driver>
 					<username>${database.username}</username>
 					<password>${database.password}</password>
 					<url>${database.url}</url>
-				</configuration>
+				</configuration>-->
 
-				<!--<configuration>
-					<!- common configuration shared by all executions
+				<configuration>
+					<!-- common configuration shared by all executions -->
 					<driver>oracle.jdbc.driver.OracleDriver</driver>
 					<username>gvenzl</username>
 					<password>supersecretpwd</password>
 					<url>jdbc:oracle:thin:@//localhost:1521/ORCLPDB1</url>
-				</configuration>-->
+				</configuration>
 				<executions>
 					<execution>
 						<id>populate-mareografo-boa</id>
