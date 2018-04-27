@@ -25,7 +25,7 @@
 
 INSERT  INTO MRG_TENDENZE VALUES(1, 'Esaurimento');
 INSERT  INTO MRG_TENDENZE VALUES(2, 'Attenuazione');
-INSERT  INTO MRG_TENDENZE VALUES(3, 'Stazionarietï¿½');
+INSERT  INTO MRG_TENDENZE VALUES(3, 'Stazionarietà');
 INSERT  INTO MRG_TENDENZE VALUES(4, 'Intensificazione');
 
 
@@ -89,13 +89,5 @@ INSERT INTO MRG_INDIRIZZI VALUES(1,'All''Assessore Sicurezza territoriale, difes
 INSERT INTO MRG_INDIRIZZI VALUES(2,'Al Direttore generale ambiente e difesa del suolo e della costa','Via della Fiera, 8 40127 Bologna');
 INSERT INTO MRG_INDIRIZZI VALUES(3,'Al Responsabile del Servizio difesa del suolo, della costa e bonifica','Via della Fiera, 8 40127 Bologna');
 INSERT INTO MRG_INDIRIZZI VALUES(4,'Al Responsabile dell''Agenzia di Protezione Civile','Viale Silvani 6, 40122 Bologna');
-
-INSERT INTO MRG_ALTEZZE VALUES(4,'20');
-INSERT INTO MRG_ALTEZZE VALUES(5,'30');
-INSERT INTO MRG_ALTEZZE VALUES(6,'40');
-
-INSERT INTO MRG_FENOMENI VALUES(4,'male');
-INSERT INTO MRG_FENOMENI VALUES(5,'sto bene');
-INSERT INTO MRG_FENOMENI VALUES(6,'spegnete tutto');
 
 COMMIT;
