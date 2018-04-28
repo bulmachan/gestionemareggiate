@@ -262,9 +262,6 @@
 
 					<!-- MANIFEST.MF necessario per aggiungere i profili di logging -->
 					<archive>
-						<manifest>
-							<addDefaultImplementationEntries>false</addDefaultImplementationEntries>
-						</manifest>
 						<manifestEntries>
 							<Logging-Profile>SupportoMareggiate_logging</Logging-Profile>
 						</manifestEntries>

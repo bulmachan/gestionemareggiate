@@ -17,7 +17,6 @@ public class AccessControlPhaseListener implements PhaseListener{
 	
 	
 	public void afterPhase(PhaseEvent event) {
-		// System.out.println("after Phase " + event.getPhaseId());
 
 		FacesContext context = event.getFacesContext();
 		String viewId = context.getViewRoot().getViewId();
@@ -83,7 +82,6 @@ public class AccessControlPhaseListener implements PhaseListener{
 	}
 
 	public void beforePhase(PhaseEvent e) {
-		System.out.println("before Phase " + e.getPhaseId());
 		if(e.getPhaseId()== PhaseId.RESTORE_VIEW)
 		{
 
