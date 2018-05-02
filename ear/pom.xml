@@ -259,6 +259,14 @@
 							<bundleFileName>it.epocaricerca.geologia-SupportoMareggiate-ejb-1.0-SNAPSHOT.jar</bundleFileName>
 						</ejbModule>
 					</modules>
+
+					<!-- MANIFEST.MF necessario per aggiungere i profili di logging -->
+					<archive>
+						<manifestEntries>
+							<Logging-Profile>SupportoMareggiate_logging</Logging-Profile>
+						</manifestEntries>
+					</archive>
+
 				</configuration>
 
 			</plugin>
