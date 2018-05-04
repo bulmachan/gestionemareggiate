@@ -54,9 +54,7 @@ public abstract class Impatto implements Serializable {
 	
 	@Lob
 	private String descrizione;
-	
-	
-	
+
 	public long getId() {
 		return id;
 	}
@@ -82,7 +80,11 @@ public abstract class Impatto implements Serializable {
 	}
 	
 	public Date getInizioValidita() {
-		return dataAllerta;
+		return this.inizioValidita;
+	}
+
+	public void setInizioValidita(Date inizioValidita) {
+		this.inizioValidita = inizioValidita;
 	}
 
 	public void setDataAllerta(Date dataAllerta) {
@@ -93,9 +95,6 @@ public abstract class Impatto implements Serializable {
 		return dataAllerta;
 	}
 
-	public void setInizioValidita(Date inizioValidita) {
-		this.inizioValidita = inizioValidita;
-	}
 
 	public Date getFineValidita() {
 		return fineValidita;

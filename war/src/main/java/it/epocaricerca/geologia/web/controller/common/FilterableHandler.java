@@ -2,6 +2,7 @@
 package it.epocaricerca.geologia.web.controller.common;
 
 import it.epocaricerca.geologia.ejb.utils.JNDIUtils;
+import it.epocaricerca.geologia.web.controller.ValutazioneImpattiController;
 import it.epocaricerca.geologia.web.model.FilterablePagedDataModel;
 import it.epocaricerca.geologia.web.util.GenericUtils;
 import it.epocaricerca.geologia.web.util.JSFUtils;
@@ -13,6 +14,7 @@ import javax.faces.model.DataModel;
 import javax.faces.model.DataModelEvent;
 import javax.faces.model.DataModelListener;
 
+import org.apache.log4j.Logger;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Order;
 
@@ -35,8 +37,10 @@ import org.hibernate.criterion.Order;
  *
  */
 public abstract class FilterableHandler<T> implements Serializable, DataModelListener{
-		
-	
+
+
+		private static Logger logger = Logger.getLogger(FilterableHandler.class);
+
 		private static final long serialVersionUID = 1L;
 		public static final String ASC = "asc";
 		public static final String DEC = "dec";

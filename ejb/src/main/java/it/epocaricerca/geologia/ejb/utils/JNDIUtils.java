@@ -1,5 +1,5 @@
 /**
- *  <p>Copyright © 2009-2010 Epoca srl</p>
+ *  <p>Copyright ï¿½ 2009-2010 Epoca srl</p>
  *
  * <p>This file is part of FatturazioneElettronica. FatturazioneElettronica is free 
  * software: you can redistribute it and/or modify it under the terms of the GNU 
@@ -53,7 +53,7 @@ import org.apache.log4j.Logger;
 /**
  * @author fulvio di marco, chiara pezzi, stefano monti
  * 
- * <p>Copyright © 2009-2010 Epoca srl</p>
+ * <p>Copyright ï¿½ 2009-2010 Epoca srl</p>
  *
  * <p>This file is part of FatturazioneElettronica. FatturazioneElettronica is free 
  * software: you can redistribute it and/or modify it under the terms of the GNU 

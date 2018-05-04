@@ -140,7 +140,7 @@ public class ValutazioneImpattiController extends FilterableHandler<PrevisioneIm
 	}
 
 	public void filtraValutazioneImpatti() {
-		logger.info("filtraValutazioneImpatti "+filtro_inizioValiditaGiorno+" "+filtro_fineValiditaGiorno);
+		logger.info("filtraValutazioneImpatti dal giorno: /"+filtro_inizioValiditaGiorno+"/ al /"+filtro_fineValiditaGiorno);
 		updateDataModel();
 	}
 
@@ -615,7 +615,7 @@ public class ValutazioneImpattiController extends FilterableHandler<PrevisioneIm
 	protected List<Criterion> determineRestrictions() {
 		List<Criterion> criterions = new ArrayList<Criterion>();
 
-		if(filtro_localita != null){
+		if(filtro_localita != null && !"".equals(filtro_localita)){
 			NestedCriterion celle = new NestedCriterion("danni", 
 					new NestedCriterion("macroArea",Restrictions.eq("nome", filtro_localita )));
 			criterions.add(celle);
